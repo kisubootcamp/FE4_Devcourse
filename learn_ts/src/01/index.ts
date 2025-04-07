@@ -7,6 +7,6 @@
   let arr:[] = [];
   let sym:symbol = Symbol("a");
   let und: undefined = undefined; // 작성할 일 없다.
-  let nul:null = null;
+  let nul:null = null;//null은 null 값만 가질 수 있다.
   let big:bigint = 100n;
 }
