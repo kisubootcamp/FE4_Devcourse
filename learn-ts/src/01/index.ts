@@ -13,9 +13,8 @@
     let MAX_LEVEL: number = 99;
     // MAX_LEVEL = '9'; // 타입을 숫자로 지정했으므로 에러 체크됨
 
-    // 나중에 설명
-    let obj: object = {};
-    let arr: [] = [];
+    let obj: object = {}; // 나중에 설명
+    let arr: [] = []; // 나중에 설명
 
     let sym: symbol = Symbol('a');
     let und: undefined = undefined;
