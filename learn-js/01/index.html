@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("내부 스크립트");
+    </script>
+
+    <!-- 외부 스크립트  여기 있으면 red 실행안댐
+     <script src="./main.js"></script>
+     defer쓰면 실행댐
+     -->
+    
+    <script src="./main.js" defer></script> 
+    <!-- 
+    <script src="./main.js" async></script>
+    html파싱
+    다운로드 병렬로 다운 다운로드된것 부터 실행
+    다운로든 된것부터 실행 
+
+    <script src="./main.js" defer></script> 
+    다운로드도 병렬, 실행순서 보장
+    -->
+</head>
+<body>
+    <!-- 인라인 스크립트 -->
+    <h1>Hello World!</h1>
+    <button onclick="console.log('인라인 스크립트')">버튼</button>
+    <!-- 외부 스크립트  여기 있으면 red 실행댐
+    <script src="./main.js"></script>
+    -->
+</body>
+</html>
+
+<!-- 
+스크립트 실행위치가 중요함
+헤드에 넣으면 html파싱개념에서 안좋음
+body마지막에 넣기 이것도 완벽한 개념은 아님
+-->
