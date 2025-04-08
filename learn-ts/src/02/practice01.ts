@@ -138,6 +138,16 @@
   //     { id: 2, name: 'Item2', price: 200 },
   //     [ 'discount', 10 ]
   //   ]
+  // 강사님ver
+  let items1: [
+    { id: number; name: string; price: number },
+    { id: number; name: string; price: number },
+    [string, number]
+  ] = [
+    { id: 1, name: "Item1", price: 100 },
+    { id: 2, name: "Item2", price: 200 },
+    ["discount", 10],
+  ];
 
   // 8 문제 변수의 타입을 지정
   let profile: {
@@ -165,6 +175,14 @@
     20,
   ];
   console.log(mixedData); // [ 'apple', 10, true, 'banana', 20 ]
+  // 강사님 ver
+  let mix1: [string, number, boolean, string, number] = [
+    "apple",
+    10,
+    true,
+    "banana",
+    20,
+  ];
 
   // 10 문제 변수의 타입을 지정
   let company: {
@@ -271,6 +289,18 @@
   //     { type: 'product', id: 1, name: 'Laptop', price: 999 },
   //     { type: 'product', id: 2, name: 'Smartphone', price: 499 }
   //   ]
+  // 강사님ver
+  let mix2: [
+    { type: string; name: string; age: number },
+    { type: string; name: string; age: number },
+    { type: string; id: number; name: string; price: number },
+    { type: string; id: number; name: string; price: number }
+  ] = [
+    { type: "user", name: "Alice", age: 30 },
+    { type: "user", name: "Bob", age: 25 },
+    { type: "product", id: 1, name: "Laptop", price: 999 },
+    { type: "product", id: 2, name: "Smartphone", price: 499 },
+  ];
 
   // 4 문제 변수의 타입을 지정
   let dataSet: ({ name: string; price: number } | [string, number])[] = [
@@ -286,6 +316,18 @@
   //     { name: 'Item B', price: 200 },
   //     [ 'item2', 75 ]
   //   ]
+  // 강사님ver
+  let data2: [
+    { name: string; price: number },
+    [string, number],
+    { name: string; price: number },
+    [string, number]
+  ] = [
+    { name: "Item A", price: 100 },
+    ["item1", 50],
+    { name: "Item B", price: 200 },
+    ["item2", 75],
+  ];
 
   // 5 문제 변수의 타입을 지정
   let complexStructure: {
@@ -378,6 +420,18 @@
   //     { id: 2, name: 'Item 2', price: 200 },
   //     [ 'Discount', 10 ]
   //   ]
+  // 강사님 ver
+  let collection1: [
+    { id: number; name: string; price: number },
+    [string, number],
+    { id: number; name: string; price: number },
+    [string, number]
+  ] = [
+    { id: 1, name: "Item 1", price: 100 },
+    ["Discount", 20],
+    { id: 2, name: "Item 2", price: 200 },
+    ["Discount", 10],
+  ];
 
   // 10. 문제 변수 타입 지정
   let mixedItems: { id: number; type: string; name: string; size: string }[] = [
