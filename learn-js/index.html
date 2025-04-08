@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 외부 script (외부에 있는 확장자가 js로 끝나는 파일을 추가) -->
+    <script src="./01/main.js" defer></script>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+  </body>
+</html>
+
+<!-- 자바스크립트 이용 방법  (면접때 많이 물어본다.)
+  
+  1. head head 사이에 위치할 때: HTML 파싱을 하다가, js를 다운로드하고 실행시킨 후, 마저 HTML을 파싱한다.
+  즉, 웹 페이지를 부를때 js를 다운하는 시간이 더 추가돼서 시간이 걸린다.
+
+  2. body 태그 끝나기 전 지점에 위치할 떄: 전체 HTML 파싱을 다 끝내고, js를 마지막에 파싱한다
+
+  3. aync + head태그 끝나기 전 위치 : HTML 파싱과 js 다운을 동시에 진행하고, 다운로드 된거 먼저 실행시킨다.
+  단점 : 
+  예)
+    <script src="./01/main1.js"></script>
+    <script src="./01/main2.js"></script>
+    <script src="./01/main3.js"></script>
+    이 순서대로 다운을 하고 실행시켜야할 때, 만약에 main2.js가 먼저 다운이 완료된다면 2를 먼저 실행시켜버린다.
+
+  4. defer + head태그 끝나기 전 위치: 모두 병렬로 다운로드 하고, HTML 파싱이 끝난 후 코드 순서대로 실행한다.
+  현재는 이게 가장 일반적인 방법
+  (defer를 사용하면 DOMContentLoaded를 안써도 된다. 근데 DOMContentLoaded를 써주면 좋긴하다.
+  그냥 defer 써도 써라;;
+  )
+
+  aync,defer는 HTML과 JS를 동시에 다운로드한다는 점에서는 같지만, aync는 다운이 완료되는 순서대로 실행하고,
+  defer는 파싱이 끝난 후 코드 순서대로 실행한다.
+-->

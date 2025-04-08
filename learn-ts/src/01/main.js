@@ -31,17 +31,16 @@ console.log(rest);
 
 // 3.2 객체에서의 구조분해 할당
 // 일반 문법 - 객체
-const {animalName, animalType, animalAge, animalGender};
 const animal = {
-	animalName: '곰이',
-	animalType: '고양이',
-	animalAge : 20, 
-	animalGender : 'male'
+  animalName: '곰이',
+  animalType: '고양이',
+  animalAge: 20,
+  animalGender: 'male',
 };
 
 const animalName = animal.animalName;
 const animalType = animal.animalType;
-const animalAge  = animal.animalAge;
+const animalAge = animal.animalAge;
 const animalGender = animal.animalGender;
 
 console.log(animalName);
@@ -50,21 +49,19 @@ console.log(animalAge);
 console.log(animalGender);
 
 // 비구조화 할당 - 객체
-const animal = {
-	animalName: '곰이',
-	animalType: '고양이',
-	animalAge : 20, 
-	animalGender : 'male'
+const animalObj = {
+  animalName: '곰이',
+  animalType: '고양이',
+  animalAge: 20,
+  animalGender: 'male',
 };
 
-const {animalName, animalType, animalAge, animalGender} = animal;
+const { animalName, animalType, animalAge, animalGender } = animalObj;
 
 console.log(animalName);
-console.log(animalType );
-console.log(animalAge  );
-console.log(animalGender );
-
-
+console.log(animalType);
+console.log(animalAge);
+console.log(animalGender);
 
 const {
   id,
@@ -108,7 +105,7 @@ const { name, ...restProperty } = {
 console.log(name);
 console.log(restProperty);
 
-// 깊은 복사처럼 보이는 약튼 복사
+// 깊은 복사처럼 보이는 얕은 복사
 const colors = ['red', 'orange', 'banana', { special: 'pink' }];
 const copyColors = [...colors];
 copyColors[0] = 'pink';
