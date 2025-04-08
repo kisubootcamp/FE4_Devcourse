@@ -34,6 +34,7 @@
 
   // 9. 객체 선언
   let userData: { name: string; age: number } = { name: "PSY", age: 28 };
+  console.log(userData);
 }
 
 {
