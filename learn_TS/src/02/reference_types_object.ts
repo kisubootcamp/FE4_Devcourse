@@ -298,4 +298,29 @@
       },
     },
   ];
+
+  // readonly : 값을 수정할 수 없게 만드는 키워드
+  // 객체에서는 readonly라는 걸 사용할 수 있는데
+  // 이건 값을 바꾸지 않고 싶을 때 사용
+
+  const userInfo: {
+    readonly id: number;
+    name: string;
+  } = {
+    id: 1,
+    name: "Alice",
+  };
+
+  // user.id = 2; 안됨
+
+  // 옵셔널 속성 : 있을 수도 있고, 없을 수도 있는 속성
+  const user1: {
+    name: string;
+    age?: number;
+  } = { name: "Alice", age: 30 }; // age 있음
+
+  const user2: {
+    name: string;
+    age?: number;
+  } = { name: "Bob" }; // age 없어도 괜찮!
 }

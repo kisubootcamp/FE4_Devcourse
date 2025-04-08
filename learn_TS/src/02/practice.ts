@@ -83,6 +83,11 @@
   let numbers: number[] = [10, 20, 30, 40, 50];
 
   // 4
+  //   let users1: [string[], number[], string[]] = [
+  //     { name: "Alice", age: 30, active: true },
+  //     { name: "Bob", age: 25, active: false },
+  //     { name: "Charlie", age: 35, active: true },
+  //   ];
   let users: { name: string; age: number; active: boolean }[] = [
     { name: "Alice", age: 30, active: true },
     { name: "Bob", age: 25, active: false },
@@ -167,10 +172,7 @@
       };
       tags: string[];
     };
-    reviews: [
-      { user: string; rating: number; comment: string },
-      { user: string; rating: number; comment: string }
-    ];
+    reviews: { user: string; rating: number; comment: string }[];
   } = {
     id: 1,
     name: "Product A",

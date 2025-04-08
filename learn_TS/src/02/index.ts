@@ -63,6 +63,4 @@
     [1, "hello", { key: "value" }],
     [2, "world", { key: "example" }],
   ];
-
-  // 객체(object)
 }
