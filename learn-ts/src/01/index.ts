@@ -25,3 +25,5 @@
   let nul: null = null;
   let big: bigint = 100n;
 }
+
+let num: number = 10;

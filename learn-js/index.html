@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./01/main.js" defer></script>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+  </body>
+</html>
+<!-- 면접 단골 질문: -->
+<!-- 1. head와 head 사이에 script 넣는 것: 좋지 않은 방법이다. -->
+<!-- 이유: html을 파싱하는 도중에 javascript를 불러오기 때문 -->
+<!-- 2. body 마지막에 script 넣는 것: 완벽하진 않은 방법 -->
+<!-- head 태그 사이에 넣되 async 속성을 사용: 조금 더 빠르지만 -->
+<!-- 다운로드가 된 것 부터 실행 한다는 단점이 존재  -->
+<!-- head 태그 사이에 넣되 defer 속성을 사용: 가장 현대적인 방법 -->
+<!-- async의 단점인 다운로드 된 것 부터 실행한다는 점을 해결 -->
+<!-- async와 defer의 차이점: html을 파싱하면서 js를 다운받는 점에선 동일하지만 
+ async는 다운 받는 순서대로 실행하고 defer는 순서를 보장 -->
