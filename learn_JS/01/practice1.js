@@ -356,4 +356,503 @@
     return result;
   }
   console.log(reverseString("hello"));
+
+  //문자열에서 특정 문자 개수 세기
+  function countCharacter(str, word) {
+    let strArr = [...str];
+    //console.log(strArr);
+    let a = 0;
+    for (let i = 0; i < str.length; i++) {
+      if (strArr[i] === word) {
+        a++;
+      }
+    }
+    return a;
+  }
+  console.log(countCharacter("banana", "a"));
+
+  // 팩토리얼 계산하기
+  function factorial(num) {
+    let fac = 1;
+    for (let i = 1; i <= num; i++) {
+      fac = fac * i;
+    }
+    return fac;
+  }
+  console.log(factorial(5));
+
+  // 삼각형의 넓이
+  function triangleArea(a, b) {
+    return (a * b) / 2;
+  }
+  console.log(triangleArea(10, 5));
+}
+
+{
+  // -----------------------------------
+  // 호이스팅 연습문제
+  console.log("호이스팅----------------------------");
+
+  // 1
+  console.log(myVar); // undefined
+  var myVar = 10;
+  console.log(myVar); // 10
+
+  // 2
+  var num1 = 5;
+  console.log(num1); // 5
+
+  function num() {
+    return 10;
+  }
+
+  console.log(num1); // 5
+  console.log(num()); // 10
+
+  // 3
+  var x = 10;
+  function test() {
+    console.log(x); //undefined
+    var x = 5;
+    console.log(x); // 5
+  }
+  test();
+  console.log(x); // 10
+}
+
+{
+  // -----------------------------------
+  // 객체 연습문제
+  console.log("객체----------------------------");
+  // 1
+
+  function mergeObjects(obj1, obj2) {
+    let object = {};
+
+    for (let key1 in obj1) {
+      object[key1] = obj1[key1];
+    }
+
+    for (let key2 in obj2) {
+      object[key2] = obj2[key2];
+    }
+
+    return object;
+  }
+
+  //   function mergeObjects(obj1, obj2) {
+  //     return { ...obj1, ...obj2 };
+  //   }
+
+  const obj1 = { a: 1, b: 2 };
+  const obj2 = { b: 3, c: 4 };
+  console.log(mergeObjects(obj1, obj2)); // { a: 1, b: 3, c: 4 }
+
+  const obj3 = { x: 10 };
+  const obj4 = { y: 20 };
+  console.log(mergeObjects(obj3, obj4)); // { x: 10, y: 20 }
+
+  const obj5 = { a: 1, b: 2 };
+  const obj6 = { a: 3, b: 4 };
+  console.log(mergeObjects(obj5, obj6)); // { a: 3, b: 4 }
+
+  const obj7 = {};
+  const obj8 = { z: 5 };
+  console.log(mergeObjects(obj7, obj8)); // { z: 5 }
+}
+
+{
+  console.log("객체----------------------------");
+  // 2
+  function objectToArray(obj) {
+    let arr = [];
+    for (let key in obj) {
+      // console.log(key);
+      arr.push([key, obj[key]]);
+    }
+    return arr;
+  }
+
+  //   function objectToArray(obj) {
+  //     return Object.entries(obj);
+  //   }
+
+  // Object.keys(obj)	키만 배열로 반환 → ['a', 'b', 'c']
+  // Object.values(obj)	값만 배열로 반환 → [1, 2, 3]
+  // Object.entries(obj)	키-값 쌍을 배열로 반환 → [['a', 1], ['b', 2], ['c', 3]]
+
+  const obj = { a: 1, b: 2, c: 3 };
+  console.log(objectToArray(obj)); // [['a', 1], ['b', 2], ['c', 3]]
+
+  const obj2 = { x: 5, y: 10 };
+  console.log(objectToArray(obj2)); // [['x', 5], ['y', 10]]
+
+  const obj3 = { p: 3 };
+  console.log(objectToArray(obj3)); // [['p', 3]]
+
+  const obj4 = {};
+  console.log(objectToArray(obj4)); // []
+}
+
+{
+  console.log("객체----------------------------");
+  // 3
+
+  function filterByThreshold(obj, threshold) {
+    let object = {};
+
+    for (let key in obj) {
+      if (obj[key] > threshold) {
+        object[key] = obj[key];
+      }
+    }
+    return object;
+  }
+
+  const obj = { a: 1, b: 5, c: 3 };
+  const threshold = 2;
+  console.log(filterByThreshold(obj, threshold)); // { b: 5, c: 3 }
+
+  const obj2 = { x: 1, y: 2, z: 3 };
+  const threshold2 = 2;
+  console.log(filterByThreshold(obj2, threshold2)); // { y: 2, z: 3 }
+
+  const obj3 = { a: 10, b: 5, c: 1 };
+  const threshold3 = 6;
+  console.log(filterByThreshold(obj3, threshold3)); // { a: 10 }
+
+  const obj4 = { m: -1, n: 0, o: 1 };
+  const threshold4 = 0;
+  console.log(filterByThreshold(obj4, threshold4)); // { n: 0, o: 1 }
+}
+
+{
+  console.log("객체----------------------------");
+  // 4
+
+  function squareValues(obj) {
+    let object = {};
+
+    for (let key in obj) {
+      object[key] = obj[key] ** 2;
+    }
+
+    return object;
+  }
+
+  const obj = { a: 1, b: 2, c: 3 };
+  console.log(squareValues(obj)); // { a: 1, b: 4, c: 9 }
+
+  const obj2 = { x: 2, y: 3 };
+  console.log(squareValues(obj2)); // { x: 4, y: 9 }
+
+  const obj3 = { p: 0, q: -2 };
+  console.log(squareValues(obj3)); // { p: 0, q: 4 }
+
+  const obj4 = {};
+  console.log(squareValues(obj4)); // {}
+}
+
+{
+  console.log("객체----------------------------");
+  // 5
+  function deleteKey(obj, keyToDelete) {
+    let answer = {};
+    for (let key in obj) {
+      if (key !== keyToDelete) {
+        answer[key] = obj[key];
+      }
+    }
+    return answer;
+  }
+
+  const obj = { a: 1, b: 2, c: 3 };
+  const keyToDelete = "b";
+  console.log(deleteKey(obj, keyToDelete)); // { a: 1, c: 3 }
+
+  const obj2 = { x: 10, y: 20, z: 30 };
+  const keyToDelete2 = "y";
+  console.log(deleteKey(obj2, keyToDelete2)); // { x: 10, z: 30 }
+
+  const obj3 = { a: 5 };
+  const keyToDelete3 = "a";
+  console.log(deleteKey(obj3, keyToDelete3)); // {}
+
+  const obj4 = { m: 1, n: 2, o: 3 };
+  const keyToDelete4 = "p";
+  console.log(deleteKey(obj4, keyToDelete4)); // { m: 1, n: 2, o: 3 }
+}
+
+{
+  console.log("객체----------------------------");
+  // 6
+
+  function removeDuplicateValues(obj) {
+    let answer = {};
+    let check = {};
+    for (let key in obj) {
+      let value = obj[key];
+
+      if (check[value] === undefined) {
+        check[value] = 0;
+      }
+
+      check[value] = check[value] + 1;
+    }
+
+    for (let key in obj) {
+      if (check[obj[key]] === 1) {
+        answer[key] = obj[key];
+      }
+    }
+    return answer;
+    //console.log(check);
+  }
+
+  const obj = { a: 1, b: 2, c: 1, d: 3 };
+  console.log(removeDuplicateValues(obj)); // { b: 2, d: 3 }
+
+  const obj2 = { x: 5, y: 5, z: 10 };
+  console.log(removeDuplicateValues(obj2)); // { z: 10 }
+
+  const obj3 = { p: 1, q: 1, r: 1 };
+  console.log(removeDuplicateValues(obj3)); // {}
+
+  const obj4 = { m: 3, n: 4, o: 3 };
+  console.log(removeDuplicateValues(obj4)); // { n: 4 }
+}
+
+{
+  console.log("객체----------------------------");
+  // 7
+
+  function findKeyByValue(obj, num) {
+    for (let key in obj) {
+      if (obj[key] === num) {
+        return key;
+      }
+    }
+    return null;
+  }
+  const obj = { a: 1, b: 2, c: 3 };
+  console.log(findKeyByValue(obj, 2)); // 'b'
+  console.log(findKeyByValue(obj, 4)); // null
+  console.log(findKeyByValue(obj, 1)); // 'a'
+  console.log(findKeyByValue({}, 1)); // null
+}
+
+{
+  console.log("객체----------------------------");
+  // 8
+  function multiplyValues(obj) {
+    let answer = 1;
+    for (let key in obj) {
+      answer = answer * obj[key];
+    }
+    return answer;
+  }
+
+  const obj = { a: 1, b: 2, c: 3 };
+  console.log(multiplyValues(obj)); // 6
+
+  const obj2 = { x: 2, y: 3, z: 4 };
+  console.log(multiplyValues(obj2)); // 24
+
+  const obj3 = { a: 1, b: 0, c: 3 };
+  console.log(multiplyValues(obj3)); // 0
+
+  const obj4 = {};
+  console.log(multiplyValues(obj4)); // 1 (곱셈의 항등원)
+}
+
+{
+  console.log("클로저----------------------------");
+  // 1
+  function createCounter() {
+    let count = 0;
+    return function () {
+      count++;
+      return count;
+    };
+  }
+
+  const counter = createCounter();
+  console.log(counter()); // 1
+  console.log(counter()); // 2
+  console.log(counter()); // 3
+}
+
+{
+  console.log("클로저----------------------------");
+  // 2
+  function square(num) {
+    let answer = num ** 2;
+    // 여기에 코드를 작성하세요
+    return answer;
+  }
+
+  console.log(square(4)); // 16
+  console.log(square(4)); // 16 (캐시 사용)
+  console.log(square(5)); // 25
+}
+
+{
+  console.log("클로저----------------------------");
+  // 3
+  function delayExecution(ms) {
+    // 여기에 코드를 작성하세요
+    return function (callback) {
+      setTimeout(callback, ms);
+    };
+  }
+
+  const delayedFunc = delayExecution(1000);
+  delayedFunc(() => console.log("Executed after 1 second"));
+}
+
+{
+  console.log("클로저----------------------------");
+  // 4
+  function createIdGenerator() {
+    // 여기에 코드를 작성하세요
+    let id = 0;
+    return function () {
+      id++;
+      return id;
+    };
+  }
+
+  const getId = createIdGenerator();
+  console.log(getId()); // 1
+  console.log(getId()); // 2
+  console.log(getId()); // 3
+}
+
+{
+  console.log("클로저----------------------------");
+  // 5
+  function memoize(fn) {
+    const cache = {};
+    return function (n) {
+      const key = JSON.stringify(n); // n을 문자열로 변환해서 키로 사용
+      if (cache[key]) return cache[key]; // 캐시에 있으면 바로 반환
+      const result = fn(n); // 계산
+      cache[key] = result; // 결과 저장
+      return result;
+    };
+  }
+  const fibonacci = memoize(function (n) {
+    // 여기에 코드를 작성하세요
+    // 피보나치 수열 공식
+    // F(0) = 0
+    // F(1) = 1
+    // F(n) = F(n - 1) + F(n - 2)  (n >= 2)
+    if (n === 0) {
+      return 0;
+    }
+    if (n === 1) {
+      return 1;
+    }
+    let answer = fibonacci(n - 1) + fibonacci(n - 2);
+    return answer;
+  });
+
+  console.log(fibonacci(10)); // 55
+  //console.log(fibonacci(100));
+  //console.log(fibonacci(100)); // 55 (메모이제이션 사용)
+}
+
+{
+  console.log("클로저----------------------------");
+  // 6
+  function createStringCombiner() {
+    // 여기에 코드를 작성하세요
+    let answer = "";
+    return function (str) {
+      return (answer = answer + str);
+    };
+  }
+
+  const combiner = createStringCombiner();
+  console.log(combiner("Hello")); // "Hello"
+  console.log(combiner(" World")); // "Hello World"
+}
+
+{
+  console.log("클로저----------------------------");
+  // 7
+  function createPropertyCounter() {
+    // 여기에 코드를 작성하세요
+    return function (obj) {
+      let count = Object.keys(obj);
+      return count.length;
+    };
+  }
+
+  const counter = createPropertyCounter();
+  console.log(counter({ a: 1, b: 2 })); // 2
+  console.log(counter({ a: 1 })); // 1
+}
+
+{
+  console.log("클로저----------------------------");
+  // 8
+
+  function createFilter(condition) {
+    // 여기에 코드를 작성하세요
+    return function (arr) {
+      return arr.filter(condition);
+    };
+  }
+
+  const filterEven = createFilter((num) => num % 2 === 0);
+  console.log(filterEven([1, 2, 3, 4, 5])); // [2, 4]
+}
+
+{
+  console.log("클로저----------------------------");
+  // 9
+  function createMultiCounter() {
+    // 여기에 코드를 작성하세요
+    let counter = {}; // 저장
+
+    return function (x) {
+      if (!counter[x]) {
+        counter[x] = 0; // 안나온 이름이면 0으로 셋팅
+      }
+      return function () {
+        counter[x]++;
+        return counter[x];
+      };
+    };
+  }
+
+  const counters = createMultiCounter();
+  const counterA = counters("A");
+  const counterB = counters("B");
+
+  console.log(counterA()); // 1
+  console.log(counterA()); // 2
+  console.log(counterB()); // 1
+  console.log(counterA()); // 3
+  console.log(counterB()); // 2
+}
+
+{
+  console.log("클로저----------------------------");
+  // 10
+  function createCalculator(operator) {
+    // 여기에 코드를 작성하세요
+    return function (a, b) {
+      return operator(a, b);
+    };
+  }
+
+  const add = createCalculator((a, b) => a + b);
+  console.log(add(2, 3)); // 5
+  console.log(add(10, 5)); // 15
+
+  const multiply = createCalculator((a, b) => a * b);
+  console.log(multiply(2, 3)); // 6
+  console.log(multiply(10, 5)); // 50
 }
