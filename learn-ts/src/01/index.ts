@@ -20,16 +20,18 @@
 
 // 자바스크립트 -> 동적 타입 시스템
 // 타입스크립트 -> 정적 타입 시스템
-{
-  let name: string = "sucoding";
-  let age: number = 20;
-  let bool: boolean = true;
+// {
+//   let name: string = "sucoding";
+//   let age: number = 20;
+//   let bool: boolean = true;
 
-  let obj: object = {}; // o -> 추후 자세히 설명 예정
-  let arr: [] = []; // o -> 추후 자세히 설명 예정
+//   let obj: object = {}; // o -> 추후 자세히 설명 예정
+//   let arr: [] = []; // o -> 추후 자세히 설명 예정
 
-  let sym: symbol = Symbol("a");
-  let und: undefined = undefined; // 작성할 일 없다.
-  let nul: null = null;
-  let big: bigint = 100n;
-}
+//   let sym: symbol = Symbol("a");
+//   let und: undefined = undefined; // 작성할 일 없다.
+//   let nul: null = null;
+//   let big: bigint = 100n;
+// }
+
+let num: number = 10;
