@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 외부 스크립트(외부에 있는 확장자가 js로 끝나는 파일 추가) -->
+
+    <!-- 1번째 유형 -->
+    <!-- <script src="./01/main.js"></script> -->
+    <!-- 안좋은 방법: html 파싱을 중단시킴 -->
+
+    <!-- 3 -->
+    <!-- <script src="./01/main.js" async></script> -->
+    <!-- 병렬로 다운: 먼저 다운받은 js가 먼저 실행되는 단점-->
+
+    <!-- 4 -->
+    <script src="./01/main.js" defer></script>
+    <!-- 병렬로 다운, 실행 순서도 순차적 -->
+
+    <!-- async, defer의 차이 알아놓기 -->
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <!-- 내부 스크립트 -->
+    <script>
+      console.log('hi!');
+    </script>
+    <!-- inline script -->
+    <button onclick="console.log('button 클릭')">버튼</button>
+
+    <!-- 2번째 -->
+    <!-- <script src="./01/main.js"></script> -->
+    <!-- 많은 내용의 파싱 후 js를 가져오는 게 장점. -->
+  </body>
+</html>
+
+<!-- html을 1번 줄부터 순차적으로 파싱한다. (웹 브라우저가 알아듣게 해석하는 과정) -->
