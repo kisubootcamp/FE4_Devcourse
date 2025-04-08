@@ -38,15 +38,14 @@
   // - **이 변수의 타입을 지정하세요**.
 
   let students: {
-      name: string;
-      age: number;
-      grade: string;
-    },
-    [] = [
-      { name: "Alice", age: 22, grade: "A" },
-      { name: "Bob", age: 24, grade: "B" },
-      { name: "Charlie", age: 21, grade: "C" },
-    ];
+    name: string;
+    age: number;
+    grade: string;
+  }[] = [
+    { name: "Alice", age: 22, grade: "A" },
+    { name: "Bob", age: 24, grade: "B" },
+    { name: "Charlie", age: 21, grade: "C" },
+  ];
 
   // ### 3. **문제**
   // let numbers = [10, 20, 30, 40, 50];
@@ -76,7 +75,7 @@
   // let nestedArray = [["apple", "banana"], [1, 2, 3], ["cherry"]];
   // - **이 변수의 타입을 지정하세요**.
 
-  let nestedArray: (string[] | number[])[] = [
+  let nestedArray: [string[], number[], string[]] = [
     ["apple", "banana"],
     [1, 2, 3],
     ["cherry"],
@@ -102,10 +101,11 @@
   // ];
   // - **이 변수의 타입을 지정하세요**.
 
-  let items: (
-    | { id: number; name: string; price: number }
-    | [string, number]
-  )[] = [
+  let items: [
+    { id: number; name: string; price: number },
+    { id: number; name: string; price: number },
+    [string, number]
+  ] = [
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
@@ -143,7 +143,7 @@
   //   "banana",
   //   20,
   // ];
-  let mixedData: (string | number | boolean)[] = [
+  let mixedData: [string, number, boolean, string, number] = [
     "apple",
     10,
     true,
