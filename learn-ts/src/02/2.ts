@@ -1,9 +1,9 @@
 {
   //객체
   // Record<string, never> : 객체의 키 값은 문자열, 값은 절대 올 수 없다 => 빈 객체를 지정해야할 때 씀. 진정한 빈 객체 생성
-  let obj: Record<string, never> = {};
+  let obj: Record<string, never> = {}; // null과 undefined를 제외한 모든 값을 허용하겠다는 됨
   obj = {};
-  //래퍼 객체
+  //랩퍼 객체
   //원시타입(primitive type)
   //   obj = null;
   //   obj = undefined;

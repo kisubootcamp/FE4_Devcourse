@@ -1,6 +1,7 @@
 // let num: number = 10;
 //typescript 는 전역적으로 type을 검사함
 //폴더가 다르더라도 다른 폴더안에 들어가 있는 파일을 인식해서 각각의 파일을 하나의 파일에 들어가 있는 것으로 인식
+// -> 그래서 {} (중괄호) 써줘야함
 
 {
   //1. string
@@ -72,7 +73,7 @@
     [7, 8, 9],
   ];
 
-  let matrix2: Array<Array<number>>;
+  let matrix2: Array<Array<number>>; // 옛날 방식
 
   let cube: number[][][] = [
     [
