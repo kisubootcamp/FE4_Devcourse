@@ -50,6 +50,8 @@
     ["cherry"],
   ];
 
+  // (string | number)[][]도 가능하지만 가독성이 떨어짐.
+  // 유니온 타입을 아래와 같이 사용하는 게 가장 정석적인 방법.
   let nestedArray_: (string[] | number[])[] = [
     ["apple", "banana"],
     [1, 2, 3],
@@ -78,6 +80,17 @@
     ["discount", 10],
   ];
 
+  // 현재 우리가 배운 tuple 방식 풀이
+  let items__: [
+    { id: number; name: string; price: number },
+    { id: number; name: string; price: number },
+    [string, number]
+  ] = [
+    { id: 1, name: "Item1", price: 100 },
+    { id: 2, name: "Item2", price: 200 },
+    ["discount", 10],
+  ];
+
   // 8
   let profile: {
     user: { name: string; age: number };
@@ -91,6 +104,15 @@
 
   // 9
   let mixedData: (string | number | boolean)[] = [
+    "apple",
+    10,
+    true,
+    "banana",
+    20,
+  ];
+
+  // 현재 우리가 배운 tuple 방식 풀이
+  let mixedData_: [string, number, boolean, string, number] = [
     "apple",
     10,
     true,

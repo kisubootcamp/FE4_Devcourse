@@ -58,6 +58,19 @@
     { type: "product", id: 2, name: "Smartphone", price: 499 },
   ];
 
+  // 현재 우리가 배운 tuple 방식 풀이
+  let mixedData_: [
+    { type: string; name: string; age: number },
+    { type: string; name: string; age: number },
+    { type: string; id: number; name: string; price: number },
+    { type: string; id: number; name: string; price: number }
+  ] = [
+    { type: "user", name: "Alice", age: 30 },
+    { type: "user", name: "Bob", age: 25 },
+    { type: "product", id: 1, name: "Laptop", price: 999 },
+    { type: "product", id: 2, name: "Smartphone", price: 499 },
+  ];
+
   // 4
   let dataSet: ({ name: string; price: number } | [string, number])[] = [
     { name: "Item A", price: 100 },
@@ -67,6 +80,19 @@
   ];
 
   let dataSet_: ({ name: string; price: number } | (string | number)[])[] = [
+    { name: "Item A", price: 100 },
+    ["item1", 50],
+    { name: "Item B", price: 200 },
+    ["item2", 75],
+  ];
+
+  // 현재 우리가 배운 tuple 방식 풀이
+  let dataSet__: [
+    { name: string; price: number },
+    [string, number],
+    { name: string; price: number },
+    [string, number]
+  ] = [
     { name: "Item A", price: 100 },
     ["item1", 50],
     { name: "Item B", price: 200 },
@@ -110,6 +136,25 @@
     },
   };
 
+  // 현재 우리가 배운 tuple 방식 풀이
+  let profile_: {
+    name: string;
+    age: number;
+    favorites: [string, number, boolean, number];
+    address: {
+      street: string;
+      city: string;
+    };
+  } = {
+    name: "Alice",
+    age: 28,
+    favorites: ["reading", 42, true, 99.9],
+    address: {
+      street: "123 Main St",
+      city: "Metropolis",
+    },
+  };
+
   // 8
   let userData: { user: { name: string; age: number }; status: string }[] = [
     { user: { name: "John", age: 32 }, status: "active" },
@@ -132,6 +177,19 @@
     | { id: number; name: string; price: number }
     | (string | number)[]
   )[] = [
+    { id: 1, name: "Item 1", price: 100 },
+    ["Discount", 20],
+    { id: 2, name: "Item 2", price: 200 },
+    ["Discount", 10],
+  ];
+
+  // 현재 우리가 배운 tuple 방식 풀이
+  let collection__: [
+    { id: number; name: string; price: number },
+    [string, number],
+    { id: number; name: string; price: number },
+    [string, number]
+  ] = [
     { id: 1, name: "Item 1", price: 100 },
     ["Discount", 20],
     { id: 2, name: "Item 2", price: 200 },
