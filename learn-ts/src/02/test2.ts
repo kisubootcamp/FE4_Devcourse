@@ -45,10 +45,53 @@ let nestedArray: [string[], number[], string[]] = [
 let words: string[] = ["apple", "banana", "cherry", "kiwi"];
 
 //7
-let items: [{ id: number; name: string; price: number }string[]] = [
+let items: [
+  { id: number; name: string; price: number },
+  { id: number; name: string; price: number },
+  [string, number]
+] = [
   { id: 1, name: "Item1", price: 100 },
   { id: 2, name: "Item2", price: 200 },
   ["discount", 10],
 ];
 
-//
+//8
+let profile: {
+  user: {
+    name: string;
+    age: number;
+  };
+
+  preferences: string[];
+  isActive: boolean;
+} = {
+  user: { name: "John", age: 30 },
+  preferences: ["coding", "reading", "travelling"],
+  isActive: true,
+};
+
+//9
+let mixedData: [string, number, boolean, string, number] = [
+  "apple",
+  10,
+  true,
+  "banana",
+  20,
+];
+
+//10
+let company: {
+  name: string;
+  address: {
+    street: string;
+    city: string;
+    country: string;
+  };
+} = {
+  name: "Tech Corp",
+  address: {
+    street: "123 Main St",
+    city: "Tech City",
+    country: "Techland",
+  },
+};

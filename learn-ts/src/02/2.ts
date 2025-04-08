@@ -297,4 +297,15 @@
       },
     },
   ];
+
+  //11. readonly
+  //읽기 전용 속성
+  let ob: {
+    readonly name: string;
+    age: 20;
+    gender?: string; //옵셔널 속성
+  } = {
+    name: "eunseo",
+    age: 20,
+  };
 }
