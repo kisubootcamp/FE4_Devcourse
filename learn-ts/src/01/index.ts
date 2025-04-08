@@ -1,5 +1,5 @@
-// let num1: number = 10;
-// console.log(num1);
+// let num: number = 10;
+// console.log(num);
 // const str = "Hello Jieun!";
 // console.log(str.replaceAll(" ", ""));
 
