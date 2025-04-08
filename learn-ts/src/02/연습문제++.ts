@@ -32,8 +32,7 @@
   };
 
   // 2
-  let dataset: { id: number; value: string };
-  [] = [
+  let dataset: { id: number; value: string }[][] = [
     [
       { id: 1, value: 'a' },
       { id: 2, value: 'b' },
@@ -47,13 +46,14 @@
       { id: 6, value: 'f' },
     ],
   ];
+  console.log(dataset);
 
   // 3
   let mixedData: [
-    { type: 'user'; name: 'Alice'; age: 30 },
-    { type: 'user'; name: 'Bob'; age: 25 },
-    { type: 'product'; id: 1; name: 'Laptop'; price: 999 },
-    { type: 'product'; id: 2; name: 'Smartphone'; price: 499 }
+    { type: string; name: string; age: number },
+    { type: string; name: string; age: number },
+    { type: string; id: number; name: string; price: number },
+    { type: string; id: number; name: string; price: number }
   ] = [
     { type: 'user', name: 'Alice', age: 30 },
     { type: 'user', name: 'Bob', age: 25 },

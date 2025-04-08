@@ -45,14 +45,14 @@
   let numbers: Array<number> = [10, 20, 30, 40, 50];
 
   // 4
-  let users: { name: string; age: number; active: boolean },
-    [] = [
-      { name: 'Alice', age: 30, active: true },
-      { name: 'Bob', age: 25, active: false },
-      { name: 'Charlie', age: 35, active: true },
-    ];
+  let users: { name: string; age: number; active: boolean }[] = [
+    { name: 'Alice', age: 30, active: true },
+    { name: 'Bob', age: 25, active: false },
+    { name: 'Charlie', age: 35, active: true },
+  ];
 
   // 5
+  // [string[],number[],string[]]
   let nestedArray: (string[] | number[])[] = [
     ['apple', 'banana'],
     [1, 2, 3],
