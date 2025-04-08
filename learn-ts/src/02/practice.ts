@@ -103,6 +103,8 @@
 	// 5.
 	let nestedArray: (string[] | number[])[] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
 	console.log(nestedArray);
+	let nestedArray2: [string[], number[], string[]] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
+	console.log(nestedArray2);
 
 	// 6.
 	let words: string[] = ["apple", "banana", "cherry", "kiwi"];
@@ -118,6 +120,13 @@
 		| [string, number]
 	)[] = [{ id: 1, name: "Item1", price: 100 }, { id: 2, name: "Item2", price: 200 }, ["discount", 10]];
 	console.log(items[2]);
+
+	let items2: [
+		{ id: number; name: string; price: number },
+		{ id: number; name: string; price: number },
+		[string, number]
+	] = [{ id: 1, name: "Item1", price: 100 }, { id: 2, name: "Item2", price: 200 }, ["discount", 10]];
+	console.log(items2[1].name);
 
 	// 8.
 	let profile: {
@@ -137,6 +146,8 @@
 	// 9.
 	let mixedData: (string | number | boolean)[] = ["apple", 10, true, "banana", 20];
 	console.log(mixedData);
+	let mixedData2: [string, number, boolean, string, number] = ["apple", 10, true, "banana", 20];
+	console.log(mixedData2);
 
 	// 10.
 	let company: {
@@ -236,6 +247,19 @@
 	];
 	console.log(mixedData);
 
+	let mixedData2: [
+		{ type: string; name: string; age: number },
+		{ type: string; name: string; age: number },
+		{ type: string; id: number; name: string; price: number },
+		{ type: string; id: number; name: string; price: number }
+	] = [
+		{ type: "user", name: "Alice", age: 30 },
+		{ type: "user", name: "Bob", age: 25 },
+		{ type: "product", id: 1, name: "Laptop", price: 999 },
+		{ type: "product", id: 2, name: "Smartphone", price: 499 },
+	];
+	console.log(mixedData2);
+
 	// 4.
 	let dataSet: ({ name: string; price: number } | [string, number])[] = [
 		{ name: "Item A", price: 100 },
@@ -244,6 +268,10 @@
 		["item2", 75],
 	];
 	console.log(dataSet[2]);
+
+	let dataSet2: [{ name: string; price: number }, [string, number], { name: string; price: number }, [string, number]] =
+		[{ name: "Item A", price: 100 }, ["item1", 50], { name: "Item B", price: 200 }, ["item2", 75]];
+	console.log(dataSet2);
 
 	// 5.
 	let complexStructure: {
@@ -315,6 +343,13 @@
 		["Discount", 10],
 	];
 	console.log(collection);
+
+	let collection2: [
+		{ id: number; name: string; price: number },
+		[string, number],
+		{ id: number; name: string; price: number },
+		[string, number]
+	];
 
 	// 10.
 	let mixedItems: {
