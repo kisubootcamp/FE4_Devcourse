@@ -71,7 +71,7 @@
   ];
 
   // 연습문제+ 5번
-  let nestedArray: (string | number)[][] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
+  let nestedArray: (string[] | number[])[] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
 
   // 연습문제+ 6번
   let words: string[] = ["apple", "banana", "cherry", "kiwi"];
@@ -127,7 +127,7 @@
       };
       tags: string[];
     };
-    reviews: [{ user: string; rating: number; comment: string }, { user: string; rating: number; comment: string }];
+    reviews: { user: string; rating: number; comment: string }[];
   } = {
     id: 1,
     name: "Product A",
@@ -227,7 +227,6 @@
     { id: 2, name: "Item 2", price: 200 },
     ["Discount", 10],
   ];
-  console.log(collection);
 
   // 연습문제++ 10번
   let mixedItems: { id: number; type: string; name: string; size: string }[] = [
