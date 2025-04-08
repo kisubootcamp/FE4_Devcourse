@@ -9,7 +9,7 @@
 
   // 03
   const bool: boolean = true;
-  console.log(true);
+  console.log(bool);
 
   // 04
   const numArr: number[] = [1, 2, 3];
