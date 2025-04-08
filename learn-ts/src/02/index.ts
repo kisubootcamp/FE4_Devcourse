@@ -88,7 +88,7 @@
   // 그래서 실무에서 자주 사용하진 않는다.
   let mixArr: [number, string] = [10, 'A'];
 
-  // let mixArr: (number | string)[] = [10,"A"], [10,"A",30] 다 상관없다.
+  // let mixArr: (number | string)[] = [10,"A"], [10,"A",30] 이렇게 쓰면 다 상관없다.
 
   let mixArr2: [number, number[]] = [10, [20, 30]];
   let mixArr3: [number, [], {}] = [10, [], {}];
@@ -97,4 +97,12 @@
     [1, 'hello', { key: 'value' }],
     [2, 'hello', { key: 'value' }],
   ];
+
+  // 10. bigint  - 은행 아니면 잘 안씀
+
+  console.log(Number.MAX_SAFE_INTEGER); //9007199254740996
+
+  const bigNumber = 9007199254740997n;
+  console.log(bigNumber);
+  console.log(100n + 1n);
 }
