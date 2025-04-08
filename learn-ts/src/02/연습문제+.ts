@@ -84,7 +84,6 @@
   };
 
   // 9
-
   // let mixedData: Array<string|number|boolean> = [
   //   'apple',
   //   10,
