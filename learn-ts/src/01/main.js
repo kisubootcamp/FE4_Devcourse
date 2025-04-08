@@ -102,9 +102,9 @@ printInfo({
 // 객체의 키를 변수로 치환
 // 리액트에서 많이 사용되는 속성
 const user = {
-  [key]: "galaxy",
+  key: "galaxy",
 };
-console.log(user.name);
+console.log(user.key);
 
 // 5. 스프레드 연산자
 // 일부만 구조분해하고 나머지 받는 형태가 리액트에서 많이 사용됨.
@@ -135,3 +135,5 @@ console.log(colors);
 console.log(copyColors);
 
 // JS는 동적 타이핑: 할당과 동시에 타입이 결정된다.
+
+// 배운 내용 정리
