@@ -16,14 +16,16 @@
 // 타입스크립트의 기본 타입들
 // 타입스크립트는 결국 값의 타입을 지정해주는 것
 // 값에 대한 타입을 지정하는 방법이 많아서 어렵다고 생각이 들 수 있음.
-{
-  let name: string = "jiyoon";
-  let age: number = 20;
-  let bool: boolean = true;
-  let obj: object = {}; // 추후 설명 참고
-  let arr: [] = []; // 추후 설명 참고
-  let sym: symbol = Symbol("a");
-  let und: undefined = undefined; // 직접 작성할 일은 없다. 있다는 것만 알아두자.
-  let nul: null = null;
-  let big: bigint = 100n;
-}
+// {
+//   let name: string = "jiyoon";
+//   let age: number = 20;
+//   let bool: boolean = true;
+//   let obj: object = {}; // 추후 설명 참고
+//   let arr: [] = []; // 추후 설명 참고
+//   let sym: symbol = Symbol("a");
+//   let und: undefined = undefined; // 직접 작성할 일은 없다. 있다는 것만 알아두자.
+//   let nul: null = null;
+//   let big: bigint = 100n;
+// }
+
+let num: number = 10;
