@@ -81,10 +81,11 @@
   let words: Array<string> = ["apple", "banana", "cherry", "kiwi"];
   console.log(words);
 
-  let items: (
-    | { id: number; name: string; price: number }
-    | [string, number]
-  )[] = [
+  let items: [
+    { id: number; name: string; price: number },
+    { id: number; name: string; price: number },
+    [string, number]
+  ] = [
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
