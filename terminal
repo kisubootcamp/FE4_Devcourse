@@ -1,0 +1,14 @@
+타입스크립트 설치하기
+npm install typescript --save-dev
+
+
+ npm init -y // 기본 값으로 npm 초기화
+ npm install typescript --save-dev // 개발모드로 설치
+ 
+ 
+ # 타입스크립트 초기화
+ node ./node_modules/typescript/bin/tsc --init  
+ npx tsc --init
+ 
+ npx tsc : 특정 파일이 아니라 모든 타입스크립트 파일을 컴파일 해라
+ npx tsc src/경로 : 특정 파일 컴파일
