@@ -14,11 +14,11 @@
 
   // 4. 숫자 배열 선언
   let numArr: number[] = [1, 2, 3, 4];
-  console.log(numArr);
+  for (const num of numArr) console.log(num);
 
   // 5. 문자열 배열 선언
   let strArr: string[] = ["Hello", "World", "!"];
-  console.log(strArr);
+  for (const str of strArr) console.log(str);
 
   // 6. 튜플 변수 선언
   let tuple: [number, string, boolean] = [10, "Hello", true];
