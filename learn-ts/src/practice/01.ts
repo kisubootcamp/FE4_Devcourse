@@ -32,6 +32,7 @@
   console.log(und);
 
   // 09
-  const obj: object = ["Jiyoon Lee", 29];
+  // const obj: object = ["Jiyoon Lee", 29];
+  const obj: { name: string; age: 29 } = { name: "Jiyoon", age: 29 };
   console.log(obj);
 }

@@ -32,10 +32,25 @@
   };
 
   // 02
-  let dataset: [
-    { id: number; value: string },
-    { id: number; value: string }
-  ][] = [
+  // let dataset: [
+  //   { id: number; value: string },
+  //   { id: number; value: string }
+  // ][] = [
+  //   [
+  //     { id: 1, value: "a" },
+  //     { id: 2, value: "b" },
+  //   ],
+  //   [
+  //     { id: 3, value: "c" },
+  //     { id: 4, value: "d" },
+  //   ],
+  //   [
+  //     { id: 5, value: "e" },
+  //     { id: 6, value: "f" },
+  //   ],
+  // ];
+
+  let dataset: { id: number; value: string }[][] = [
     [
       { id: 1, value: "a" },
       { id: 2, value: "b" },
@@ -49,7 +64,6 @@
       { id: 6, value: "f" },
     ],
   ];
-
   // 03
   let mixedData: [
     { type: string; name: string; age: number },
@@ -61,7 +75,7 @@
     { type: "user", name: "Bob", age: 25 },
     { type: "product", id: 1, name: "Laptop", price: 999 },
     { type: "product", id: 2, name: "Smartphone", price: 499 },
-  ];
+  ]; // 유니온 타입을 쓰면 중복 제거 가능
 
   // 04
   let dataSet: [
@@ -89,6 +103,7 @@
 
   // 06
   let nestedData: { id: number; tags: [string, string]; name: string }[] = [
+    // tags: string[]
     { id: 1, tags: ["fruit", "sweet"], name: "apple" },
     { id: 2, tags: ["fruit", "tropical"], name: "mango" },
     { id: 3, tags: ["fruit", "berry"], name: "strawberry" },
