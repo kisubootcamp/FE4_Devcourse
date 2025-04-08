@@ -32,3 +32,6 @@
     let anything: any = "문자";                         // 아무 타입도 가능, 타입 검사 안 함
     let tuple: [string, number] = ["JeongCoding", 25];  // 고정된 타입과 순서를 가지는 배열
 }
+{
+let num:number = 10;
+}
