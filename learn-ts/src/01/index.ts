@@ -5,6 +5,9 @@
 // 값에 대한 타입을 지정하는 방법이 많음
 
 // string, number, boolean, object, array, symbol, tuple, undefined, null, any, bigint
+
+// 자바스크립트 -> 동적 타입 시스템
+// 타입스크립트 -> 정적 타입 시스템
 {
   let name: string = "sucoding";
   let age: number = 20;
