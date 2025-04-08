@@ -16,19 +16,22 @@
 
 // 자바스크립트 -> 동적 타입 시스템
 // 타입스크립트 -> 정적 타입 시스템
-{
-    let name: string="sucoding";
-    let age: number=20;
-    let bool: boolean=true;
-    let obj: object={}; // o -> 자세히 설명해드림
-    let arr: []=[]; // o ->
+// {
+//     let name: string="sucoding";
+//     let age: number=20;
+//     let bool: boolean=true;
+//     let obj: object={}; // o -> 자세히 설명해드림
+//     let arr: []=[]; // o ->
 
-    let sym: symbol = Symbol("a");
-    let und: undefined=undefined; //타입은 존재하나 작업자가 작성할 일 없음
-    let nul: null=null;
-    //let nul: null | string=null; 처럼 하면 두가지 타입 가능 --> 나중에 자세히
-    let big: bigint=100n;
+//     let sym: symbol = Symbol("a");
+//     let und: undefined=undefined; //타입은 존재하나 작업자가 작성할 일 없음
+//     let nul: null=null;
+//     //let nul: null | string=null; 처럼 하면 두가지 타입 가능 --> 나중에 자세히
+//     let big: bigint=100n;
 
-}
+// }
 // 한번 정해진 타입은 변하지 않음
-
+{
+    // 코드 블럭(중괄호)
+    let num: number=10;
+}
