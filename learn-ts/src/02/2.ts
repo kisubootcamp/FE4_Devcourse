@@ -2,20 +2,18 @@
 	// 객체
 	// 빈 객체를 타입을 지정하는 것을 조심해야 함.
 	let obj: object = {};
-	let obj2: {} = {}; // null과 defined를 제외한 모든 값을 허용하겠다는 말이 됨.
 
 	// 래퍼 객체
 	// 원시 타입(primitive type)
-
 	obj = null;
 	obj = undefined;
 	obj = 20;
-	obj = "A";
-	// 우리가 사용하는 모든 타입은 결국 object에서 파생된 것이다.
-
+	obj = "A"; // 우리가 사용하는 모든 타입은 결국 object에서 파생된 것이다.
 	obj = [];
-	obj = function () {};
+	obj = function () {}; // object로 타입을 지정하게 되면 []과 function 재할당이 가능하다
+	console.log(obj);
 
+	let obj2: {} = {}; // null과 undefined를 제외한 모든 값을 허용하겠다는 말이 됨.
 	obj2 = null;
 	obj2 = undefined;
 	obj2 = 20;
@@ -23,8 +21,8 @@
 	obj2 = [];
 	obj2 = function () {};
 
-	// => 빈 객체는 untility 타입으로 지정해야 됨.
-	let obj3: Record<string, never> = {}; // 객체의 키 값은 문자열, 값은 절대 올 수 없다는 뜻을 가지게 됨. 속성값으로 어떤 값도 가질 수 없다면 그게 곧 빈객체니까.
+	// => 빈 객체는 utility 타입으로 지정해야 됨.
+	let obj3: Record<string, never> = {}; // 객체의 키 값은 문자열이고 값은 절대 올 수 없다는 뜻을 가지게 됨. 속성값으로 어떤 값도 가질 수 없다면 그게 곧 빈객체니까.
 	obj3 = {}; // 가능
 
 	obj3 = null;
@@ -45,7 +43,6 @@
 		name: string; // ;대신에 , 사용해도 에러 안나지만, 권장 방법은 ;이다.
 		age: number;
 	} = {
-		//권장x
 		name: "yeonseo",
 		age: 20,
 	};
