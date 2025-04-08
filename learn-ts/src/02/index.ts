@@ -188,3 +188,42 @@
   // 타입 선언을 하면 자동완성이 지원된다.
   // 접근할 수 있는 항목의 타입을 선언해줬기 떄문에
 }
+
+{
+  // 타입 추론
+  // 변수에 할당 되는 값을 보고 타입스크립트 컴파일러가 타입을 추론해주는 현상
+  let num = 10;
+  let name = "Hello";
+  let bool = true;
+
+  // any 타입으로 추론
+  // 이후에라도 다른 값으로 할당될수 있다고 판단 -> 그래서 any 로 추론
+  // undefined -> 아직 할당 하지 않은 값
+  // null -> 개발자가 임의로 넣은 빈 값이라는 느낌
+  let unde = undefined;
+  let nul = null;
+
+  let symbol = Symbol("a");
+  let numArr = [1, 2, 3];
+  let obj = { name: "PSY", age: 20 };
+  let big = 100n;
+}
+
+{
+  // 1. readonly, Optional Property
+  let obj: { readonly name: string; age: number; gender?: string } = {
+    name: "PSY",
+    age: 20,
+  };
+
+  // readonly 로 설정된 객체의 항목은 절대로 변경 불가능하다.
+  // obj.name = "Lee";
+
+  console.log(obj.name);
+  console.log(obj.age);
+
+  // a few moments later
+  // 옵셔널 속성으로 추가 해주면 된다.
+  // 옵션이다. -> 있거나 없거나.
+  obj.gender = "Female";
+}
