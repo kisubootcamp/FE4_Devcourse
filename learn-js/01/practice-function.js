@@ -1,0 +1,271 @@
+// Q1
+// 매개변수를 전달받아서 매개변수의 총 합을 반환하는 덧셈 함수를 만들어주세요.
+// 매개변수의 갯수 제한은 없습니다.
+
+{
+  function sum(...rest) {
+    const arr = [...rest];
+    const result = arr.reduce((acc, num) => acc + num, 0);
+    return result;
+  }
+  console.log(sum(1, 2, 3));
+}
+
+// Q2
+//사칙연산을 수행하는 로직을 담은 함수를 구현해주세요.  (매개변수 - 2개) (+, -, *, /)
+//구현 방법은 자율입니다.
+
+{
+  function sum(a, b) {
+    return a + b;
+  }
+  function minus(a, b) {
+    return a - b;
+  }
+  function multiply(a, b) {
+    return a * b;
+  }
+  function divide(a, b) {
+    return a / b;
+  }
+  console.log(sum(1, 2));
+  console.log(minus(2, 1));
+  console.log(multiply(1, 4));
+  console.log(divide(12, 2));
+}
+
+// Q3
+// 짝수 홀수 판별하기
+//숫자를 매개변수로 받아서 짝수면 true, 홀수면 false를 반환하는 함수 isEven을 작성하세요.
+//함수를 사용하여 7이 짝수인지 홀수인지 판별하고 결과를 출력하세요.
+
+{
+  const isEven = (num) => {
+    if (num % 2 === 0) return true;
+    else return false;
+  };
+
+  console.log(isEven(7));
+}
+
+// Q4
+// 배열의 모든 요소 더하기
+// 배열의 모든 요소의 합을 반환하는 함수를 작성하세요
+{
+  const arr = [1, 2, 3, 4, 5];
+  const sumArray = (arr) => {
+    return arr.reduce((acc, num) => acc + num, 0);
+  };
+  console.log(sumArray(arr));
+  console.log(sumArray([1, 2, 3, 4]));
+}
+
+// Q5
+// 배열에서 최대값을 찾는 함수를 작성하세요
+
+{
+  const findMax = (arr) => {
+    return Math.max(...arr);
+  };
+
+  console.log(findMax([1, 2, 3, 7]));
+}
+
+// Q6
+//문자열 반전
+// 주어진 문자열을 반전시켜 반환하는 함수를 작성하세요
+
+{
+  const reverseString = (str) => {
+    return str.split("").reverse().join("");
+  };
+
+  console.log(reverseString("hello"));
+}
+
+// Q7
+// 문자열에서 특정 문자 개수 세기
+// 주어진 문자열에서 특정 문자의 개수를 세는 함수를 작성하세요
+
+{
+  const countCharacter = (str, alp) => {
+    return str.split("").filter((el) => el === alp).length;
+  };
+
+  console.log(countCharacter("banana", "a"));
+}
+
+// Q8
+// 팩토리얼 계산하기
+// - 양의 정수를 매개변수로 받아서 그 수의 팩토리얼을 반환하는 함수 `factorial`을 작성하세요.
+// - 함수를 사용하여 5의 팩토리얼을 계산하고 결과를 출력하세요.
+
+{
+  const factorialFunc = (num) => {
+    let result = 1;
+    for (let i = num; i > 0; i--) {
+      result *= i;
+    }
+    return result;
+  };
+  console.log(factorialFunc(5));
+}
+
+// Q9
+// 삼각형 넓이 계산하기
+// 삼각형의 밑변과 높이를 매개변수로 받아서 넓이를 반환하는 함수 triangleArea를 작성하세요.
+// 함수를 사용하여 밑변이 10이고 높이가 5인 삼각형의 넓이를 계산하고 결과를 출력하세요.
+
+{
+  const triangleArea를 = (a, b) => {
+    return (a * b) / 2;
+  };
+
+  console.log(triangleArea를(10, 5));
+}
+
+// 1. 특정 문자 제거
+// 주어진 문자열에서 특정 문자를 제거하는 함수를 작성하시오.
+{
+  const removeChar = (str, remove) => {
+    const arr = str.split("");
+    return arr.filter((el) => el !== remove).join("");
+  };
+
+  console.log(removeChar("hello world", "o"));
+}
+
+// 2. 배열 요소를 반전
+// 주어진 배열의 요소를 반전 시키는 함수를 작성하시오.
+{
+  const reverseArray = (arr) => {
+    return arr.reverse();
+  };
+  console.log(reverseArray([1, 2, 3, 4, 5]));
+}
+
+// 3. 특정 숫자 찾기
+// 주어진 배열에서 특정 숫자가 있는지 확인하는 함수를 작성하시오.
+
+{
+  const containsNumber = (arr, num) => {
+    return arr.includes(num);
+  };
+
+  console.log(containsNumber([1, 2, 3, 4, 5], 5));
+  console.log(containsNumber([1, 2, 3, 4, 5], 7));
+}
+
+// 4. 애너그램인지 확인
+// 두 문자열이 애너그램(서로 다른 순서로 같은 문자를 가지는 경우)인지 확인하는 함수를 작성하시오. (알파뱃)
+
+{
+  const isAnagrams = (a, b) => {
+    a = a.split("").sort().join("");
+    b = b.split("").sort().join("");
+    return a.includes(b);
+  };
+
+  console.log(isAnagrams("listen", "silent"));
+  console.log(isAnagrams("fluster", "restful"));
+  console.log(isAnagrams("rat", "car"));
+  console.log(isAnagrams("aaa", "aaaa"));
+}
+
+// 5. 배열에서 두 수의 합
+// 주어진 배열에서 두 수의 합이 특정 목표값이 되는 쌍을 찾아 반환하는 함수를 작성하시오.
+
+{
+  const twiceSum = (arr, num) => {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] + arr[j] === num) result.push([arr[i], arr[j]]);
+      }
+    }
+    return result;
+  };
+  console.log(twiceSum([1, 2, 3, 4, 5], 5));
+  console.log(twiceSum([1, 2, 3, 4, 5], 9));
+  console.log(twiceSum([1, 2, 3, 4, 5], 6));
+}
+
+// 연습문제++
+// 1. 문자열 압축
+// 문자열이 주어졌을 때, 연속된 동일한 문자를 하나의 문자와 그 문자의 개수로 압축해서 반환하는 함수를 만들어주세요.
+
+{
+  const func = (str) => {
+    let result = "";
+    let count = 1;
+
+    for (let i = 1; i < str.length; i++) {
+      if (str[i] === str[i - 1]) count++;
+      else {
+        result += str[i - 1] + count;
+        count = 1;
+      }
+    }
+    result += str[str.length - 1] + count;
+    return result;
+  };
+
+  console.log(func("aaabbbccc"));
+}
+
+// 2. 팰린드롬 확인하기(쉬운 버전)
+// 주어진 문자열이 팰린드롬인지 확인하는 함수를 작성하세요. 팰린드롬이란 앞에서부터 읽으나 뒤에서부터 읽으나 같은 문자열을 말합니다. 대소문자를 구분하지 않으며, 매개변수는 항상 공백 없이 소문자 알파뱃만 넘어온다고 가정합니다.
+
+{
+  const func = (str) => {
+    const reversedStr = str.split("").reverse().join("");
+
+    if (str === reversedStr) return true;
+    else return false;
+  };
+
+  console.log(func("level"));
+}
+
+// 3. 팰린드롬 확인하기(어려운 버전)
+// 주어진 문자열이 팰린드롬인지 확인하는 함수를 작성하세요. 팰린드롬이란 앞에서부터 읽으나 뒤에서부터 읽으나 같은 문자열을 말합니다. 대소문자를 구분하지 않으며, 매개변수는 항상 공백 없이 소문자 알파뱃만 넘어온다고 가정합니다.
+
+{
+  const func = (str) => {
+    str = str.replace(/[^a-zA-Z]/g, "").toLowerCase();
+    const reversedStr = str
+      .replace(/[^a-zA-Z]/g, "")
+      .toLowerCase()
+      .split("")
+      .reverse()
+      .join("");
+
+    if (str === reversedStr) return true;
+    else return false;
+  };
+
+  console.log(func("A man, a plan, a canal, Panama!"));
+}
+
+// 4. 최대공약수
+{
+  const gcd = (a, b) => {
+    while (b !== 0) {
+      const num = b;
+      b = a % b;
+      a = num;
+    }
+    return a;
+  };
+
+  console.log(gcd(56, 98));
+}
+
+// 5. 배열 정렬(버블 정렬)
+{
+  const bubbleSort = (arr) => {
+    return arr.sort((a, b) => a-b);
+  };
+
+  console.log(bubbleSort([5, 3, 8, 1, 2]))
+}
