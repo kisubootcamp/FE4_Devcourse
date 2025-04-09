@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 내부 스크립트 -->
+     <script>
+        alert("h1!")
+     </script>
+
+     <!-- 외부스크립트 (외부에 있는 확장자가 js로 끝나는 파일을 추가)-->
+      <script src="./01/main.js" defer></script>
+
+
+
+      <!-- 1. head 사이에 script/ 단점은 html 파싱이 script룰 먼저 앍고 body로 넘어가기(html 파싱 중단됨) 때문에 늦어짐 -->
+</head>
+<body>
+    <!-- 인라인 스트립트 -->
+     <button onclick="console.log('button 클릭!')">버튼</button>
+
+    <h1>Hello World!</h1>
+
+    <!-- 2. body 태그 마지막에 script html 파싱이 끝난후 script를 가져옴 -->
+    <!-- 3. async - 병렬로 script를 가져옴,, 하지만 script 실행 순서는 보장할 수 없음-->
+    <!-- 4. defer - 병렬로 script를 가져오고 html 파싱이 끝난후 순서대로 실행한다. -->
+</body>
+</html>
