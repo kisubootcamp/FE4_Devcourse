@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./01/main.js" defer></script>
+    <!-- 내부 스크립트 -->
+    <!-- <script>
+      console.log("hi!");
+    </script> -->
+    <!-- 외부 스크립트(외부에 있는 확장자가 js로 끝나는 파일을 추가) -->
+    <!-- header 사이에 사용 or body태그 끝나기 전에 사용 or script 태그안에 async 또는 defer 속성 사용 -->
+    <!-- head 태그 안에 넣으면 html 로드하다가 js 로드하느라 중단됨  -->
+    <!-- 
+      script태그를 head 안에 넣는 대신 async 속성 추가
+      html 실행하다가 js 병렬로 실행
+      그냥 헤드에 넣는 것보다 빠른 화면 로딩 속도
+      치명적인 단점 -> js파일 여러개면 다운로드 완료된 순서대로 실행. 순서 보장 X
+    -->
+    <!-- 
+      그래서 등장한게 defer
+      html과 병렬로 진행
+      html 파싱 모두 끝나고 js 순차적으로 실행. 실행 순서 보장
+    -->
+    <!-- <script src="./01/main.js"></script> -->
+  </head>
+  <body>
+    <!-- <button onclick="console.log('button 클릭!')">버튼</button> -->
+    <h1>Hello World!</h1>
+    <!-- 인라인 스크립트 -->
+    <!-- body 태그 끝나기 전에 js 사용하면 장점: 좀 더 빠르게 화면을 보여줄 수 있음 -->
+    <!-- <script src="./01/main.js"></script> -->
+  </body>
+</html>
