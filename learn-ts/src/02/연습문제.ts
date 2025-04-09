@@ -85,7 +85,7 @@
   ];
 
   //5
-  let nestedArray: [string[], number[], string[]] = [
+  let nestedArray: (string | number)[][] = [
     ["apple", "banana"],
     [1, 2, 3],
     ["cherry"],
@@ -96,17 +96,17 @@
 
   //7
   let items: (
-    | {
-        id: number;
-        name: string;
-        price: number;
-      }
-    | [string, number]
+    | { id: number; name: string; price: number }
+    | (string | number)[]
   )[] = [
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
   ];
+  // 타입 가드 -> 타입을 좁혀주는 행위
+  if ("name" in items[0]) {
+    console.log(items[0].name);
+  }
 
   //8
   let profile: {
@@ -120,7 +120,7 @@
   };
 
   //9
-  let mixedData: [string, number, boolean, string, number] = [
+  let mixedData: (string | number | boolean)[] = [
     "apple",
     10,
     true,
@@ -224,7 +224,7 @@
   ];
 
   //4
-  let dataSet: ({ name: string; price: number } | [string, number])[] = [
+  let dataSet: ({ name: string; price: number } | (string | number)[])[] = [
     { name: "Item A", price: 100 },
     ["item1", 50],
     { name: "Item B", price: 200 },
