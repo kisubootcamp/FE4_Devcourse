@@ -37,6 +37,7 @@
 
   // 05
   let nestedArray: [string[], number[], string[]] = [
+    // = (string[] | number[])[], (string | number)[][]
     ["apple", "banana"],
     [1, 2, 3],
     ["cherry"],
@@ -46,15 +47,23 @@
   let words: string[] = ["apple", "banana", "cherry", "kiwi"];
 
   // 07
-  let items: [
+  let items: /*[
     { id: number; name: string; price: number },
     { id: number; name: string; price: number },
     [string, number]
-  ] = [
+  ]*/ ({ id: number; name: string; price: number } | (string | number)[])[] = [
+    // 소괄호로 묶어주지 않으면 앞의 객체 모양 이거나 string | number 모양의 배열임으로 잘못 설정됨
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
   ];
+
+  // 타입 가드(Type Guard)
+  // 타입을 좁혀주는 행위
+  if ("name" in items[0]) {
+    console.log(items[0].name);
+  }
+  //items[0].id; // 유니온 타입을 사용할 때에는 타입의 가짓수가 많아지기 때문에 사용할 값의 타입을 검증해주고 사용해야 함.
 
   // 08
   let profile: {
