@@ -31,6 +31,7 @@
 	};
 	console.log(obj);
 }
+
 {
 	// 연습문제+
 	// 1.
@@ -70,7 +71,7 @@
 	];
 
 	// 5.
-	let nestedArray: (string | number)[][] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
+	let nestedArray: [string[], number[], string[]] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
 
 	// 6.
 	let words: string[] = ["apple", "banana", "cherry", "kiwi"];
@@ -165,19 +166,12 @@
 	];
 
 	// 3. *
-	let mixedData: (
-		| {
-				type: string;
-				name: string;
-				age: number;
-		  }
-		| {
-				type: string;
-				id: number;
-				name: string;
-				price: number;
-		  }
-	)[] = [
+	let mixedData: [
+		{ type: string; name: string; age: number },
+		{ type: string; name: string; age: number },
+		{ type: string; id: number; name: string; price: number },
+		{ type: string; id: number; name: string; price: number }
+	] = [
 		{ type: "user", name: "Alice", age: 30 },
 		{ type: "user", name: "Bob", age: 25 },
 		{ type: "product", id: 1, name: "Laptop", price: 999 },
