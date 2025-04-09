@@ -6,6 +6,7 @@
 
 // string,number,boolean,object,array,symbol,tuple,undefined, null, any, bigint
 {
+    // 코드블록 {}
     let name: string = 'sucoding';
     let age: number = 20;
     let bool: boolean = true;
@@ -20,4 +21,5 @@
     let und: undefined = undefined;
     let nul: null = null;
     let big: bigint = 100n;
+    let num: number = 10;
 }

@@ -61,12 +61,12 @@
     ];
 
     // 4문제 이 변수의 타입을 지정하세요.
-    let dataSet: [
-        { name: string; price: number },
-        [string, number],
-        { name: string; price: number },
-        [string, number]
-    ] = [{ name: 'Item A', price: 100 }, ['item1', 50], { name: 'Item B', price: 200 }, ['item2', 75]];
+    let dataSet: ({ name: string; price: number } | (string | number)[])[] = [
+        { name: 'Item A', price: 100 },
+        ['item1', 50],
+        { name: 'Item B', price: 200 },
+        ['item2', 75],
+    ];
 
     // 5문제 이 변수의 타입을 지정하세요.
     let complexStructure: { id: number; value: string; attributes: { weight: number; color: string } }[] = [

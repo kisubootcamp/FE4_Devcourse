@@ -37,6 +37,8 @@
 
     // 5문제 이 변수의 타입을 지정하세요.
     let nestedArray: [string[], number[], string[]] = [['apple', 'banana'], [1, 2, 3], ['cherry']];
+    let nestedArray2: (string | number)[][] = [['apple', 'banana'], [1, 2, 3], ['cherry']];
+    let nestedArray3: (string[] | number[])[] = [['apple', 'banana'], [1, 2, 3], ['cherry']];
 
     // 6문제 이 변수의 타입을 지정하세요.
     let words: string[] = ['apple', 'banana', 'cherry', 'kiwi'];
@@ -47,6 +49,16 @@
         { id: number; name: string; price: number },
         [string, number]
     ] = [{ id: 1, name: 'Item1', price: 100 }, { id: 2, name: 'Item2', price: 200 }, ['discount', 10]];
+
+    let items2: ({ id: number; name: string; price: number } | (string | number)[])[] = [
+        { id: 1, name: 'Item1', price: 100 },
+        { id: 2, name: 'Item2', price: 200 },
+        ['discount', 10],
+    ];
+
+    if ('name' in items2[0]) {
+        console.log(items2[0].name);
+    }
 
     // 8문제 이 변수의 타입을 지정하세요.
     let profile: {
