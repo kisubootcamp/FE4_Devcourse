@@ -71,6 +71,7 @@
     ["discount", 10],
   ];
 
+  // 유니온 타입
   let items_: (
     | { id: number; name: string; price: number }
     | (string | number)[]
@@ -79,6 +80,17 @@
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
   ];
+
+  // console.log(items_[0].name); // 에러가 남
+  // -> 유니온 타입이기 때문에 사전에 타입 검증을 해줘야 에러가 나지 않음
+  // 타입 가드(Type Guard) -> 타입을 좁혀주는 행위
+  if ("name" in items_[0]) {
+    console.log(items_[0].name);
+  }
+
+  // 이 경우에는 타입 추론을 해줌
+  let value: number | string = 10.12;
+  console.log(value.toFixed(0));
 
   // 현재 우리가 배운 tuple 방식 풀이
   let items__: [
