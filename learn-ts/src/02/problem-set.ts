@@ -92,6 +92,15 @@
   ];
   console.log(items);
 
+  let items1: (
+    | { id: number; name: string; price: number }
+    | (string | number)[]
+  )[] = [
+    { id: 1, name: "Item1", price: 100 },
+    { id: 2, name: "Item2", price: 200 },
+    ["discount", 10],
+  ];
+
   let profile: {
     user: { name: string; age: number };
     preferences: Array<string>;
@@ -191,6 +200,8 @@
     ["item2", 75],
   ];
   console.log(dataSet);
+
+  //타입 가드 --> if문 활용 타입을 좁혀주는 행위
 
   let complexStructure: {
     id: number;
