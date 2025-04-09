@@ -46,16 +46,24 @@
   let words: string[] = ["apple", "banana", "cherry", "kiwi"];
 
   // 7
-  let items: [
-    { id: number; name: string; price: number },
-    { id: number; name: string; price: number },
-    [string, number]
-  ] = [
+  let items: (
+    | {
+        id: number;
+        name: string;
+        price: number;
+      }
+    | (string | number)[]
+  )[] = [
     //
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
   ];
+
+  // Type Guard => 타입을 좁혀주는 행위
+  if ("name" in items[0]) {
+    console.log(items[0].name);
+  }
 
   // 8
   let profile: {

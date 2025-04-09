@@ -64,12 +64,7 @@
 }
 {
   // 4
-  let dataSet: [
-    { name: string; price: number },
-    [string, number],
-    { name: string; price: number },
-    [string, number]
-  ] = [
+  let dataSet: ({ name: string; price: number } | [string, number])[] = [
     { name: "Item A", price: 100 },
     ["item1", 50],
     { name: "Item B", price: 200 },
