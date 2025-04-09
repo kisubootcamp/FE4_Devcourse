@@ -118,6 +118,17 @@
     ["cherry"],
   ];
   console.log(nestedArray); // [ [ 'apple', 'banana' ], [ 1, 2, 3 ], [ 'cherry' ] ]
+  // 유니온타입을 쓴다면?!
+  let nestedArray1: (string | number)[][] = [
+    ["apple", "banana"],
+    [1, 2, 3],
+    ["cherry"],
+  ];
+  let nestedArray2: (string[] | number[])[] = [
+    ["apple", "banana"],
+    [1, 2, 3],
+    ["cherry"],
+  ];
 
   // 6. 문제 변수 타입 지정
   let words: string[] = ["apple", "banana", "cherry", "kiwi"];
@@ -126,7 +137,7 @@
   // 7. 문제 변수 타입 선언
   let items: (
     | { id: number; name: string; price: number }
-    | [string, number]
+    | (string | number)[]
   )[] = [
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
@@ -303,7 +314,7 @@
   ];
 
   // 4 문제 변수의 타입을 지정
-  let dataSet: ({ name: string; price: number } | [string, number])[] = [
+  let dataSet: ({ name: string; price: number } | (string | number)[])[] = [
     { name: "Item A", price: 100 },
     ["item1", 50],
     { name: "Item B", price: 200 },
