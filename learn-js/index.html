@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./01/main.js" defer></script>
+  </head>
+  <body>
+    <h1>Hello</h1>
+  </body>
+</html>
+
+<!-- 외부 script -->
+<!-- 
+1. 헤드 사이 -> html 파싱중 js를 만나면 다운후 실행하고 html 파싱 시작
+2. 바디 사이
+3. async -> html 파싱과 동일하게 병렬로 다운 후 js를 실행하는 구간만 html 파싱을 멈춤, 다운로드 완료된 것부터 실행한다는 단점
+4. defer -> html 파싱과 동일하게 병렬로 다운 후 html 파싱이 끝나면 순차적으로 js 실행
+-->
