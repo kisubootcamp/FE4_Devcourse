@@ -84,7 +84,7 @@
 	//   문제 7: 옵셔널 파라미터를 사용한 인사 함수
 	// greet 함수는 이름을 받아 인사말을 반환합니다. name 파라미터는 필수로 받되, message 파라미터는 옵셔널 파라미터로 받습니다. message가 없으면 기본값 "Welcome"을 사용해야 합니다. 이 함수의 타입을 지정하고, 호출해보세요.
 	// 함수 정의
-	function greet(name: string, message: string = "Welcome"): string {
+	function greet(name: string, message: string = "Welcome"): string { // 초기값을 설정하면 옵셔널 파라미터로 처리할 수 없다.
 		return `${message}, ${name}!`;
 	}
 
@@ -120,3 +120,5 @@
 	const doubled = double(10);
 	console.log(doubled); // 20
 }
+
+// 연습문제+
