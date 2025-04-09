@@ -103,6 +103,8 @@
 	// 5.
 	let nestedArray: (string[] | number[])[] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
 	console.log(nestedArray);
+	let nestedArray1: (string | number)[][] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
+	console.log(nestedArray1); // 위 코드와 이것중에 가독성 더 좋은걸로
 	let nestedArray2: [string[], number[], string[]] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
 	console.log(nestedArray2);
 
@@ -120,6 +122,26 @@
 		| [string, number]
 	)[] = [{ id: 1, name: "Item1", price: 100 }, { id: 2, name: "Item2", price: 200 }, ["discount", 10]];
 	console.log(items[2]);
+
+	let items1: ( // 소괄호를 적지 않으면 (객체) 또는 (string number요소가 담긴 중첩 배열)이 되는 것임.
+		| {
+				id: number;
+				name: string;
+				price: number;
+		  }
+		| (string | number)[]
+	)[] = [{ id: 1, name: "Item1", price: 100 }, { id: 2, name: "Item2", price: 200 }, ["discount", 10]];
+	console.log(items1[0]);
+
+  // console.log(items1[0].name); // 객체일수도 있고 배열일수도 있는데 name으로 접근할 수 없다.
+  // -> 검증 후 사용해야 됨.
+  // 검증 방법 : 타입가드(Type Guard) -> 타입을 좁혀주는 행위
+  if ("name" in items1[0]) { // 확신한다
+    console.log(items1[0].name);
+  }
+
+  let value: number | string = 10.12;
+  console.log(value.toFixed(0)); // 이건 추론이 되네? 추론 되는것도 있다ㅎㅎ
 
 	let items2: [
 		{ id: number; name: string; price: number },
@@ -268,6 +290,14 @@
 		["item2", 75],
 	];
 	console.log(dataSet[2]);
+
+  let dataSet1: ({ name: string; price: number } | (string | number)[])[] = [
+		{ name: "Item A", price: 100 },
+		["item1", 50],
+		{ name: "Item B", price: 200 },
+		["item2", 75],
+	];
+	console.log(dataSet1[2]);
 
 	let dataSet2: [{ name: string; price: number }, [string, number], { name: string; price: number }, [string, number]] =
 		[{ name: "Item A", price: 100 }, ["item1", 50], { name: "Item B", price: 200 }, ["item2", 75]];
