@@ -21,7 +21,7 @@
 }
 
 {
-    //문제3.인터섹션 타입 사용하기: 객체 합치기(아직 못품)
+    //문제3.인터섹션 타입 사용하기: 객체 합치기
     const mergeObjects = (
         a: { name: string; age: number },
         b: { jobTitle: string; salary: number }
