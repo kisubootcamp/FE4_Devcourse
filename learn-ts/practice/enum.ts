@@ -127,7 +127,7 @@
     return !status;
   }
 
-  console.log(toggleStatus(0));
+  console.log(toggleStatus(1));
 }
 
 // 08

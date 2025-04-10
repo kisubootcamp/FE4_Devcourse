@@ -52,7 +52,9 @@
       console.log("실패!");
     }
   }
-  // showStatus("success"); // enum으로 선언한 요소를 호출 불가
+
+
+//  showStatus("StatusEnum"); // enum으로 선언한 요소를 호출 불가
   // 함수에서 enum요소를 호출할 때 오타가 있으면 알려줌
   // showStatus("sucs"); // 버그
   // enum은 즉시 실행 함수로 컴파일
