@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 외부 선언 1 -->
+    <script src="./01/main.js" defer></script>
+
+    <!-- 내부 스크립트 -->
+    <script>
+      console.log("Hello World!");
+    </script>
+    <!-- 외부 스크립트 (외부에 있는 확장자가 js 로 끝나는 파일을 추가) -->
+    <!-- <script src="./01/main.js"></script> -->
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <!-- 인라인 스크립트 -->
+    <button onclick="console.log('clicked')">Click me</button>
+
+    <!-- 외부 선언 2 -->
+    <!-- <script src="./01/main.js"></script> -->
+
+    <!-- 외부 선언 3 -->
+    <!-- <script src="./01/main.js" async></script> -->
+
+    <!-- 외부 선언 4 -->
+    <!-- <script src="./01/main.js" defer></script> -->
+  </body>
+</html>
