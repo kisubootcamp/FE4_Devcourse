@@ -814,7 +814,7 @@
   // 9
   function createMultiCounter() {
     // 여기에 코드를 작성하세요
-    let counter = {}; // 저장
+    let counter = {}; // 저장ㄹ
 
     return function (x) {
       if (!counter[x]) {
