@@ -96,3 +96,85 @@
   console.log(combiner("Hello")); // "Hello"
   console.log(combiner(" World")); // "Hello World"
 }
+
+// 문제 7: 객체 속성 카운터
+// 설명: 객체의 속성 개수를 세는 함수를 작성하세요. 이 함수는 객체를 클로저로 기억해야 합니다.
+{
+  function createPropertyCounter() {
+    return function (arr) {
+      return Object.keys(arr).length;
+    };
+  }
+
+  const counter = createPropertyCounter();
+  console.log(counter({ a: 1, b: 2 })); // 2
+  console.log(counter({ a: 1 })); // 1
+}
+
+// 문제 8: 배열 필터링
+// 설명: 주어진 배열에서 특정 조건을 만족하는 요소만 필터링하는 함수를 작성하세요.
+{
+  function createFilter(condition) {
+    return function (arr) {
+      // let res = [];
+
+      // for (let i of arr) {
+      //   if (condition(i)) res.push(i);
+      // }
+
+      // return res;
+
+      return arr.filter(condition);
+    };
+  }
+
+  const filterEven = createFilter((num) => num % 2 === 0);
+  console.log(filterEven([1, 2, 3, 4, 5])); // [2, 4]
+}
+
+// 문제 9: 다중 카운터
+// 설명: 여러 개의 카운터를 동시에 관리할 수 있는 함수를 작성하세요. 각 카운터는 별개의 값을 가지고 있어야 하며, 특정 카운터를 지정하여 그 카운터만 증가시키는 기능이 필요합니다.
+{
+  function createMultiCounter() {
+    const counters = {};
+
+    return function (key) {
+      if (!counters[key]) {
+        let count = 0;
+        counters[key] = function () {
+          count++;
+          return count;
+        };
+      }
+      return counters[key];
+    };
+  }
+
+  const counters = createMultiCounter();
+  const counterA = counters("A");
+  const counterB = counters("B");
+
+  console.log(counterA()); // 1
+  console.log(counterA()); // 2
+  console.log(counterB()); // 1
+  console.log(counterA()); // 3
+  console.log(counterB()); // 2
+}
+
+// 문제 10: 고차 함수로 커스터마이징된 계산기
+// 설명: 기본 연산을 수행할 수 있는 계산기를 작성하세요. 이 계산기는 특정 연산을 클로저로 기억하여 그 연산만 수행할 수 있도록 합니다.
+{
+  function createCalculator(operator) {
+    return function (a, b) {
+      return operator(a, b);
+    };
+  }
+
+  const add = createCalculator((a, b) => a + b);
+  console.log(add(2, 3)); // 5
+  console.log(add(10, 5)); // 15
+
+  const multiply = createCalculator((a, b) => a * b);
+  console.log(multiply(2, 3)); // 6
+  console.log(multiply(10, 5)); // 50
+}
