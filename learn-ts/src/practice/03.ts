@@ -78,12 +78,12 @@
   ]; // 유니온 타입을 쓰면 중복 제거 가능
 
   // 04
-  let dataSet: [
+  let dataSet: /*[
     { name: string; price: number },
     [string, number],
     { name: string; price: number },
     [string, number]
-  ] = [
+  ]*/ ({ name: string; price: number } | (string | number)[])[] = [
     { name: "Item A", price: 100 },
     ["item1", 50],
     { name: "Item B", price: 200 },

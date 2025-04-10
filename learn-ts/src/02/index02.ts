@@ -1,7 +1,7 @@
 {
   // // 객체
-  // // Record<string, never> -> 객체의 키 값은 문자열. 이 외의 값은 절대 올 수 없다.
-  // let obj: object = {};
+  // // Record<string, never> -> 객체의 키 값은 문자열. 이 외의 값은 절대 올 수 없다.(X) 빈 객체만 허용한다 -> 빈 객체 만들 때 사용
+  // let obj: object = {}; // 원시 타입 객체만 허용
   // let obj1: {} = {}; // null과 undefined를 제외한 모든 값을 허용하겠다는 뜻이 됨
   // // 위 방법들로는 객체의 타입을 완벽히 지정할 수 없다.
   // let obj2: Record<string, never> = {}; // 유틸리티 함수

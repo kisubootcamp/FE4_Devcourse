@@ -1,0 +1,1 @@
+function twiceSum(Arr, num) {}
