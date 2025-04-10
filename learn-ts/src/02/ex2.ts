@@ -54,6 +54,14 @@
     ["cherry"],
   ];
 
+  // or
+
+  // let nestedArray: (string | number)[][] = [
+  //   ["apple", "banana"],
+  //   [1, 2, 3],
+  //   ["cherry"],
+  // ];
+
   // 6. 이 변수의 타입을 지정하세요.
   let words: string[] = ["apple", "banana", "cherry", "kiwi"];
 
@@ -72,12 +80,17 @@
 
   let items: (
     | { id: number; name: string; price: number }
-    | [string, number]
+    | (string | number)[]
   )[] = [
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
   ];
+
+  // 타입 가드(Type Guard) -> 타입을 좁혀주는 행위
+  if ("name" in items[0]) {
+    console.log(items[0].name);
+  }
 
   // 8. 이 변수의 타입을 지정하세요.
   let profile: {
