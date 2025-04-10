@@ -12,3 +12,13 @@
   let obj = { name: 'sy', age: 25 };
   let big = 100n;
 }
+
+{
+  // 리터럴 타입 -> 값 자체를 타입으로 사용하는 것
+  const num = 10;
+  const str = 'A';
+  const bool = true;
+  const obj = { name: 'sucoding' };
+  obj.name = 'aa';
+  const arr: number[] = [1, 2, 3];
+}

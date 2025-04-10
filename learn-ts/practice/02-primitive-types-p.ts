@@ -56,6 +56,13 @@
   //   ['cherry'],
   // ];
   // console.log(nestedArray);
+
+  // let nestedArray: (string | number)[][] = [
+  //   ['apple', 'banana'],
+  //   [1, 2, 3],
+  //   ['cherry'],
+  // ];
+  // console.log(nestedArray);
 }
 
 {
