@@ -42,9 +42,13 @@
     [1, 2, 3],
     ["cherry"],
   ];
-
   //유니온 방법
   let nestedArray2: (string[] | number[])[] = [
+    ["apple", "banana"],
+    [1, 2, 3],
+    ["cherry"],
+  ];
+  let nestedArray3: (string | number)[][] = [
     ["apple", "banana"],
     [1, 2, 3],
     ["cherry"],
@@ -63,6 +67,18 @@
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
   ];
+  let items2: (
+    | { id: number; name: string; price: number }
+    | (string | number)[]
+  )[] = [
+    { id: 1, name: "Item1", price: 100 },
+    { id: 2, name: "Item2", price: 200 },
+    ["discount", 10],
+  ];
+  //타입 가드(Type Guard) -> 타입을 좁혀주는 행위
+  if ("name" in items[0]) {
+    console.log(items[0].name);
+  }
 
   // 8
   let profile: {

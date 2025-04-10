@@ -111,6 +111,12 @@
     { name: "Item B", price: 200 },
     ["item2", 75],
   ];
+  let dataSet2: ({ name: string; price: number } | [string, number])[] = [
+    { name: "Item A", price: 100 },
+    ["item1", 50],
+    { name: "Item B", price: 200 },
+    ["item2", 75],
+  ];
 
   // 5*
   let complexStructure: {
