@@ -1,0 +1,15 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "- 노션 핸드북에 연습문제가 있음 - 그 문제로 학습 및 복습",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^9.24.0"
+  }
+}
