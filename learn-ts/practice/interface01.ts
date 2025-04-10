@@ -165,16 +165,13 @@
 // 10
 {
   interface Operation {
-    num: number;
+    (num1: number, num2: number): number;
   }
 
-  function operation(num1: number, num2: Operation) {
-    function add(num1, num2){
-      console.log(num1 + num2)
-    }
+  const add: Operation = (num1, num2) => num1 + num2;
 
-    function sub
-  }
+  const subtract: Operation = (num1, num2) => num1 - num2;
 
-  operation(1, 1);
+  console.log(add(1, 2));
+  console.log(subtract(2, 1));
 }
