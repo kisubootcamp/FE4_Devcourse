@@ -59,7 +59,7 @@
   [sum, difference, product, quotient].forEach((el) => console.log(el));
 
   //증감
-  const y = 7;
+  let y = 7;
 
   console.log(`증가하기 전 y: ${y}`);
   y++;
@@ -208,5 +208,256 @@
 
 //반복문 어려움 문제
 {
-  //피보나치 수열
+  //1. 피보나치 수열
+  let n = 10;
+  let arr1 = [0, 1];
+  for (let i = 1; i <= n - 2; i++) {
+    arr1.push(arr1[i - 1] + arr1[i]);
+  }
+  console.log(arr1);
+}
+
+{
+  //2. 소수 찾기
+  let end = 100;
+  let arr2 = [];
+  for (let num = 2; num <= end; num++) {
+    let isvalid = true;
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        isvalid = false;
+        break;
+      }
+    }
+    if (isvalid) arr2.push(num);
+  }
+  console.log(arr2);
+}
+
+{
+  //3. 요소의 합 구하기
+  const numbers = [5, 10, 15, 20, 25];
+  const result = numbers.reduce((acc, num) => acc + num, 0);
+  console.log(result);
+}
+
+{
+  //4. 문자열 뒤집기
+  const str = "Hello, World!";
+  let arr = [];
+  str.split("").forEach((str) => arr.unshift(str));
+  console.log(arr.join(""));
+}
+
+{
+  //5. 특정 숫자까지 곱 계산
+  let n = 5;
+  let factorial = 1;
+  for (let num = 1; num <= n; num++) {
+    factorial *= num;
+  }
+
+  console.log(`${n}의 팩토리얼:`, factorial);
+}
+
+{
+  //6.암스트롱 수 구하기
+  for (let i = 100; i <= 999; i++) {
+    let cloneNum = i;
+    let temp = String(i)
+      .split("")
+      .map((num) => Number(num) ** 3)
+      .reduce((acc, num) => acc + num, 0);
+    if (cloneNum === temp) console.log(i);
+  }
+}
+
+//함수 연습 문제
+{
+  // 1
+  function sum(num1, num2) {
+    console.log(num1 + num2);
+  }
+  sum(1, 2);
+}
+
+{
+  // 2
+  function sum(num1, num2) {
+    console.log(num1 + num2 - num1);
+  }
+  sum(1, 2);
+}
+
+{
+  // 3
+  function isEven(num) {
+    if (num % 2 === 0) return true;
+    return false;
+  }
+  isEven(7);
+}
+
+{
+  // 4
+  function sumArray(arr) {
+    return arr.reduce((acc, num) => acc + num, 0);
+  }
+  console.log(sumArray([1, 2, 3]));
+}
+
+{
+  //5
+  function findMax(arg) {
+    return Math.max(...arg);
+  }
+  console.log(findMax([1, 5, 3, 9, 2])); // 9
+}
+
+{
+  //6
+  function reverseString(str) {
+    return str.split("").reverse().join("");
+  }
+  console.log(reverseString("hello")); // "olleh"
+}
+
+{
+  //7
+  function countCharacter(str, findStr) {
+    let cnt = 0;
+    str.split("").forEach((str) => {
+      if (str === findStr) cnt++;
+    });
+    return cnt;
+  }
+
+  console.log(countCharacter("banana", "a")); // 3
+}
+
+{
+  //8
+  function factorial(n) {
+    let temp = 1;
+    for (let i = 1; i <= n; i++) {
+      temp *= i;
+    }
+    console.log(temp);
+  }
+  factorial(5);
+}
+
+{
+  //9
+  function triangleArea(height) {
+    let rowLine = 10;
+    console.log(height * rowLine);
+  }
+  triangleArea(7);
+}
+
+//연습 문제 +
+{
+  // 1
+  function removeChar(str, char) {
+    let temp = [];
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === char) continue;
+      temp.push(str[i]);
+    }
+    console.log(temp.join(""));
+  }
+  removeChar("hello world", "o");
+}
+
+{
+  //2
+  function reverseArray(arr) {
+    console.log(arr.reverse());
+  }
+  reverseArray([1, 2, 3, 4, 5]); // [5, 4, 3, 2, 1]
+}
+
+{
+  //3
+  function containsNumber(arr, num) {
+    console.log(arr.indexOf(num) > -1);
+  }
+  containsNumber([1, 2, 3, 4, 5], 5); // true
+  containsNumber([1, 2, 3, 4, 5], 7); // false
+}
+
+{
+  //4
+  function isAnagrams(str1, str2) {
+    let valid = true;
+
+    if (str1.length !== str2.length) {
+      console.log(false);
+      return;
+    }
+
+    str1.split("").forEach((char) => {
+      if (str2.indexOf(char) === -1) {
+        valid = false;
+      }
+    });
+
+    console.log(valid);
+  }
+  isAnagrams("listen", "silent"); // true
+  isAnagrams("fluster", "restful"); // true
+  isAnagrams("rat", "car"); // false
+  isAnagrams("aaa", "aaaa"); // false
+}
+
+//호이스팅
+{
+  // 1
+  console.log(myVar); //undefined
+  var myVar = 10;
+  console.log(myVar); //10
+}
+
+{
+  //2
+  var num = 5;
+  console.log(num); //5
+  function num() {
+    return 10;
+  }
+  console.log(num); //5
+  console.log(num()); //10
+}
+
+{
+  //3
+  var x = 10;
+
+  function test() {
+    console.log(x); //10
+    var x = 5;
+    console.log(x); //5
+  }
+
+  test();
+
+  console.log(x); //10
+}
+
+//클로저
+{
+  // 1
+  function createCounter() {
+    cnt = 0;
+    return function () {
+      cnt++;
+      return cnt;
+    };
+  }
+
+  const counter = createCounter();
+  console.log(counter()); // 1
+  console.log(counter()); // 2
+  console.log(counter()); // 3
 }
