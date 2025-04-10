@@ -16,10 +16,7 @@
       };
       tags: string[];
     };
-    reviews: [
-      { user: string; rating: number; comment: string },
-      { user: string; rating: number; comment: string }
-    ];
+    reviews: { user: string; rating: number; comment: string }[];
   } = {
     id: 1,
     name: "Product A",
@@ -39,7 +36,7 @@
   };
 
   // 2. 문제
-  let dataset = [
+  let dataset: { id: number; value: string }[][] = [
     [
       { id: 1, value: "a" },
       { id: 2, value: "b" },
@@ -55,7 +52,12 @@
   ];
 
   // 3. 문제
-  let mixedData = [
+  let mixedData: [
+    { type: string; name: string; age: number },
+    { type: string; name: string; age: number },
+    { type: string; id: number; name: string; price: number },
+    { type: string; id: number; name: string; price: number }
+  ] = [
     { type: "user", name: "Alice", age: 30 },
     { type: "user", name: "Bob", age: 25 },
     { type: "product", id: 1, name: "Laptop", price: 999 },
@@ -63,6 +65,20 @@
   ];
 
   // 4. 문제
+  //   let dataSet: [
+  //     { name: string; price: number },
+  //     [string, number],
+  //     { name: string; price: number },
+  //     [string, number]
+  //   ] = [
+  //     { name: "Item A", price: 100 },
+  //     ["item1", 50],
+  //     { name: "Item B", price: 200 },
+  //     ["item2", 75],
+  //   ];
+
+  // or
+
   let dataSet: ({ name: string; price: number } | [string, number])[] = [
     { name: "Item A", price: 100 },
     ["item1", 50],
@@ -115,6 +131,20 @@
   ];
 
   // 9. 문제
+  //   let collection: [
+  //     { id: number; name: string; price: number },
+  //     [string, number],
+  //     { id: number; name: string; price: number },
+  //     [string, number]
+  //   ] = [
+  //     { id: 1, name: "Item 1", price: 100 },
+  //     ["Discount", 20],
+  //     { id: 2, name: "Item 2", price: 200 },
+  //     ["Discount", 10],
+  //   ];
+
+  // or
+
   let collection: (
     | { id: number; name: string; price: number }
     | [string, number]

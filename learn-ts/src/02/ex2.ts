@@ -40,7 +40,15 @@
 
   // 5. 문제: 중첩된 배열
   // 이 변수의 타입을 지정하세요.
-  let nestedArray: [string[], number[], string[]] = [
+  //   let nestedArray: [string[], number[], string[]] = [
+  //     ["apple", "banana"],
+  //     [1, 2, 3],
+  //     ["cherry"],
+  //   ];
+
+  // or
+
+  let nestedArray: (string[] | number[])[] = [
     ["apple", "banana"],
     [1, 2, 3],
     ["cherry"],
@@ -50,6 +58,18 @@
   let words: string[] = ["apple", "banana", "cherry", "kiwi"];
 
   // 7. 이 변수의 타입을 지정하세요.
+  //   let items: [
+  //     { id: number; name: string; price: number },
+  //     { id: number; name: string; price: number },
+  //     [string, number]
+  //   ] = [
+  //     { id: 1, name: "Item1", price: 100 },
+  //     { id: 2, name: "Item2", price: 200 },
+  //     ["discount", 10],
+  //   ];
+
+  // or
+
   let items: (
     | { id: number; name: string; price: number }
     | [string, number]
@@ -71,6 +91,16 @@
   };
 
   // 9. 이 변수의 타입을 지정하세요.
+  //   let mixedData: [string, number, boolean, string, number] = [
+  //     "apple",
+  //     10,
+  //     true,
+  //     "banana",
+  //     20,
+  //   ];
+
+  // or
+
   let mixedData: (string | number | boolean)[] = [
     "apple",
     10,
