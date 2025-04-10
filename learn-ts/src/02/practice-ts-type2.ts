@@ -110,6 +110,20 @@
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
   ];
+  {
+    let items: (
+      | { id: number; name: string; price: number }
+      | (string | number)[]
+    )[] = [
+      { id: 1, name: "Item1", price: 100 },
+      { id: 2, name: "Item2", price: 200 },
+      ["discount", 10],
+    ];
+
+    if ("name" in items[0]) {
+      console.log(items[0].name);
+    }
+  }
 
   // ### 8. **문제**
   // let profile = {

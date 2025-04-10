@@ -127,4 +127,3 @@ const sum3 = (a, b) => {
 
 const sum4 = (a, b) => a + b;
 
-// 
