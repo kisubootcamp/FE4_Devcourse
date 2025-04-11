@@ -79,7 +79,16 @@
 
   // or
 
-  let dataSet: ({ name: string; price: number } | [string, number])[] = [
+  // let dataSet: ({ name: string; price: number } | [string, number])[] = [
+  //   { name: "Item A", price: 100 },
+  //   ["item1", 50],
+  //   { name: "Item B", price: 200 },
+  //   ["item2", 75],
+  // ];
+
+  // or
+
+  let dataSet: ({ name: string; price: number } | (string | number)[])[] = [
     { name: "Item A", price: 100 },
     ["item1", 50],
     { name: "Item B", price: 200 },
