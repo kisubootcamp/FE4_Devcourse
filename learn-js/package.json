@@ -1,5 +1,5 @@
 {
-  "name": "learn-ts",
+  "name": "learn",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,10 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "typescript": "^5.8.3"
-  },
   "dependencies": {
-    "ts-node": "^10.9.2"
+    "eslint": "^9.24.0"
   }
 }
