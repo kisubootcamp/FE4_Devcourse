@@ -84,8 +84,8 @@
   );
   console.log(updatedPerson);
   // 예상 출력: { name: "Jane", age: 28, address: "123 Maple St" }
-  const updatedPersonWithoutAddress = updateAddress({ name: "John", age: 22 });
-  console.log(updatedPersonWithoutAddress);
+  // const updatedPersonWithoutAddress = updateAddress({ name: "John", age: 22 });
+  // console.log(updatedPersonWithoutAddress);
   // 예상 출력: { name: "John", age: 22 }
 }
 
