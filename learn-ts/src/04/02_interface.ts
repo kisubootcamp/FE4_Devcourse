@@ -111,6 +111,28 @@ console.log("-------------------------------------");
   console.log(successResponse({ state: "error", error: "error" }));
 }
 
+{
+  interface SuccessResponse<T> {
+    state: "success";
+    data: T;
+  }
+
+  interface ErrorResponse<E> {
+    state: "error";
+    error: E;
+  }
+
+  type Response<T, E> = SuccessResponse<T> | ErrorResponse<E>;
+
+  const successResponse = <T, E>(response: Response<T, E>): string => {
+    if (response.state === "success") return `Success: ${response.data}`;
+    else return `Error: ${response.error}`;
+  };
+
+  console.log(successResponse({ state: "success", data: "data" }));
+  console.log(successResponse({ state: "error", error: "error" }));
+}
+
 console.log("-------------------------------------");
 
 {
