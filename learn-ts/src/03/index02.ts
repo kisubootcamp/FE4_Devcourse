@@ -17,7 +17,8 @@
   printValue({ name: "lee" });
 
   const sum = (n1: number | string, n2: number | string): number | string => {
-    if (typeof n1 === "number" && typeof n2 === "number") return n1 + n2;
+    if (typeof n1 === "number" && typeof n2 === "number")
+      return n1 + n2; // 타입 가드
     else return `${n1}${n2}`;
   };
   // n1 + n2; // 덧셈 operator는 유니온과 유니온 타입의 매개변수에는 사용할 수 없다.
@@ -30,7 +31,7 @@
 
 {
   const sum = (n1: number | string, n2: number | string): number | string => {
-    if (typeof n1 === "number" && typeof n2 === "number") return n1 + n2; // if문으로 특정한 상황을 지정해주고 나머지를 리턴하면 에러가 발생하지 않는다.
+    if (typeof n1 === "number" && typeof n2 === "number") return n1 + n2; // if문으로 특정한 상황을 지정해주고 나머지를 리턴하면 에러가 발생하지 않는다. <- 타입 가드라고 한다
     return `${n1}${n2}`; // 위 조건 이외라면 `${n1}${n2}`를 반환함을 명시함으로 에러를 막음
   };
   // n1 + n2; // 덧셈 operator는 유니온과 유니온 타입의 매개변수에는 사용할 수 없다.
