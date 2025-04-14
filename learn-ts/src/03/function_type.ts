@@ -31,8 +31,8 @@
   // 함수 정의
   const sum = (a: number, b: number = 0): number => a + b;
   // 함수 호출
-  const result = sum(5);
-  console.log(result); // 5
+  const result = sum(5, 2);
+  console.log(result); // 7
 }
 {
   // 5. 두 수를 곱하는 함
@@ -65,7 +65,7 @@
 {
   // 8. 숫자 배열의 최대값을 구하는 함수
   // 함수 정의
-  const findMax = (nums: number[]): number => Math.max(...nums); //풀어주는 상태?
+  const findMax = (nums: number[]): number => Math.max(...nums);
   // 함수 호출
   const max = findMax([10, 20, 30, 40]);
   console.log(max); // 40

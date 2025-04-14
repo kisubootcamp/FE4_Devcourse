@@ -1,4 +1,171 @@
-//연습문제 ++
+// 기본 타입
+
+// 연습문제
+{
+  // 1
+  let value: string = "Hello";
+  console.log(value);
+
+  // 2
+  let num: number = 42;
+  console.log(num);
+
+  // 3
+  let bool: boolean = true;
+  console.log(bool);
+
+  // 4
+  let numArr: number[] = [10, 20, 30];
+  console.log(numArr);
+
+  // 5
+  let stringArr: string[] = ["A", "B", "c"];
+  console.log(stringArr);
+
+  // 6
+  let mixArr: [number, string] = [10, "S"];
+  console.log(mixArr);
+
+  // 7
+  let nothing: null = null;
+  console.log(nothing);
+
+  // 8
+  let notDefined: undefined = undefined;
+  console.log(notDefined);
+
+  // 9
+  let user: {
+    name: string;
+    age: number;
+  } = {
+    name: "kyo",
+    age: 25,
+  };
+  console.log(user); // { name: 'kyo', age: 25 }
+}
+
+// 연습문제 +
+{
+  // 1
+  let employee: {
+    id: number;
+    name: string;
+    contact: {
+      email: string;
+      phone: string;
+    };
+    department: string;
+  } = {
+    id: 123,
+    name: "John Doe",
+    contact: {
+      email: "john.doe@example.com",
+      phone: "123-456-7890",
+    },
+    department: "Engineering",
+  };
+
+  // 2
+  let students: { name: string; age: number; grade: string }[] = [
+    { name: "Alice", age: 22, grade: "A" },
+    { name: "Bob", age: 24, grade: "B" },
+    { name: "Charlie", age: 21, grade: "C" },
+  ];
+
+  // 3
+  let numbers: number[] = [10, 20, 30, 40, 50];
+
+  // 4
+  let users: { name: string; age: number; active: boolean }[] = [
+    { name: "Alice", age: 30, active: true },
+    { name: "Bob", age: 25, active: false },
+    { name: "Charlie", age: 35, active: true },
+  ];
+
+  // 5
+  let nestedArray: [string[], number[], string[]] = [
+    ["apple", "banana"],
+    [1, 2, 3],
+    ["cherry"],
+  ];
+  //유니온 방법
+  let nestedArray2: (string[] | number[])[] = [
+    ["apple", "banana"],
+    [1, 2, 3],
+    ["cherry"],
+  ];
+  let nestedArray3: (string | number)[][] = [
+    ["apple", "banana"],
+    [1, 2, 3],
+    ["cherry"],
+  ];
+
+  // 6
+  let words: string[] = ["apple", "banana", "cherry", "kiwi"];
+
+  // 7*
+  let items: [
+    { id: number; name: string; price: number },
+    { id: number; name: string; price: number },
+    [string, number]
+  ] = [
+    { id: 1, name: "Item1", price: 100 },
+    { id: 2, name: "Item2", price: 200 },
+    ["discount", 10],
+  ];
+  let items2: (
+    | { id: number; name: string; price: number }
+    | (string | number)[]
+  )[] = [
+    { id: 1, name: "Item1", price: 100 },
+    { id: 2, name: "Item2", price: 200 },
+    ["discount", 10],
+  ];
+  //타입 가드(Type Guard) -> 타입을 좁혀주는 행위
+  if ("name" in items[0]) {
+    console.log(items[0].name);
+  }
+
+  // 8
+  let profile: {
+    user: { name: string; age: number };
+    preferences: string[];
+    isActive: boolean;
+  } = {
+    user: { name: "John", age: 30 },
+    preferences: ["coding", "reading", "travelling"],
+    isActive: true,
+  };
+
+  // 9
+  let mixedData: [string, number, boolean, string, number] = [
+    "apple",
+    10,
+    true,
+    "banana",
+    20,
+  ];
+
+  // 10
+  let company: {
+    name: string;
+    address: {
+      street: string;
+      city: string;
+      country: string;
+    };
+  } = {
+    name: "Tech Corp",
+    address: {
+      street: "123 Main St",
+      city: "Tech City",
+      country: "Techland",
+    },
+  };
+}
+
+// 연습문제 ++
 {
   // 1
   let complexData: {

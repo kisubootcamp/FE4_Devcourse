@@ -90,7 +90,7 @@ if (day === 1) {
   dayName = "금요일";
 } else if (day === 6) {
   dayName = "토요일";
-} else if ((day = 7)) {
+} else if (day === 7) {
   dayName = "일요일";
 }
 console.log(dayName);
@@ -101,6 +101,6 @@ if (num2 > 0) {
   console.log("양수");
 } else if (num2 < 0) {
   console.log("음수");
-} else if ((num2 = 0)) {
+} else if (num2 === 0) {
   console.log(0);
 }
