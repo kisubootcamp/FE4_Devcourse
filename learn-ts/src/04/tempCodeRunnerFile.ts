@@ -1,9 +1,23 @@
-	interface Operation {
-		(n1: number, n2: number): number;
+	interface Vehicle {
+		brand: string;
+		model: string;
 	}
 
-	const add: Operation = (n1, n2) => n1 + n2;
-	const subtract: Operation = (n1, n2) => n1 - n2;
+	interface Electric {
+		batteryLife: number;
+	}
 
-	console.log(add(1, 4));
-	console.log(subtract(1, 4));
+	interface ElectricCar extends Vehicle, Electric {
+		charge(): void;
+	}
+
+	const tesla: ElectricCar = {
+		brand: "포르쉐",
+		model: "타이칸",
+		batteryLife: 1000,
+		charge() {
+			console.log("Charging the car...");
+		},
+	};
+
+	tesla.charge();
