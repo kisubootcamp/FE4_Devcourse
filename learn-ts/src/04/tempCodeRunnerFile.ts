@@ -1,7 +1,9 @@
-	function printValue(value: number | null) {
-		if (typeof value === "number") console.log(value.toFixed(2));
-		// console.log(value?.toFixed(2));
-    console.log(value!.toFixed(2)); // 절대로 null이 아닐거라고 보장시켜주는 연산자 !
+	interface Operation {
+		(n1: number, n2: number): number;
 	}
 
-  printValue(null); // ? 사용했을 때는 undefined
+	const add: Operation = (n1, n2) => n1 + n2;
+	const subtract: Operation = (n1, n2) => n1 - n2;
+
+	console.log(add(1, 4));
+	console.log(subtract(1, 4));
