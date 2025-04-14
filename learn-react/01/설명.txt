@@ -1,0 +1,5 @@
+깃허브에는 노드 모듈스랑
+패키지 락.json 은 올리지 않는다.
+
+
+설명할때는 assets, app.css, index,css 를 지운다

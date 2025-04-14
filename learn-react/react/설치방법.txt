@@ -1,0 +1,11 @@
+npx create-react-app .
+
+npm list -g --depth=0
+npm uninstall -g 지우고싶은거 @앞까지
+ pnpm 이 나는 안깔려있음
+
+npm learn start -> 리액트 초기환경 시작
+
+cd ../vite : 
+
+cd ~/.Trash
