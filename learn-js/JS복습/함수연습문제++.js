@@ -14,17 +14,17 @@ function charNum(str) {
   return result.join("");
 }
 console.log(charNum("aabaa"));
-const i = "aaabbbccc";
-const o = "a3b3c3";
+// const i = "aaabbbccc";
+// const o = "a3b3c3";
 
-const i2 = "aabbaa";
-const o2 = "a2b2a2";
+// const i2 = "aabbaa";
+// const o2 = "a2b2a2";
 
-const i3 = "abbbffd";
-const o3 = "a1b3f2d1";
+// const i3 = "abbbffd";
+// const o3 = "a1b3f2d1";
 
-const i4 = "aabaa";
-const o4 = "a2b1a2"; // a4b1 (???)
+// const i4 = "aabaa";
+// const o4 = "a2b1a2"; // a4b1 (???)
 
 // 2번  **팰린드롬 확인하기(쉬운 버전)**
 // 주어진 문자열이 팰린드롬인지 확인하는 함수를 작성하세요.
@@ -101,3 +101,30 @@ function bubbleSort(arr) {
   return arr.sort((a, b) => a - b);
 }
 console.log(bubbleSort([5, 3, 8, 1, 2])); // [1, 2, 3, 5, 8]
+
+{
+  function solution(n, lost, reserve) {
+    let current = 0;
+    let reserved = [];
+    let getItem = [];
+    let lostStu = lost.filter((c) => !reserve.includes(c));
+    let reserveStu = reserve.filter((b) => !lost.includes(b));
+    for (let i = 0; i < reserveStu.length; i++) {
+      for (let j = 0; j < lostStu.length; j++) {
+        if (
+          (lostStu[j] - 1 === reserveStu[i] || lostStu[j] + 1 === reserveStu[i]) &&
+          !reserved.includes(reserveStu[i]) &&
+          !getItem.includes(lostStu[j]) &&
+          !lostStu.includes(reserveStu[i]) &&
+          reserveStu.includes(reserveStu[i])
+        ) {
+          reserved.push(reserveStu[i]);
+          getItem.push(lostStu[j]);
+          current++;
+        }
+      }
+    }
+    return n - (lostStu.length - current);
+  }
+  console.log(solution(5, [2, 4], [2, 3, 5]));
+}
