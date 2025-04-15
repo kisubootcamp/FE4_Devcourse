@@ -387,7 +387,15 @@ findMax(arr);
 /*
 Q6. 문자열 반전
 주어진 문자열을 반전시켜 반환하는 함수를 작성하세요
-*/ 111;
+*/
+let str = 'hello';
+let answer = [];
+const reverseString = (...str) => {
+  for (let i = str.length - 1; i >= 0; i--) {
+    answer.push(str[i]);
+  }
+  return answer;
+};
 
 /*
 

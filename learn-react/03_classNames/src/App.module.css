@@ -1,0 +1,26 @@
+.container {
+  border: 1px solid red;
+  padding: 1rem;
+}
+
+.container .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.container p {
+  color: green;
+}
+
+.text-red {
+  color: red;
+}
+
+/* 글로벌 스타일 - CSS Module 과 무관하게 적용된다. */
+:global .line-through {
+  text-decoration: line-through;
+}
+:global .italic {
+  font-style: italic;
+}
