@@ -27,7 +27,18 @@
 }
 
 {
-	// 3.
+	// 3. 인터섹션 타입을 활용한 복합 객체 다루기
+	type Person = { name: string; age: number };
+	type Employee = { jobTitle: string; salary: number };
+
+	const combinePersonAndEmployee = (obj1: Person, obj2: Employee): Person & Employee => {
+		return { ...obj1, ...obj2 };
+	};
+
+	// 테스트 케이스
+	const person = { name: "Alice", age: 30 };
+	const employee = { jobTitle: "Engineer", salary: 5000 };
+	console.log(combinePersonAndEmployee(person, employee));
 }
 
 {
@@ -65,6 +76,17 @@
 
 {
 	// 7.
+	type Person = { name: string; age: number };
+	type Address = { street: string; city: string; zipcode: string };
+
+	const combinePersonAndAddress = (obj1: Person, obj2: Address): Person & Address => {
+		return { ...obj1, ...obj2 };
+	};
+
+	// 테스트 케이스
+	const person = { name: "John", age: 25 };
+	const address = { street: "123 Elm St", city: "Springfield", zipcode: "12345" };
+	console.log(combinePersonAndAddress(person, address));
 }
 
 {
@@ -106,6 +128,18 @@
 
 {
 	// 10.
-}
+	type Person = { name: string; age: number };
+	type Contact = { email?: string; phoneNumber?: string };
 
-// 인터섹션은 나중에 공부 더 해오겠습니다...
+	const mergeContactInfo = (obj1: Person, obj2: Contact): Person & Contact => {
+		return { ...obj1, ...obj2 };
+	};
+
+	// 테스트 케이스
+	const person = { name: "Alice", age: 30 };
+	const contactInfo = { email: "alice@example.com", phoneNumber: "123-456-7890" };
+	console.log(mergeContactInfo(person, contactInfo));
+
+	const personWithoutContact = { name: "Bob", age: 25 };
+	console.log(mergeContactInfo(personWithoutContact, {}));
+}

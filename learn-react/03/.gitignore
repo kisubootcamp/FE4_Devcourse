@@ -12,9 +12,6 @@ dist
 dist-ssr
 *.local
 
-package-lock.json
-env.*
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -25,8 +22,3 @@ env.*
 *.njsproj
 *.sln
 *.sw?
-
-
-_pictures
-learn-pr
-learn-vite-ts
