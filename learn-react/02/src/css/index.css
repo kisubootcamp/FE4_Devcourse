@@ -1,0 +1,5 @@
+@import "./global.css";
+@import "./tailwind.css";
+
+/* css 폴더를 생성해서 국소적으로 css 파일을 만든 뒤 index.css 에서 취합 */
+/* 취합 후 main.tsx 에서 import */
