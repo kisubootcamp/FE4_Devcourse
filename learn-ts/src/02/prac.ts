@@ -74,7 +74,7 @@
   ];
 
   //5
-  let nestedArray: [string[], number[], string[]] = [
+  let nestedArray: (string | number)[][] = [
     ["apple", "banana"],
     [1, 2, 3],
     ["cherry"],
@@ -84,15 +84,17 @@
   let words: string[] = ["apple", "banana", "cherry", "kiwi"];
 
   //7?
-  let items: [
-    { id: number; name: string; price: number },
-    { id: number; name: string; price: number },
-    [string, number]
-  ] = [
+  let items: (
+    | { id: number; name: string; price: number }
+    | (string | number)[]
+  )[] = [
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],
   ];
+
+  //타입 가드(Type Guard) -> 타입을 좁혀주는 행위
+  if ("name" in items[0]) console.log(items[0].name); //유니온의 단점: 내부 값 호출이 모호해짐
 
   //8
   let profile: {
@@ -199,12 +201,7 @@
   ];
 
   //4.
-  let dataSet: [
-    { name: string; price: number },
-    [string, number],
-    { name: string; price: number },
-    [string, number]
-  ] = [
+  let dataSet: ({ name: string; price: number } | (string | number)[])[] = [
     { name: "Item A", price: 100 },
     ["item1", 50],
     { name: "Item B", price: 200 },
