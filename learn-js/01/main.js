@@ -55,9 +55,7 @@ switch (area) {
     baesonbi += 0;
     break;
   case '인천':
-
   case '경기':
-
   case '강북':
   case '강서':
     baesonbi += 1000;

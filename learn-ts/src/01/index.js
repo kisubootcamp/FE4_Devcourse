@@ -3,4 +3,4 @@
 //tsc => 트랜스 컴파일러
 var str = 'Hello World!';
 console.log(str.replaceAll(' ', ''));
-//npx tsc src/01/index.ts 했을 때 오류류
+//npx tsc src/01/index.ts 했을 때 오류

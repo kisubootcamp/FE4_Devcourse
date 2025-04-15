@@ -30,7 +30,7 @@
   let notDefined: undefined = undefined;
 
   // 6. any - 아무거나 허용
-  // -> 타입 검사를 무력화 하는 타입이기 때문에 남용을 피해야 함함
+  // -> 타입 검사를 무력화 하는 타입이기 때문에 남용을 피해야 함
   let anything: any = 10;
   anything = 'A';
   anything = true;
