@@ -10,7 +10,7 @@
   let obj: Record<string, never> = {};
   obj = {};
 
-  // 래페 객체
+  // 래퍼 객체
   // 원시 타입(primitive type)
   //   obj = null;
   //   obj = undefined;
