@@ -193,7 +193,7 @@
     person?: Person,
     contactInfo?: ContactInfo
   ): Person & ContactInfo {
-    return { ...person, ...contactInfo };
+    //return { ...person, ...contactInfo };
   };
 
   // 테스트 케이스
