@@ -100,6 +100,19 @@
     ["item2", 75],
   ];
 
+  //4-1
+  let dataSet1: ({ name: string; price: number } | (string | number)[])[] = [
+    { name: "Item A", price: 100 },
+    ["item1", 50],
+    { name: "Item B", price: 200 },
+    ["item2", 75],
+  ];
+  // 유니온 타입을 사용하면 출력을 할 때에 문제가 생길 수 있다.
+  // 타입가스(Type Guard) -> 타입을 좁혀주는 행위
+  if ("name" in dataSet1[0]) {
+    console.log(dataSet1[0].name);
+  }
+
   //5.
   let complexStructure: {
     id: number;

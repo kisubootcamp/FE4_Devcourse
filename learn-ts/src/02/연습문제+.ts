@@ -48,6 +48,8 @@
 
   // 5-1. (유니온타입)
   let nestedArray2: (string[] | number[])[] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
+  // 5-2. (유니온타입)
+  let nestedArray3: (string | number)[][] = [["apple", "banana"], [1, 2, 3], ["cherry"]];
 
   //6.
   let words: string[] = ["apple", "banana", "cherry", "kiwi"];
@@ -67,6 +69,13 @@
     [string, number]
   ] = [
     // 객체 값이 같더라도 배열의 인덱스가 다르기 때문에 두 번 작성하는 것이 맞다.
+    { id: 1, name: "Item1", price: 100 },
+    { id: 2, name: "Item2", price: 200 },
+    ["discount", 10],
+  ];
+
+  // 7-1.
+  let items1: ({ id: number; name: string; price: number } | (string | number)[])[] = [
     { id: 1, name: "Item1", price: 100 },
     { id: 2, name: "Item2", price: 200 },
     ["discount", 10],

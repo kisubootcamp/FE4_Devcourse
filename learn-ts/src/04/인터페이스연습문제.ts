@@ -108,21 +108,54 @@
   }
 }
 {
-  //### 8. **다중 인터페이스를 사용하는 객체**  
+  //### 8. **다중 인터페이스를 사용하는 객체**
   //**문제:** `Person`과 `Address`라는 두 개의 인터페이스가 있을 때, 이 두 인터페이스를 합친 객체 `Contact`를 만들어 보세요.
 
   interface Person {
-    name: string,
-    age: number,
+    name: string;
+    age: number;
   }
   interface Address {
-    street: string,
-    city: string,
-    zipCode: number,
+    street: string;
+    city: string;
+    zipCode: number;
   }
-  const Contact: {
-    Person & Address
-  } = {
+  type Contact = Person & Address;
 
+  const contact: Contact = {
+    name: "John",
+    age: 19,
+    street: "Mangu-ro",
+    city: "Seoul",
+    zipCode: 1111,
+  };
+
+  console.log(contact.city);
+}
+{
+  //### 9. **인터페이스에 인덱스 시그니처 사용**
+  //**문제:** `Dictionary`라는 인터페이스를 정의하여, 이 인터페이스는 `string` 키와 `string` 값을 가지는 객체 타입을 정의하세요.
+
+  interface Dictionary {
+    [key: string]: string;
   }
+}
+{
+  //### 10. **인터페이스를 사용한 함수 타입 정의**
+  // **문제:** `Operation`이라는 인터페이스를 정의하여, 두 개의 `number`를 받아 `number`를 반환하는 함수를 타입으로 정의하세요.
+  // 그 후 `add`와 `subtract` 함수를 작성하여 이 인터페이스를 사용하세요.
+
+  interface Operation {
+    (n1: number, n2: number): number;
+  }
+
+  const add: Operation = (n1, n2) => {
+    return n1 + n2;
+  };
+
+  const subtract: Operation = (n1, n2) => {
+    return n1 - n2;
+  };
+  console.log(add(1, 2));
+  console.log(subtract(20, 4));
 }
