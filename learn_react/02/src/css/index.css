@@ -1,0 +1,19 @@
+@import "./globalcss.css";
+/* 
+// 리액트 스타일링 방법
+// 전통방식
+// - 인라인 스타일
+// - 글로벌 (외부) 스타일
+// - css module (+ classNames 패키지)
+
+// CSS-IN_JS 방식
+// - styled-components
+// - emotion
+// - Vanilla Extract
+
+// TailwindCss 방법으로 스타일링 하기
+// - 단독 유틸리티 퍼스트 css 라이브러리
+
+// 그 외
+// - 이미지 렌더링
+// - 폰트 적용 */

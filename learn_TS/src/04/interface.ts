@@ -175,8 +175,8 @@
     speed: 50,
   };
 
-  function printValueCar(obj: Car) {
+  function printValueCar(obj: Vehicle) {
     console.log(`${obj.name} ${obj.speed}`);
   }
-  printValueCar(vehicle);
+  printValueCar(car);
 }
