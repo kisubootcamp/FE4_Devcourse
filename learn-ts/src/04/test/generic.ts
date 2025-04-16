@@ -27,12 +27,14 @@
 
 //4
 {
-  function add<T>(a: T, b: T): T {
+  function add<T extends number | string>(a: T, b: T): T {
     if (typeof a === "number" && typeof b === "number") {
       return (a + b) as T;
-    } else if (typeof a === "string" && typeof b === "string") {
+    }
+    if (typeof a === "string" && typeof b === "string") {
       return (a + b) as T;
     }
+    return a;
   }
   console.log(add(2, 3)); // 5
 }
@@ -57,11 +59,14 @@
 
 //7 내일풀어야지
 {
-  function square<T>(arr: T[]): T[] {
-    return arr.map((num) => num * num);
+  function square(arr: number[]): number[];
+  function square(arr: bigint[]): bigint[];
+  function square<T extends number | bigint>(arr: T[]): T[] {
+    return arr.map((num) => (num * num) as T);
   }
 
   console.log(square([1, 2, 3])); // [1, 4, 9]
+  console.log(square([1n, 2n, 3n]));
 }
 
 //8
