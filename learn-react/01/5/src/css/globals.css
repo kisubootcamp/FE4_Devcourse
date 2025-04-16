@@ -1,0 +1,16 @@
+img {
+  max-width: 200px;
+  height: 200px;
+}
+
+.bg-a {
+  background: url("/images/a.jpg") no-repeat;
+  width: 100%;
+  height: 400px;
+}
+
+.bg-b {
+  background: url("../assets/images/b.jpg") no-repeat;
+  width: 100%;
+  height: 400px;
+}

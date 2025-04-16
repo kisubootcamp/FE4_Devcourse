@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "NanumHumanTTFBold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2501-1@1.1/NanumHumanTTFBold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jeju";
+  src: url("../assets/fonts/EF_jejudoldam\(OTF\).woff2") format("woff2"),
+    url("../assets/fonts/EF_jejudoldam_OTF_.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.jeju {
+  font-family: "Jeju";
+  font-weight: normal;
+  font-style: normal;
+}
+.NanumHuman {
+  font-family: "NanumHumanTTFBold";
+  font-weight: normal;
+}
+
+.ibm-plex-sans {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
