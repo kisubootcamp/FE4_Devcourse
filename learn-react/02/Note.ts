@@ -43,7 +43,6 @@
 1.2.2 emotion
 
 
-1.2.3 Vanilla Extract
 
 1.3 TailwindCSS 방법으로 스타일링 하기
 1.3.1 단독 유틸리티 퍼스트 CSS 라이브러리
