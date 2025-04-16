@@ -14,7 +14,7 @@ Car.prototype.getMaxSpeed = function () {
 // 인스턴스 - 생성자 함수로 찍어낸 객체를 가리키는 용어
 // 프로토타입체인 -> 인스턴스에서 자신을 생성한 생성자 함수의 프로토타입 객체를 참조하는 행위
 const car1 = new Car("bmw", 200);
-console.log(car1.hasOwnProperty("superman"));
+// console.log(car1.hasOwnProperty("superman"));
 console.dir(car1);
 
 const num = 3.14;
