@@ -1,0 +1,6 @@
+git clone https://github.com/ysnam0123/react_TailwindCSS_StarterPack
+
+해서 내려받고
+
+rm -rf .git
+으로 깃허브연결 해제하기

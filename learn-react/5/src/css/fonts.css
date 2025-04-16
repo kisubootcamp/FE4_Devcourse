@@ -1,0 +1,26 @@
+.nanumpen {
+  font-family: 'Nanum Pen Script', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF_HambakSnow';
+  src: url(https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_210)
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jeju';
+  src: url(/assets/fonts/jeju.woff) format('woff'),
+    url(/assets/fonts/jeju.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+.jeju {
+  font-family: 'Jeju';
+  font-weight: normal;
+  font-style: normal;
+}
