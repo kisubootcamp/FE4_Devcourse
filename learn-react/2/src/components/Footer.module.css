@@ -1,0 +1,7 @@
+/* module 방식으로 CSS 작성 */
+.underline {
+  text-decoration: underline;
+}
+.red-color {
+  color: red;
+}

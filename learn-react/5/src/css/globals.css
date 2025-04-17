@@ -1,0 +1,14 @@
+img {
+  height: 200px;
+}
+
+.bg-a {
+  background: url('../assets/images/a.jpg');
+  width: 400px;
+  height: 200px;
+}
+.bg-b {
+  background: url('/b.jpg');
+  width: 400px;
+  height: 200px;
+}
