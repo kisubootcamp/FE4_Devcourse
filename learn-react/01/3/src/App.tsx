@@ -6,7 +6,9 @@ const Title = styled.h1`
   font-size: 50px;
   color: red;
 `; // 태그드 리터럴 템플릿(js 문법) : 이게 뭔지까지는 몰라도 됨
-const Button = styled.button<{$primary?: boolean}>`
+
+// export 한다면, 재사용도 가능함
+export const Button = styled.button<{$primary?: boolean}>`
   /* Adapt the colors based on primary prop */
   background: ${(props) => (props.$primary ? "#BF4F74" : "white")};
   color: ${(props) => (props.$primary ? "white" : "#BF4F74")};
