@@ -1,0 +1,21 @@
+import "../app.css";
+
+export default function Navigate() {
+  return (
+    <>
+      <ul>
+        <li>
+          <a className="title" href="#section1">
+            소개
+          </a>
+        </li>
+        <li>
+          <a href="#section2">서비스</a>
+        </li>
+        <li>
+          <a href="#section3">연락처</a>
+        </li>
+      </ul>
+    </>
+  );
+}
