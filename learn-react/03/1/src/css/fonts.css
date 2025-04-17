@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "SF_HambakSnow";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* nanum pen font */
+.nanumpen {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 다운로드한 폰트 적용하는 방법*/
+@font-face {
+  font-family: "Jeju";
+  src: url("../assets/fonts/jeju.woff2") format("woff2"),
+    url("../assets/fonts/jeju.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.jeju {
+  font-family: "Jeju";
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hambak {
+  font-family: "SF_HambakSnow";
+  font-weight: normal;
+  font-style: normal;
+}
