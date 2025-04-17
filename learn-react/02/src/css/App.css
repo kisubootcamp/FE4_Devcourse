@@ -1,0 +1,5 @@
+.title {
+  color: blue;
+  text-decoration: underline;
+}
+/* 별도의 css파일을 생성해서 css를 지정해 주는 것이 글로벌 스타일 */
