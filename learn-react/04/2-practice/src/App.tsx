@@ -31,14 +31,14 @@ export default function App() {
 				userImg="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 				uname="Sally Ramos"
 				instaId="@sallytheramos"
-				onClick={() => alert("Follow")}
+				onClick={(uname) => alert(uname)}
 			></ProfileCard>
 			<ProfileCard
 				bg="https://cdn.pixabay.com/photo/2024/12/05/08/06/modern-9246082_1280.jpg"
 				userImg="https://cdn.pixabay.com/photo/2019/10/23/08/03/woman-4570763_1280.jpg"
 				uname="Anna"
 				instaId="@anna"
-				onClick={() => alert("Follow")}
+				onClick={(uname) => alert(uname)}
 			></ProfileCard>
 		</>
 	);

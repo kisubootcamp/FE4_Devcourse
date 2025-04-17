@@ -9,7 +9,7 @@ export default function ProfileCard({
 	userImg: string;
 	uname: string;
 	instaId: string;
-	onClick: () => void;
+	onClick: (name: string) => void;
 }) {
 	return (
 		<>
@@ -21,7 +21,7 @@ export default function ProfileCard({
 					<img className="prof-img" src={userImg} alt="profile-pic" />
 					<h3 className="alias">{uname}</h3>
 					<p className="username">{instaId}</p>
-					<button onClick={onClick}>Follow</button>
+					<button onClick={() => onClick(uname)}>Follow</button>
 				</div>
 			</article>
 		</>
