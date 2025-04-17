@@ -132,6 +132,211 @@
   };
 }
 
+// 연습문제+
+{
+  //1
+  interface Animal {
+    name: string;
+    speak(): string;
+  }
+  interface Dog extends Animal {
+    speak(): "woof!";
+  }
+  interface Cat extends Animal {
+    speak(): "Meow!";
+  }
+}
+
+{
+  //2
+  interface Employee {
+    name: string;
+    age: number;
+    position?: string;
+  }
+  interface Company {
+    name: string;
+    location: string;
+    employee: Employee;
+  }
+}
+
+{
+  //3
+  interface Logger {
+    log: (message: string) => void;
+    history: string[];
+  }
+
+  const logger: Logger = {
+    log: function (message: string) {
+      this.history.push(message);
+    },
+    history: [],
+  };
+
+  logger.log("App started");
+  logger.log("User logged in");
+  console.log(logger.history); // ["App started", "User logged in"]
+}
+
+{
+  //4
+  type Response = {
+    status: string;
+    data: string;
+  };
+  function handleResponse(response: Response): string {
+    if (response.status === "success") return `Success: ${response.data}`;
+    else return `Error: ${response.status}`;
+  }
+}
+
+{
+  //5
+  interface Author {
+    name: string;
+    birthYear: number;
+  }
+  interface Book {
+    title: string;
+    publishedYear: number;
+    author: Author;
+  }
+}
+
+{
+  //6
+  interface Employee {
+    name: string;
+    age: number;
+  }
+
+  interface Manager extends Employee {
+    team: string[];
+  }
+
+  interface Developer extends Employee {
+    language: string;
+  }
+
+  const manager: Manager = {
+    name: "Alice",
+    age: 35,
+    team: ["Bob", "Charlie", "David"],
+  };
+
+  const developer: Developer = {
+    name: "John",
+    age: 28,
+    language: "JavaScript",
+  };
+}
+
+{
+  //7
+  interface Database {
+    [key: string]: string[];
+  }
+
+  const db: Database = {
+    users: ["Alice", "Bob", "Charlie"],
+    orders: ["order1", "order2"],
+  };
+
+  console.log(db.users); // ["Alice", "Bob", "Charlie"]
+  console.log(db.orders); // ["order1", "order2"]
+}
+
+{
+  //8
+  interface User {
+    // 코드를 작성하세요.
+    name: string;
+    isAdmin: boolean;
+    adminCode?: string;
+  }
+
+  function createUser(name: string, isAdmin: boolean): User {
+    // 코드를 작성하세요
+    if (isAdmin === true) {
+      return {
+        name: `${name}`,
+        isAdmin,
+        adminCode: `admin123`,
+      };
+    } else return { name: `${name}`, isAdmin };
+  }
+
+  const admin = createUser("Alice", true);
+  const user = createUser("Bob", false);
+
+  console.log(admin); // { name: "Alice", isAdmin: true, adminCode: "admin123" }
+  console.log(user); // { name: "Bob", isAdmin: false }
+}
+
+{
+  //9
+  // 인터페이스를 작성하세요
+
+  interface Shape {
+    area: () => number;
+  }
+  interface Circle extends Shape {
+    radius: number;
+  }
+  interface Rectangle extends Shape {
+    width: number;
+    height: number;
+  }
+
+  const circle: Circle = {
+    // 코드를 작성하세요
+    radius: 20,
+    area: function () {
+      return this.radius * this.radius * 3.14;
+    },
+  };
+
+  const rectangle: Rectangle = {
+    // 코드를 작성하세요
+    width: 10,
+    height: 20,
+    area: function () {
+      return this.width * this.height;
+    },
+  };
+
+  console.log(circle.area());
+  console.log(rectangle.area());
+}
+
+{
+  //10
+  interface Vehicle {
+    brand: string;
+    model: string;
+  }
+  interface Electric {
+    batteryLife: number;
+  }
+  interface ElectricCar extends Vehicle, Electric {
+    charge: () => string;
+  }
+
+  const tesla: ElectricCar = {
+    // 코드를 작성하세요
+    brand: "BMW",
+    model: "G80",
+    batteryLife: 2080,
+    charge: function () {
+      return `${this.brand} ${this.model} ${this.batteryLife}`;
+    },
+  };
+
+  tesla.charge();
+}
+
 // 타입별칭
 
 {
@@ -285,6 +490,120 @@
   console.log(
     isValidTransaction({ id: "성수", amount: 2, timestamp: "14:00 - 17:00" })
   );
+}
+
+//연습문제+
+{
+  //1
+  type Obj = {
+    [key: string]: unknown;
+  };
+  type Action = {
+    type: string;
+    payload: string | number | Obj;
+  };
+
+  // code
+  function createAction(type: string, payload: Action["payload"]): Action {
+    return {
+      type,
+      payload,
+    };
+  }
+
+  // 함수 호출 예시
+  const action1 = createAction("ADD_ITEM", { id: 1, name: "item" });
+  const action2 = createAction("UPDATE_ITEM", 42);
+  const action3 = createAction("SET_STATUS", "success");
+
+  console.log(action1); // { type: 'ADD_ITEM', payload: { id: 1, name: 'item' } }
+  console.log(action2); // { type: 'UPDATE_ITEM', payload: 42 }
+  console.log(action3); // { type: 'SET_STATUS', payload: 'success' }
+}
+
+{
+  //2
+  //code
+  type NumberOrString = number | string;
+
+  function createObject(id: NumberOrString, name: string) {
+    return {
+      id,
+      name,
+    };
+  }
+
+  const object1 = createObject(1, "Alice");
+  const object2 = createObject("123", "Bob");
+
+  console.log(object1); // { id: 1, name: 'Alice' }
+  console.log(object2); // { id: '123', name: 'Bob' }
+}
+
+{
+  //3
+  type Point = {
+    x: number;
+    y: number;
+  };
+  function calculateDistance(a: Point, b: Point): number {
+    return (a.x - b.x) ** 2 + (a.y - b.y) ** 2;
+  }
+  calculateDistance({ x: 2, y: 3 }, { x: 4, y: 1 });
+}
+
+{
+  //4
+  type FetchRsult = {
+    status: "loading" | "success" | "error";
+    data?: string;
+    message?: string;
+  };
+
+  function fetchData(data: FetchRsult): FetchRsult {
+    if (data.status === "loading") return { status: data.status };
+    if (data.status === "success")
+      return { status: data.status, data: "Data loaded successfully!" };
+    else return { status: data.status, message: "Failed to load data." };
+  }
+}
+
+{
+  //5
+  type NullOrUndefined = null | undefined;
+  //is는 타입스크립트에게 "이 조건이 true면, 이 값은 이 타입이다!" 라고 선언하는 역할입니다.
+  function getValue(value: any): value is NullOrUndefined {
+    return value === null || value === undefined;
+  }
+
+  const check1 = getValue(null);
+  const check2 = getValue(undefined);
+  const check3 = getValue("Hello");
+
+  console.log(check1); // true
+  console.log(check2); // true
+  console.log(check3); // false
+}
+
+{
+  //6
+  //code
+  type Num = number;
+  function setCoordinates(x: Num, y: Num): Num[] {
+    return [x, y];
+  }
+
+  const coordinates = setCoordinates(10, 20);
+  console.log(coordinates); // [10, 20]
+}
+
+{
+  //7
+  type Person = {
+    readonly name: string;
+    readonly age: number;
+  };
+  function createPerson<T>(name: T, age: T): Person {}
 }
 
 // enum 연습 문제
