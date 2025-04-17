@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <>
-      <div>Header Component</div>
+      <div className="text-white">Header Component</div>
     </>
   );
 }
