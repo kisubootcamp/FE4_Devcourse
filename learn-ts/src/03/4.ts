@@ -13,3 +13,17 @@
     age: 20,
   };
 }
+
+
+{
+  interface Book {
+    title: string;
+    author: string;
+    publishedYear: number;
+
+    Author: {
+      name: string;
+      birthYear: number;
+    };
+  }
+}
