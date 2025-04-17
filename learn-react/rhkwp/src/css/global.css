@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #100d1d;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.loginComp {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginBox {
+  width: 375px;
+  height: 434.03px;
+  border-radius: 10px;
+  position: relative;
+  background-color: white;
+}
+
+.loginTop {
+  margin-inline-end: 40px;
+  justify-content: center;
+  align-items: right;
+}
+
+.title {
+  padding: 25px;
+  height: 10px;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.subTitle {
+  padding: 25px;
+  height: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+}
+
+.idBox {
+  border-color: #4f4f4f;
+  width: 325px;
+  height: 44px;
+  font-size: 14px;
+}
+
+.passWordBox {
+  border-color: black;
+  width: 325px;
+  height: 44px;
+  margin-top: 16px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.checkBoxLine {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+#policyCheck {
+  width: 20.03px;
+  height: 20.03px;
+  accent-color: #4f4f4f;
+}
+
+.toolBtn {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.loginBtn {
+  border: none;
+  background-color: #4f4f4f;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  width: 325px;
+  height: 44px;
+  font-size: 14px;
+}
+
+.signupBtn {
+  border-color: #4f4f4f;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: black;
+  cursor: pointer;
+  width: 325px;
+  height: 44px;
+  font-size: 14px;
+  margin-top: 16px;
+}
