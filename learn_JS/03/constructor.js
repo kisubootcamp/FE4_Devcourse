@@ -109,3 +109,51 @@
   person.setAge = 34; //setter는 값을 넣어주기
   console.log(person);
 }
+
+{
+  let { name, age } = { name: "j", age: 31 };
+  console.log(age);
+  console.log(name);
+}
+
+{
+  const gender = "male";
+  const job = "CEO";
+
+  const obj1 = { gender: gender, job: job };
+  const obj2 = { gender: gender, job: job }; // 위에것을 축약해서 나타내기
+
+  console.log(obj1);
+  console.log(obj2);
+}
+
+{
+  let obj = { name: "j", age: 31 };
+  function Destructuring({ name, age }) {
+    console.log(name);
+    console.log(age);
+  }
+  Destructuring({ name: "kim", age: 30 });
+}
+
+{
+  function first(second) {
+    console.log(1);
+    second();
+  }
+  function second() {
+    console.log(2);
+  }
+  first(second);
+}
+
+{
+  const promise = new Promise(function (resolve, reject) {
+    resolve();
+    reject();
+  });
+  promise
+    .then(function () {})
+    .catch(function () {})
+    .finally(function () {});
+}
