@@ -11,7 +11,7 @@ export default function InputComponents({
 }) {
   let mainDivClassName = "";
   let inputClassName = "";
-  if (children) {
+  if (type === "checkbox") {
     mainDivClassName = "flex items-center gap-2";
     inputClassName = "accent-[#4F4F4F] w-5 h-5 rounded-md cursor-pointer";
   } else {
