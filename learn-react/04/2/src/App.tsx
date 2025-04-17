@@ -18,9 +18,7 @@ export default function App() {
         onClick={onClick}
         value={["0", 1, 2]}
         style={{ fontSize: "50px", color: "red" }}
-        header={<Header />}
-        content={<Content />}
-        footer={<Footer />}
+        components={[<Header />, <Content />, <Footer />]}
       />
     </>
   );

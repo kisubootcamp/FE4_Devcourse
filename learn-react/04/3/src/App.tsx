@@ -9,7 +9,9 @@ export default function App() {
   const instaID = "@sallytheramos";
   let isFollowing = false;
   const changeColor = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    console.log(e);
     e.currentTarget.style.backgroundColor = isFollowing ? "black" : "red";
+    e.currentTarget.textContent = isFollowing ? "Follow" : "Unfollow";
     isFollowing = !isFollowing;
   };
   return (
@@ -19,7 +21,6 @@ export default function App() {
         userImg={userImg}
         username={username}
         instaID={instaID}
-        isFollowing={isFollowing}
         changeColor={changeColor}
       />
     </>

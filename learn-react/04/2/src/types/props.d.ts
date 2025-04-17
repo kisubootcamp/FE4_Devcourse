@@ -8,9 +8,7 @@ interface ChildProps {
   name?: string;
   value: Value;
   style: Style;
-  header: JSX.Element;
-  content: JSX.Element;
-  footer: JSX.Element;
+  components: JSX.Element[];
 }
 
 interface Info {

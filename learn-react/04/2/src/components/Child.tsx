@@ -8,9 +8,7 @@ export default function Child({
   name = "홍길동",
   value,
   style,
-  header,
-  content,
-  footer,
+  components,
 }: ChildProps) {
   return (
     <>
@@ -25,9 +23,7 @@ export default function Child({
         8. {typeof value === "object" ? JSON.stringify(value, null, 2) : value}
       </h1>
       <h1 style={style}>9. 스타일 전달하기</h1>
-      {header}
-      {content}
-      {footer}
+      {...components}
     </>
   );
 }
