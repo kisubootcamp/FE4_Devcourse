@@ -76,7 +76,17 @@
   console.log(doubled); // 20
 
   // 연습문제+ 1번
-  // 모르게쒀요..
+  // 문제 1: 여러 개의 숫자 배열을 받아 합을 구하는 함수
+  // 문제 설명: sumAllNumbers 함수는 여러 개의 숫자 배열을 인자로 받아 각 배열의 합을 구하여 반환하는 함수입니다.
+  // rest parameter와 map을 사용하여 여러 배열을 처리하고 결과를 반환해야 합니다.
+  // 함수 정의
+  const sumAllNumbers = (...sumNum: number[][]): number[] => {
+    return sumNum.map((v) => v.reduce((acc, num) => acc + num, 0));
+  };
+
+  // 함수 호출
+  const result1000 = sumAllNumbers([1, 2], [3, 4, 5], [6, 7]);
+  console.log(result1000); // [3, 12, 13]
 
   // 연습문제+ 2번
   // 함수 정의
@@ -92,8 +102,16 @@
   console.log(result20); // 10
 
   // 연습문제+ 3번
-  // 이것도..
+  // const multiplyArrays = (twoNums: number[][]): number[] => {
+  //   return twoNums;
+  // };
 
+  // // 함수 호출
+  // const result300 = multiplyArrays([1, 2, 3], [4, 5, 6]);
+  // console.log(result); // [4, 10, 18]
+
+  // const result200 = multiplyArrays([1, 2], [4, 5, 6]);
+  // console.log(result2); // [4, 10]
   // 연습문제+ 4번
   // 이것도 잘 모르게쒀요...
 
