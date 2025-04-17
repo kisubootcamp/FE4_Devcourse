@@ -1,4 +1,5 @@
 import User from "./components/User";
+import Button from "./components/Button";
 
 export default function App() {
     const myFunction = (message: string) => {
@@ -21,6 +22,7 @@ export default function App() {
                 myFunction={myFunction}
                 greet={greet}
             />
+            <Button type="button">로그인</Button>
         </>
     );
 }
