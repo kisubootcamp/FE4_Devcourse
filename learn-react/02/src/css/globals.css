@@ -1,0 +1,10 @@
+.title {
+  color: blue;
+  text-decoration: underline;
+}
+
+section p {
+  padding: 10px 20px;
+  border: 1px solid #d6d6d6;
+  display: inline-block;
+}
