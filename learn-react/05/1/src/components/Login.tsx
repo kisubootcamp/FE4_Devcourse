@@ -9,7 +9,7 @@ export default function Login() {
 
             {/* 입력 영역과 버튼 영역 묶기 */}
             <div className="flex flex-col gap-[32px]">
-                {/* 입력과 체크박스 묶기 */}
+                {/* 입력 + 체크박스 */}
                 <div className="flex flex-col gap-[16px] w-[325px] h-[140px]">
                     <input
                         type="email"
@@ -29,7 +29,7 @@ export default function Login() {
                     </label>
                 </div>
 
-                {/* 버튼들 묶기 */}
+                {/* 버튼들 */}
                 <div className="flex flex-col gap-[16px] w-[325px] h-[104px]">
                     <button className="w-[325px] h-[44px] py-2 rounded-[8px] bg-[#4F4F4F] text-white text-sm">
                         Log In
