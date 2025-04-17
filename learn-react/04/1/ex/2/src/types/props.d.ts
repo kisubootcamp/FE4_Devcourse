@@ -1,7 +1,7 @@
 interface ProfileCardProps {
-  bjImg: string;
+  bgImg: string;
   userImg: string;
   userName: string;
   instagramId: string;
-  handleClickFollowBtn: () => void;
+  handleClickFollowBtn: (name:string) => void;
 }

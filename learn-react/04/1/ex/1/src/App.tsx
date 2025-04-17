@@ -21,9 +21,9 @@ export default function App() {
         name="박준규"
         value={28}
         style={style}
-        Header={Header}
-        Content={Content}
-        Footer={Footer}
+        Header={<Header/>}
+        Content={<Content/>}
+        Footer={<Footer/>}
       />
     </>
   );

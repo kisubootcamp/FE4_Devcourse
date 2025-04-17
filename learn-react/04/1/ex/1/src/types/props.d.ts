@@ -5,10 +5,10 @@ interface ChildProps {
   obj: { name: string; age: number };
   isLoggedIn: boolean;
   handleClick: () => void;
-  name: string;
-  value: string | number | [];
-  style: { fontSize: string; color: string };
-  Header: React.ComponentType;
-  Content: React.ComponentType;
-  Footer: React.ComponentType;
+  name?: string;
+  value: string | number | unknown[];
+  style: React.CSSProperties;
+  Header: React.ReactElement;
+  Content: React.ReactElement;
+  Footer: React.ReactElement;
 }

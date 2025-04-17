@@ -1,5 +1,5 @@
 export default function ProfileCard({
-  bjImg,
+  bgImg,
   userImg,
   userName,
   instagramId,
@@ -9,13 +9,13 @@ export default function ProfileCard({
     <>
       <article className="card">
         <div>
-          <img className="card-img" src={bjImg} alt="background-pic" />
+          <img className="card-img" src={bgImg} alt="background-pic" />
         </div>
         <div className="profile">
           <img className="prof-img" src={userImg} alt="profile-pic" />
           <h3 className="alias">{userName}</h3>
           <p className="username">{instagramId}</p>
-          <button onClick={handleClickFollowBtn}>Follow</button>
+          <button onClick={() => handleClickFollowBtn(userName)}>Follow</button>
         </div>
       </article>
     </>
