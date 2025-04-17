@@ -21,7 +21,17 @@
 
 {
   // 2.
-  let students: { name: string; age: number; grade: string }[] = [
+  let students: [
+    { name: string; age: number; grade: string },
+    { name: string; age: number; grade: string },
+    { name: string; age: number; grade: string }
+  ] = [
+    { name: 'Alice', age: 22, grade: 'A' },
+    { name: 'Bob', age: 24, grade: 'B' },
+    { name: 'Charlie', age: 21, grade: 'C' },
+  ];
+
+  let students2: { name: string; age: number; grade: string }[] = [
     { name: 'Alice', age: 22, grade: 'A' },
     { name: 'Bob', age: 24, grade: 'B' },
     { name: 'Charlie', age: 21, grade: 'C' },
@@ -35,7 +45,17 @@
 
 {
   // 4.
-  let users: { name: string; age: number; active: boolean }[] = [
+  let users: [
+    { name: string; age: number; active: boolean },
+    { name: string; age: number; active: boolean },
+    { name: string; age: number; active: boolean }
+  ] = [
+    { name: 'Alice', age: 30, active: true },
+    { name: 'Bob', age: 25, active: false },
+    { name: 'Charlie', age: 35, active: true },
+  ];
+
+  let users2: { name: string; age: number; active: boolean }[] = [
     { name: 'Alice', age: 30, active: true },
     { name: 'Bob', age: 25, active: false },
     { name: 'Charlie', age: 35, active: true },
@@ -49,20 +69,6 @@
     [1, 2, 3],
     ['cherry'],
   ];
-
-  // let nestedArray: (string[] | number[])[] = [
-  //   ['apple', 'banana'],
-  //   [1, 2, 3],
-  //   ['cherry'],
-  // ];
-  // console.log(nestedArray);
-
-  // let nestedArray: (string | number)[][] = [
-  //   ['apple', 'banana'],
-  //   [1, 2, 3],
-  //   ['cherry'],
-  // ];
-  // console.log(nestedArray);
 }
 
 {
@@ -81,20 +87,21 @@
     { id: 2, name: 'Item2', price: 200 },
     ['discount', 10],
   ];
-
-  // let items: (
-  //   | { id: number; name: string; price: number }
-  //   | [string, number]
-  // )[] = [
-  //   { id: 1, name: 'Item1', price: 100 },
-  //   { id: 2, name: 'Item2', price: 200 },
-  //   ['discount', 10],
-  // ];
 }
 
 {
   // 8.
   let profile: {
+    user: { name: string; age: number };
+    preferences: [string, string, string];
+    isActive: boolean;
+  } = {
+    user: { name: 'John', age: 30 },
+    preferences: ['coding', 'reading', 'travelling'],
+    isActive: true,
+  };
+
+  let profile2: {
     user: { name: string; age: number };
     preferences: string[];
     isActive: boolean;
@@ -114,14 +121,6 @@
     'banana',
     20,
   ];
-
-  // let mixedData: (string | number | boolean)[] = [
-  //   'apple',
-  //   10,
-  //   true,
-  //   'banana',
-  //   20,
-  // ];
 }
 
 {
