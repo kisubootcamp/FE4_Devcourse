@@ -39,7 +39,7 @@
   //unknown과 any는 타입이 지정 되있지 않기 때문에 각 타입별 내장 메소드를 사용 하려할 때 에러가 난다.
 
   //ex) anything.split(); err
-  //ex) unk.thFixed(); err
+  //ex) unk.toFixed(); err
 
   //그렇기 때문에 아래와 같이 타입 검증이 필요하다
   if (typeof unk === "number") console.log(unk.toFixed(1));
