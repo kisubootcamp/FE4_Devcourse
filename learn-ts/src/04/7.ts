@@ -53,7 +53,7 @@
 	// 타입 단언이나 !를 쓰면 런타임 에러가 발생할 가능성이 있음
 }
 
-{
-	const element = document.querySelector("button") as HTMLButtonElement;
-	element.style.color = "red";
-}
+// {
+// 	const element = document.querySelector("button") as HTMLButtonElement;
+// 	element.style.color = "red";
+// }
