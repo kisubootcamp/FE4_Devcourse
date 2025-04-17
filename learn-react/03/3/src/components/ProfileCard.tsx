@@ -3,7 +3,7 @@ export default function ProfileCard(props: {
   userImg: string;
   uName: string;
   instaId: string;
-  follow: () => void;
+  follow: (uName: string) => void;
 }) {
   return (
     <>
@@ -15,7 +15,7 @@ export default function ProfileCard(props: {
           <img className="prof-img" src={props.userImg} alt="profile-pic" />
           <h3 className="alias">{props.uName}</h3>
           <p className="username">{props.instaId}</p>
-          <button onClick={props.follow}>Follow</button>
+          <button onClick={() => props.follow(props.uName)}>Follow</button>
         </div>
       </article>
     </>

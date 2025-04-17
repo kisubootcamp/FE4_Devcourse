@@ -1,8 +1,9 @@
+//import Button from "./components/Button";
 import ProfileCard from "./components/ProfileCard";
 
 export default function App() {
-  const followFunction = () => {
-    alert("Followed!");
+  const followFunction = (uName: string) => {
+    alert(`${uName}`);
   };
   return (
     <>
@@ -13,6 +14,8 @@ export default function App() {
         instaId="@sallytheramos"
         follow={followFunction}
       />
+
+      {/*<Button type="button">로그인</Button>*/}
     </>
   );
 }
