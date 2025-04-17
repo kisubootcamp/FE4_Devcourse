@@ -1,0 +1,13 @@
+@import "./tailwind.css";
+
+body {
+  background-color: #1e1e1e;
+  font-family: "Roboto", sans-serif;
+}
+
+input[type="checkbox"] + label {
+  background-image: url("../assets/images/Checkbox_off.png");
+}
+input[type="checkbox"]:checked + label {
+  background-image: url("../assets/images/Checkbox_on.png");
+}
