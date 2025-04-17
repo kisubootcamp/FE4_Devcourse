@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 내부 스크립트 -->
+    <script src="./03/1.js" defer></script>
+    <!-- 외부 스크립트(외부에 있는 확장자가 ?) -->
+    <!-- head 사이, body끝나는지점에, script에 async 추가, script에 defer 추가 총 4가지로 외부 스크립트 불러올 수 있음 -->
+    <!-- sync는 다운완료된 순서대로 실행, defer는 다운도 실행도 순서 지켜서 실행 / async는 parsing 완료와 상관없이 다운되는대로 실행, defer는 parsing 완료 후 순서맞춰 실행-->
+    <!-- <script src="./01/main.js"></script> -->
+    <!-- 여기에 쓰면 parsing할때 시간이 너무 많이 소요됨(중간에 script 다운로드)=>body끝나기 전에 넣어야 parsing마무리 될쯤에 script다운로드(parsing방해x)  -->
+    <!-- <script src="./01/main.js" async></script> -->
+    <!-- parsing과 스크립트 다운로드를 병렬로 실행, 스크립트 실행만 중간에 parsing 멈추고 진행=>속도good  -->
+  </head>
+  <body>
+    <!-- 인라인 스크립트 -->
+    <h1>Hello World!</h1>
+    <script src="./01/main.js" defer></script>
+    <!-- 여기에 script가 있어야 h1에 대한 정보가 script에 넘어갈 수 있음 -->
+  </body>
+</html>
