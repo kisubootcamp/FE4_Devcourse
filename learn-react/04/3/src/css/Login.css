@@ -1,0 +1,12 @@
+.card {
+  border: 1px solid #d1d1d1;
+}
+.input {
+  display: block;
+  width: 325px;
+  height: 44px;
+  border: 1px solid #4f4f4f;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
