@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "SF_HambakSnow";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jeju"; /* 사용할 폰트의 이름을 정의 */
+  src: url("../assets/fonts/jeju.woff2") format("woff2"),
+    url("../assets/fonts/jeju.woff") format("woff"); /* 폰트 파일의 위치 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.jeju {
+  font-family: "Jeju";
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hambak {
+  font-family: "SF_HambakSnow";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nanumpen {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
