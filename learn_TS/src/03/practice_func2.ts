@@ -58,6 +58,7 @@
   // 문제 4: 두 개의 배열을 받아 교차된 값을 반환하는 함수
   // 함수 정의
   const intersection = (...arr: number[][]): number[] => {
+    //console.log(arr)
     let result: number[] = [];
     let arr1 = arr[0];
     let arr2 = arr[1];

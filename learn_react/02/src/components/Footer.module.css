@@ -1,0 +1,9 @@
+.underline {
+  text-decoration: underline;
+}
+
+.color_aqua {
+  color: aquamarine;
+}
+
+/* module.css 는 class 선택자로만 css를 지정해야 함. */
