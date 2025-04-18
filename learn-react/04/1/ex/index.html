@@ -1,0 +1,42 @@
+<!-- # 프로필 카드 컴포넌트 만들기
+
+## 프로필 카드 UI
+
+### 문제
+
+다음 주어진 HTML 코드와 CSS 코드가 있습니다. 
+해당 코드로 만들어지는 UI를 기본으로 하여 ProfileCard 컴포넌트를 만들어주세요.
+ProfileCard 컴포넌트는 배경 이미지, 유저 이미지, 유저 이름, 인스타 아이디를 Props로 전달 받아야 하며, 
+[Follow] 버튼을 클릭했을 때 적절한 클릭 이벤트가 발생할 수 있도록 이벤트도 Props로 전달해야합니다.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article class="card">
+      <div>
+        <img
+          class="card-img"
+          src="https://images.pexels.com/photos/158251/forest-the-sun-morning-tucholskie-158251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt="background-pic"
+        />
+      </div>
+      <div class="profile">
+        <img
+          class="prof-img"
+          src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt="profile-pic"
+        />
+        <h3 class="alias">Sally Ramos</h3>
+        <p class="username">@sallytheramos</p>
+        <button>Follow</button>
+      </div>
+    </article>
+  </body>
+</html>
