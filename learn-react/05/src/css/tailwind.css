@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer components {
+    .item-middle {
+        @apply flex flex-col items-center justify-center min-h-screen gap-4;
+    }
+    .button-style {
+        @apply w-[77px] h-[44px] text-white text-sm rounded-lg cursor-pointer bg-[#4f4f4f] disabled:bg-gray-400 disabled:cursor-default;
+    }
+    .input-style {
+        @apply w-[240px] h-11 rounded-lg border border-[#4F4F4F] text-sm px-4 placeholder:text-[#acacac];
+    }
+    .checkbox-style {
+        @apply w-5 h-5 appearance-none border border-[#4f4f4f] bg-white checked:bg-[#4f4f4f] rounded-[5px] checked:bg-[url('./check-icon.svg')] checked:bg-no-repeat checked:bg-center;
+    }
+}
