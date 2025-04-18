@@ -17,5 +17,5 @@ css module + classname package
 .module.css 파일을 사용하여 클래스명을 로컬 스코프로 제한
 classname 패키지 사용하면 조건부 클래스 설정이 간편
 
-후기: css module
+후기: classname 쓸때 문법이 많이 헷갈린다..
 */
