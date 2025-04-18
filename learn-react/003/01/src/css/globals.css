@@ -1,0 +1,19 @@
+body {
+  font-family: "Nanum Pen Script", cursive;
+}
+
+img {
+  height: 200px;
+}
+
+.bg-a {
+  background: url("../assets/images/a.png");
+  width: 500%;
+  height: 100px;
+}
+
+.bg-b {
+  background: url("/b.png");
+  width: 50%;
+  height: 100px;
+}
