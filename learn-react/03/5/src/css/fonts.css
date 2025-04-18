@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "SF_HambakSnow";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jeju";
+  src: url("../assets/fonts/EF_jejudoldam\(OTF\).woff2") format("woff2"),
+    url("../assets/fonts/EF_jejudoldam_OTF_.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* woff2 20%-30% 압축률과 성능이 더 좋아서 앞에서 먼저 불러야함.  */
+
+.jeju {
+  font-family: "Jeju";
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hambak {
+  font-family: "SF_HambakSnow";
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nanumpen {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+/* .nanum-pen-script-regular */

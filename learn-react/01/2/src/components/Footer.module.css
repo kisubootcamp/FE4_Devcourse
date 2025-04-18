@@ -1,0 +1,7 @@
+.underline {
+  text-decoration: underline;
+}
+.red-color {
+  color: red;
+}
+/* 컴포넌트에 종속되는 스타일 */
