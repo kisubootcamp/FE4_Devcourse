@@ -19,7 +19,7 @@ export default function LoginCard() {
             placeholder="Enter Password"
             className="border border-[#4F4F4F] rounded-[8px] px-[16px] py-[14px]  text-[#ACACAC] text-[14px]"
           />
-          <div className="flex gap-[8px]">
+          <div className="flex gap-[8px] items-center">
             <input
               type="checkbox"
               className="border border-[#4F4F4F] accent-[#4F4F4F] w-[20px] h-[20px]"
