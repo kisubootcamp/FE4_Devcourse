@@ -1,0 +1,17 @@
+body {
+  font-family: "Nanum Pen Script", cursive;
+}
+
+img {
+  max-height: 300px;
+}
+
+.bg-a {
+  background: url("../assets/images/a.jpg");
+  width: 100%;
+}
+
+.bg-b {
+  background: url("/images/b.jpg");
+  width: 100%;
+}
