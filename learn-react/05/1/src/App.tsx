@@ -10,7 +10,7 @@
 //       {/* <User user={user}/> */}
 //       {/* <User id={user.id} name={user.name} age={user.age} /> */}
 //       <User {...user} clickHandler={() => alert("click")} />
-//       {/* 객체에서만 사용가능, 위코드와 동일일 */}
+//       {/* 객체에서만 사용가능, 위코드와 동일 */}
 //     </>
 //   );
 // }
