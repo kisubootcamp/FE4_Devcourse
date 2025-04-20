@@ -1,12 +1,9 @@
 //import "../css/Login.css";
 
-type loginInfo = {
-  email: string;
-  password: string;
-  agree: boolean;
-};
+import Button from "./html/Button";
+import Input from "./html/Input";
 
-export default function Login({ email, password, agree }: loginInfo) {
+export default function Login() {
   return (
     <>
       <div className="w-[375px] bg-white rounded-lg p-8 flex flex-col gap-4 shadow-md">
@@ -16,32 +13,26 @@ export default function Login({ email, password, agree }: loginInfo) {
         <p className="text-[14px] text-[#4f4f4f]">
           Please enter your details to continue.
         </p>
-        <input
+        <Input
           type="email"
           placeholder="someone@example.com"
-          className="border rounded-lg border-[#4f4f4f] p-3 "
-          value={email}
+          className="input-style"
         />
-        <input
+        <Input
           type="password"
+          className="input-style"
           placeholder="Enter Password"
-          className="border rounded-lg border-[#4f4f4f] p-3"
-          value={password}
         />
-        <label className="flex items-center gap-1.5 text-[#4f4f4f] text-[14px]">
-          <input
-            type="checkbox"
-            checked={agree}
-            className="peer w-4.5 h-4.5 cursor-pointer"
-          />
-          I agree with <b>terms</b> and <b>policies</b>
-        </label>
-        <button className="border rounded-lg cursor-pointer border-[#4f4f4f] bg-[#4f4f4f] text-white text-[14px] p-3 ">
+
+        <Button
+          type="button"
+          className="w-full bg-[#4F4F4F] text-[#F5F5F5] rounded-lg"
+        >
           Log In
-        </button>
-        <button className="border rounded-lg cursor-pointer border-[#4f4f4f] p-3 text-[14px] ">
-          Go To Sing up
-        </button>
+        </Button>
+        <Button className="w-full border border-[#4f4f4f] text-[#4f4f4f] rounded-lg">
+          Go To Sign up
+        </Button>
       </div>
     </>
   );
