@@ -9,7 +9,7 @@
 
 {
   // 2. 배열의 길이 구하기
-  function getLength<E>(arr: E[]): number {
+  function getLength<T extends { length: number }>(arr: T): number {
     return arr.length;
   }
 
@@ -27,35 +27,38 @@
 
 {
   // 4. 두 값을 더하는 함수
-  function add<T extends number>(a: T, b: T): number {
-    return a + b;
+  function add<T>(a: T, b: T): T {
+    return ((a as any) + (b as any)) as T;
   }
 
   console.log(add(2, 3)); // 5
+  console.log(add('A', 'B')); // AB
 }
 
 {
   // 5. 객체에서 특정 키의 값 구하기
-  function getValue<T>(obj: { name: T }): T {
-    return obj.name;
+  function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
+    return obj[key];
   }
 
-  console.log(getValue({ name: 'Alice' })); // "Alice"
+  console.log(getValue({ name: 'Alice' }, 'name')); // Alice
+  console.log(getValue({ age: 20 }, 'age')); // Alice
 }
 
 {
   // 6. 두 값을 비교하는 함수
-  function isEqual<T>(a: T, b: T): boolean {
-    return a === b;
+  function isEqual<T, U>(a: T, b: U): boolean {
+    return (a as unknown) === (b as unknown);
   }
 
   console.log(isEqual(2, 2)); // true
+  console.log(isEqual('a', 'a')); // true
 }
 
 {
   // 7. 배열의 모든 값을 제곱하는 함수
-  function square<E extends number>(arr: E[]): number[] {
-    return arr.map((num) => num * num);
+  function square<T extends number>(arr: T[]): T[] {
+    return arr.map((num) => num * num) as T[];
   }
 
   console.log(square([1, 2, 3])); // [1, 4, 9]
@@ -68,15 +71,16 @@
   }
 
   console.log(getFirstAndLast([1, 2, 3])); // [1, 3]
+  console.log(getFirstAndLast(['A', 'B', 'C'])); // ['A', 'C'];
 }
 
 {
   // 9. 두 개의 객체 병합 함수
-  function mergeObjects<T, U>(obj1: { name: T }, obj2: { age: U }) {
+  function mergeObjects<T, U>(obj1: T, obj2: U) {
     return { ...obj1, ...obj2 };
   }
 
-  console.log(mergeObjects({ name: 'Alice' }, { age: 25 })); // { name: "Alice", age: 25 }
+  console.log(mergeObjects({ name: 'Alice' }, { age: 25 })); // { name: 'Alice', age: 25 }
 }
 
 {
