@@ -1,3 +1,4 @@
+import MyComponent from "./components/MyComponent";
 import ProfileCard from "./components/ProfileCard";
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
         instaID={instaID}
         changeColor={changeColor}
       />
+      <MyComponent />
     </>
   );
 }
