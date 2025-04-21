@@ -1,1 +1,9 @@
 @import "tailwindcss";
+@layer components {
+  .items-center {
+    @apply flex min-h-screen w-full items-center justify-center gap-[10px];
+  }
+  .btn_creater {
+    @apply h-[44px] w-[77px] cursor-pointer rounded-[8px] bg-[#4f4f4f] text-sm text-white disabled:cursor-default disabled:bg-gray-400;
+  }
+}
