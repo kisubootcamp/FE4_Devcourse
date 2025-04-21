@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Button from "./html/Button";
 import Checkbox from "./html/Checkbox";
 import Input from "./html/Input";
@@ -6,11 +6,19 @@ import Input from "./html/Input";
 export default function Login() {
   const [agree, setAgree] = useState(false);
   const [email, setEmail] = useState("");
+  const emailRef = useRef<HTMLInputElement>(null);
+
   const [password, setPassword] = useState("");
+  const pwRef = useRef<HTMLInputElement>(null);
   const loginHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!agree || !email.length || !password.length) {
+    if (!agree || !email || !password) {
       alert("Please fill all the fields.");
+      if (!email) {
+        emailRef.current?.focus();
+      } else if (!password) {
+        pwRef.current?.focus();
+      }
     } else {
       alert("Login Successfully");
     }
@@ -24,6 +32,7 @@ export default function Login() {
           <form action="" className="grid gap-4" onSubmit={loginHandler}>
             <Input
               type="text"
+              ref={emailRef}
               className="input-style"
               placeholder="someone@example.com"
               onChange={(e) => setEmail(e.target.value)}
@@ -31,6 +40,7 @@ export default function Login() {
             />
             <Input
               type="password"
+              ref={pwRef}
               className="input-style"
               placeholder="Enter Password"
               onChange={(e) => setPassword(e.target.value)}
