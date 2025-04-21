@@ -18,9 +18,17 @@ export default function App() {
   };
   return (
     <>
-      <pre>{text}</pre>
+      {/* <pre>{text}</pre> */}
       <textarea value={text} onChange={changeHandler}></textarea>
       <input type="text" value={text2} onChange={changeHandler2} />
     </>
   );
 }
+
+// 이렇게 써도된다.
+// const changeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+//   setText(e.target.value);
+// };
+// const changeHandler2 = (e: React.ChangeEvent<HTMLInputElement>) => {
+//   setText2(e.target.value);
+// };

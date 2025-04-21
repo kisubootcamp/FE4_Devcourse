@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 export default function App() {
   const picture = [
     'https://cdn.pixabay.com/photo/2013/08/26/09/40/silhouette-175970_1280.jpg',
@@ -7,7 +9,8 @@ export default function App() {
     'https://cdn.pixabay.com/photo/2022/12/28/21/10/streets-7683842_1280.jpg',
     'https://cdn.pixabay.com/photo/2023/01/08/05/45/mountain-7704584_1280.jpg',
   ];
-
+  const [active, setActive] = useState('active');
+  const handleActive = () => {};
   return (
     <div className="w-full max-w-4xl mx-auto py-6 px-4">
       <header className="flex items-center justify-between mb-6">

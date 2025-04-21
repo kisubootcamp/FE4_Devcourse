@@ -16,6 +16,8 @@ type InputProps = Omit<React.ComponentPropsWithRef<'input'>, 'type'> & {
   type?: Exclude<ReactInputType, 'radio' | 'checkbox' | 'range'>;
 };
 
+// forwardRef는 2개를 받는
+
 export default forwardRef<HTMLInputElement, InputProps>(function Input(
   props: InputProps,
   ref
