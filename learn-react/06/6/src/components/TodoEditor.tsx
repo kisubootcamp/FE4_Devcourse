@@ -21,6 +21,10 @@ export default function TodoEditor({
         placeholder="Enter a new todo"
         className="flex-grow p-2 border rounded-l-md focus:outline-none"
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => {
+          console.log(e);
+          if (e.key === "Enter") addItemToList();
+        }}
       />
       <button
         onClick={addItemToList}
