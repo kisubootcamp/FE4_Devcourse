@@ -1,10 +1,4 @@
-export default function Login({
-  onLogIn,
-  onGoToSignUp,
-}: {
-  onLogIn: () => void;
-  onGoToSignUp: () => void;
-}) {
+export default function Login() {
   return (
     <>
       <div className="flex flex-col mt-[40px] ml-[25px]">
@@ -16,13 +10,13 @@ export default function Login({
 
         <input
           type="text"
-          className="w-[325px] h-[44px] px-3 border mb-[16px] border-black rounded-[8px]"
+          className="input-style"
           placeholder=" someone@example.com"
         />
 
         <input
           type="password"
-          className="w-[325px] h-[44px] px-3 border mb-[16px] border-black rounded-[8px]"
+          className="input-style"
           placeholder=" Enter Password"
         />
 
@@ -32,14 +26,14 @@ export default function Login({
         </div>
 
         <button
-          onClick={onLogIn}
+          type="submit"
           className="w-[325px] h-[44px] mb-[16px] rounded-[8px] bg-[#4f4f4f] text-white"
         >
           Log in
         </button>
 
         <button
-          onClick={onGoToSignUp}
+          type="button"
           className="w-[325px] h-[44px] border-1 rounded-[8px]"
         >
           Go To Sign up
