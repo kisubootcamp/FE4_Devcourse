@@ -1,14 +1,42 @@
-export default function TodoListItem() {
+import { useState } from "react";
+
+export default function TodoListItem({
+  item,
+  list,
+  setList,
+  children,
+}: {
+  item: { id: number; content: string };
+  list: { id: number; content: string }[];
+  setList: React.Dispatch<
+    React.SetStateAction<{ id: number; content: string }[]>
+  >;
+  children: React.ReactNode;
+}) {
+  const [checked, setChecked] = useState(false);
+  const changeCheckedHandler = () => {
+    setChecked((checked) => !checked);
+  };
+  const deleteItem = () => {
+    setList([...list].filter((el) => el !== item));
+  };
   return (
-    <li className='flex items-center justify-between p-3 border-b hover:bg-gray-100 transition-colors'>
-      <div className='flex items-center'>
+    <li className="flex items-center justify-between p-3 border-b hover:bg-gray-100 transition-colors">
+      <div className="flex items-center">
         <input
-          type='checkbox'
-          className='mr-3 h-4 w-4 text-blue-500 focus:ring-blue-400'
+          checked={checked}
+          type="checkbox"
+          className="mr-3 h-4 w-4 text-blue-500 focus:ring-blue-400 "
+          onChange={changeCheckedHandler}
         />
-        <span>Todo Item Example</span>
+        <span className={`${checked ? "line-through" : ""}`}>{children}</span>
       </div>
-      <button className='text-red-500 hover:text-red-700 ml-4'>Delete</button>
+      <button
+        onClick={deleteItem}
+        className="text-red-500 hover:text-red-700 ml-4"
+      >
+        Delete
+      </button>
     </li>
   );
 }
