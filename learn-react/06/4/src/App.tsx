@@ -2,15 +2,33 @@ import { useState } from "react";
 
 export default function App() {
   const [picture, setPicture] = useState([
-    "https://cdn.pixabay.com/photo/2013/08/26/09/40/silhouette-175970_1280.jpg",
-    "https://cdn.pixabay.com/photo/2015/11/25/09/42/rocks-1061540_1280.jpg",
-    "https://cdn.pixabay.com/photo/2018/09/23/12/33/building-3697342_1280.jpg",
-    "https://cdn.pixabay.com/photo/2014/05/02/12/43/clouds-335969_1280.jpg",
-    "https://cdn.pixabay.com/photo/2022/12/28/21/10/streets-7683842_1280.jpg",
-    "https://cdn.pixabay.com/photo/2023/01/08/05/45/mountain-7704584_1280.jpg",
+    {
+      id: 1,
+      src: "https://cdn.pixabay.com/photo/2013/08/26/09/40/silhouette-175970_1280.jpg",
+    },
+    {
+      id: 2,
+      src: "https://cdn.pixabay.com/photo/2015/11/25/09/42/rocks-1061540_1280.jpg",
+    },
+    {
+      id: 3,
+      src: "https://cdn.pixabay.com/photo/2018/09/23/12/33/building-3697342_1280.jpg",
+    },
+    {
+      id: 4,
+      src: "https://cdn.pixabay.com/photo/2014/05/02/12/43/clouds-335969_1280.jpg",
+    },
+    {
+      id: 5,
+      src: "https://cdn.pixabay.com/photo/2022/12/28/21/10/streets-7683842_1280.jpg",
+    },
+    {
+      id: 6,
+      src: "https://cdn.pixabay.com/photo/2023/01/08/05/45/mountain-7704584_1280.jpg",
+    },
   ]);
 
-  const [deleted, setDeleted] = useState<string[]>([]);
+  const [deleted, setDeleted] = useState<{ id: number; src: string }[]>([]);
 
   const deletePicture = (index: number) => {
     setPicture((pics) => pics.filter((_, i) => i !== index));
@@ -21,9 +39,9 @@ export default function App() {
     if (!deleted.length) {
       return;
     }
-    const prevPic = deleted[0];
-    setDeleted((pics) => pics.filter((pic) => pic !== prevPic));
-    setPicture((pics) => [...pics, prevPic]);
+    const newPic = deleted[0];
+    setDeleted((pics) => pics.filter((_, i) => i !== 0));
+    setPicture((pics) => [...pics, newPic].sort((a, b) => a.id - b.id));
   };
 
   return (
@@ -42,11 +60,11 @@ export default function App() {
         </div>
       </header>
       <div className="grid grid-cols-3 gap-4">
-        {picture.map((value, index) => (
-          <div className="group relative" key={index}>
+        {picture.map(({ id, src }, index) => (
+          <div className="group relative" key={id}>
             <a className="group" href="#">
               <img
-                src={value}
+                src={src}
                 width="400"
                 height="400"
                 alt={`Photo ${index + 1}`}
