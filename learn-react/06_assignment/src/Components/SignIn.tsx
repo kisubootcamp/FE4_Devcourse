@@ -1,13 +1,10 @@
 //import "../css/Login.css";
 
-type SignInfo = {
-  name: string;
-  email: string;
-  password: string;
-  agree: boolean;
-};
+import Button from "./html/Button";
+import CheckBox from "./html/CheckBox";
+import Input from "./html/Input";
 
-export default function SignIn({ name, email, password, agree }: SignInfo) {
+export default function SignIn() {
   return (
     <>
       <div className="w-[375px] bg-white rounded-lg p-8 flex flex-col gap-4 shadow-md">
@@ -15,38 +12,33 @@ export default function SignIn({ name, email, password, agree }: SignInfo) {
         <p className="text-[14px] text-[#4f4f4f]">
           Please enter your details to continue.
         </p>
-        <input
-          type="name"
+        <Input
+          type="text"
           placeholder="Enter Your Name"
-          className="border rounded-lg border-[#4f4f4f] p-3"
-          value={name}
+          className="input-style"
         />
-        <input
-          type="email"
+        <Input
+          type="text"
           placeholder="someone@example.com"
-          className="border rounded-lg border-[#4f4f4f] p-3 "
-          value={email}
+          className="input-style"
         />
-        <input
+        <Input
           type="password"
           placeholder="Enter Password"
-          className="border rounded-lg border-[#4f4f4f] p-3"
-          value={password}
+          className="input-style"
         />
-        <label className="flex items-center gap-1.5 text-[#4f4f4f] text-[14px]">
-          <input
-            type="checkbox"
-            checked={agree}
-            className="peer w-4.5 h-4.5 cursor-pointer"
-          />
-          I agree with <b>terms</b> and <b>policies</b>
-        </label>
-        <button className="border rounded-lg cursor-pointer border-[#4f4f4f] bg-[#4f4f4f] text-white text-[14px] p-3 ">
+        <CheckBox>
+          <span className="text-sm color-[#4f4f4f]">
+            {" "}
+            I agree with <b>terms</b> and <b>policies</b>.
+          </span>
+        </CheckBox>
+        <Button className="w-full bg-[#4F4F4F] text-[#F5F5F5] rounded-lg">
           Log In
-        </button>
-        <button className="border rounded-lg cursor-pointer border-[#4f4f4f] p-3 text-[14px] ">
+        </Button>
+        <Button className="w-full border border-[#4f4f4f] text-[#4f4f4f] rounded-lg">
           Go To Log In
-        </button>
+        </Button>
       </div>
     </>
   );
