@@ -1,0 +1,111 @@
+// import User from "./components/User";
+// import LoggedIn from "./components/LoggedIn";
+
+// export default function App() {
+//   const user = {
+//     id: 1,
+//     name: "sucoding",
+//     age: 20,
+//   };
+//   return (
+//     <>
+//       {/* <User user={user} /> */}
+//       <User {...user} clickHandler={() => alert("click")} />
+//       {/* <User id={user.id} name={user.name} age={user.age} /> */}
+//     </>
+//   );
+// }
+{
+  /* ------------------------------------------------------------------- */
+}
+// 조건부 렌더링
+// 조건문을 활용해서 조건 렌더링을 수행하는 기법
+// 조건에 따라서 컴포넌트를 렌더링하는 기법
+// 1. if
+// 2. 삼항 연산자
+// 3. 논리 && 연산자
+// 3.1 expr1 && expr2 -> true
+
+// 반복 렌더링
+// 반복문을 활용해서 반복 렌더링을 수행하는 기법
+
+// import LoggedIn from "./components/LoggedIn";
+// import NotLoggedIn from "./components/NotLoggedIn";
+
+export default function App() {
+  const isLogin = false;
+
+  // 1. if
+  // if (isLogin) {
+  //   return <LoggedIn />;
+  // }
+  // return <NotLoggedIn />;
+
+  // 2. 삼항 연산자
+  // return (
+  //   <>
+  //     {isLogin ? <h1>User Is Login</h1> : <h1>User Is Not Login</h1>}
+  //   </>
+  // )
+
+  // return (
+  //   <>
+  //     {isLogin ? (
+  //       <LoggedIn />
+  //     ) : (
+  //       <>
+  //         <h1>User is Not Login!</h1>
+  //       </>
+  //     )}
+  //   </>
+  // );
+
+  // 3. 논리 && 연산자
+  return (
+    <>
+      {isLogin && <h1>User Is Login!</h1>}
+      {!isLogin && <h1>User Is Not Login!</h1>}
+    </>
+  );
+}
+
+--------------------------------
+
+// 조건부 렌더링
+// 조건문을 활용해서 조건 렌더링을 수행하는 기법
+// 조건에 따라서 컴포넌트를 렌더링하는 기법
+// 1. if
+// 2. 삼항 연산자
+// 3. 논리 && 연산자
+// 3.1 expr1 && expr2 -> true
+
+import User from "./components/User";
+
+// 반복 렌더링
+// 반복문을 활용해서 반복 렌더링을 수행하는 기법
+// for react에선 잘 안씀
+// [].map() 이걸 씀
+// map을 쓸 때는 반드시 key 속성의 값을 유니크하게 해줘야함
+export default function App() {
+  const items = ["apple", "banana", "orange"];
+  const users = [
+    { id: 1, name: "John", age: 20 },
+    { id: 2, name: "Sucoding", age: 30 },
+  ];
+
+  return (
+    <>
+      <ul>
+        {users.map((user) => (
+          // ref
+          <User key={user.id} {...user} />
+        ))}
+      </ul>
+      <ul>
+        {items.map((value, index) => (
+          <li key={index}>{value}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
