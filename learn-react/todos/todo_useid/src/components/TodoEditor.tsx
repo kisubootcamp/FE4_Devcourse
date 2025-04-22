@@ -1,26 +1,24 @@
 import { useState } from "react";
 
-export default function TodoEditor({
-  setList,
-}: {
-  setList: React.Dispatch<
-    React.SetStateAction<{ id: number; content: string }[]>
-  >;
+export default function TodoEditor({dispatch}: {dispatch:
 }) {
-  const [value, setValue] = useState("");
+  const [text, setText] = useState("");
+  const textChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setText(e.target.value);
+  };
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setList((list) => [...list, { id: Math.random(), content: value }]);
-    setValue("");
+    addTodo(text);
+    setText("");
   };
   return (
     <form className="flex p-4" onSubmit={submitHandler}>
       <input
         type="text"
-        value={value}
         placeholder="Enter a new todo"
         className="flex-grow p-2 border rounded-l-md focus:outline-none"
-        onChange={(e) => setValue(e.target.value)}
+        value={text}
+        onChange={textChangeHandler}
       />
       <button
         type="submit"
