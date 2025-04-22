@@ -1,3 +1,5 @@
+import { TodoReducerAction, TodoType } from "../types/todo";
+
 export const todoReducer = (todos: TodoType[], action: TodoReducerAction) => {
   switch (action.type) {
     case "ADD_TODO":

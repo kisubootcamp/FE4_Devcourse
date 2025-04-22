@@ -2,7 +2,7 @@ import TodoEditor from "./TodoEditor";
 import TodoHeader from "./TodoHeader";
 import TodoList from "./TodoList";
 import { useReducer } from "react";
-import { todoReducer } from "../../reducer/todo.reducer";
+import { todoReducer } from "../reducer/todo.reducer";
 import { TodoActionType, TodoType } from "../types/todo";
 
 export default function Todo() {
