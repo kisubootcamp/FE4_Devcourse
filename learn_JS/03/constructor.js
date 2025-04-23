@@ -157,3 +157,89 @@
     .catch(function () {})
     .finally(function () {});
 }
+
+{
+  let loading = new Promise(function (resolve, reject) {
+    const img = document.querySelector(".test");
+    img.addEventListener("load", function () {
+      resolve();
+    });
+    img.addEventListener("load", function () {
+      reject();
+    });
+  });
+
+  loading
+    .then(function () {
+      console.log("로딩성공");
+    })
+    .catch(function () {
+      console.log("로딩실패");
+    });
+}
+
+{
+  let promise = new Promise((resolve, reject) => {
+    $.get("경로").done(function (result) {
+      console.log(resolve(result));
+    });
+  });
+  promise.then(function (result) {
+    console.log(result);
+  });
+}
+
+{
+  let promise = new Promise((resolve, reject) => {
+    $.get("경로").done(function (result) {
+      console.log(resolve(result));
+    });
+  });
+  promise
+    .then(function (result) {
+      console.log(result);
+      return new Promise((resolve, reject) => {
+        $.get("경로").done(function (result) {
+          console.log(resolve(result));
+        });
+      });
+    })
+    .then(function (result) {
+      console.log(result);
+    });
+}
+
+{
+  async function calc() {
+    return 1 + 1;
+  }
+
+  calc().then(function (result) {
+    console.log("성공");
+    console.log(result);
+  });
+}
+
+{
+  // {<button id="test">버튼</button>
+  const promise = new Promise((resolve, reject) => {
+    document.getElementById("test").addEventListener("click", function () {
+      resolve("성공");
+    });
+  });
+
+  async function buttonClick() {
+    const result = await promise;
+    console.log(result);
+  }
+
+  buttonClick();
+}
+
+{
+  // 객체 자료 만들기
+  const person = new Map();
+  person.set("name", "kim"); // 객체의 키값
+  person.set("age", 20); // 객체의 키의 value값
+  console.log(person.get("age"));
+}

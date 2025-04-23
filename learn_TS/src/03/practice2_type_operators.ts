@@ -188,12 +188,12 @@
 {
   // 10. 인터섹션 타입을 활용한 동적 객체 반환
   type Person = { name: string; age: number };
-  type ContactInfo = { email: string; phoneNumber: string };
+  type ContactInfo = { email?: string; phoneNumber?: string };
   const mergeContactInfo = function (
-    person?: Person,
-    contactInfo?: ContactInfo
+    person: Person,
+    contactInfo: ContactInfo
   ): Person & ContactInfo {
-    //return { ...person, ...contactInfo };
+    return { ...person, ...contactInfo };
   };
 
   // 테스트 케이스
