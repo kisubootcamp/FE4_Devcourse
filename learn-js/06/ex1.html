@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="load()">load</button>
+    <button onclick="load2()">load2</button>
+    <div style="display: grid; grid-template-columns: 1fr 1fr">
+      <div id="list"></div>
+      <div id="list2"></div>
+    </div>
+
+    <script>
+      // load : 리플로우와 리페인트를 최적화한 코드
+      // 메모리 상에만 위치하는 객체라서 화면에 나타나지 않음. (데이터를 넣어줄 뿐임)
+      // 90000번은 메모리 상에만 넣어주는 것임.
+      // 리플로우와 리페인트가 1번만 일어나는 코드
+      function load() {
+        console.time("load");
+        const list = document.getElementById("list");
+        const fragment = document.createDocumentFragment();
+        const items = [];
+
+        for (let i = 0; i < 90000; i++) {
+          const item = document.createElement("li");
+          item.textContent = `Item ${i}`;
+          fragment.append(item); // 메모리에 저장
+          // items.push(item);
+        }
+
+        // 생성된 요소들을 한 번에 DOM에 추가
+        // list.append(...items);
+        list.appendChild(fragment); // 1회
+
+        // DOM 추가 후 완료 시간을 측정
+        // setTimeout을 집어넣지 않으면 시간이 바로바로 출력돼서 정확한 시간이 측정되지 않음.
+        // setTimeout은 태스크 큐에 들어가서 콜스택이 비워질 때까지 수행되지 않기 때문에 정확한 시간 측정이 가능함.
+        setTimeout(() => {
+          console.timeEnd("load"); // 3832ms -> 3.8초
+        }, 0); // 렌더링이 완료된 후 시간을 측정하기 위해 0ms 지연
+      }
+
+      // load2 : 리플로우와 리페인트를 최적화하지 않은 코드
+      // li 태그를 만들어서 list2에 넣어주는 것을 90000번 실행함.
+      // 90000번의 리플로우와 리페인트가 일어나는 코드임.
+      function load2() {
+        console.time("load2");
+        const list = document.getElementById("list2");
+        const items = [];
+
+        for (let i = 0; i < 90000; i++) {
+          const item = document.createElement("li");
+          item.textContent = `Item ${i}`;
+          list.appendChild(item); // 90000번의 리플로우와 리페인트를 요구하는 코드
+        }
+
+        // DOM 추가 후 완료 시간을 측정
+        setTimeout(() => {
+          console.timeEnd("load2"); // 7228ms -> 7.2초
+        }, 0); // 렌더링이 완료된 후 시간을 측정하기 위해 0ms 지연
+      }
+    </script>
+  </body>
+</html>
