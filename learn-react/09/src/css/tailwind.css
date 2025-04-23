@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* 컴포넌트에서 사용할 수 있는 클래스를 정의 */
+/* 맥의 텍스트 대치 느낌으로 아래의 선언한 클래스명을 @apply 에 설정된 클래스 명 들로 대치 하는 느낌 */
+@layer components {
+  .input-style {
+    @apply rounded-lg border border-[#4f4f4f] px-4 text-sm placeholder:text-[#acacac];
+  }
+  .item-middle {
+    @apply flex flex-col gap-4 items-center justify-center mt-5;
+  }
+  .button-style {
+    @apply w-[77px] h-[44px] text-white rounded-lg cursor-pointer text-sm disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}

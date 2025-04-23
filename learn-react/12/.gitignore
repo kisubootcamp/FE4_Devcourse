@@ -1,9 +1,3 @@
-# 패키지 락 파일
-package-lock.json
-
-# 환경변수
-.env.*
-
 # Logs
 logs
 *.log
@@ -29,4 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-node_modules
+# custom ignore
+.env*
+.env.*
+package-lock.json
