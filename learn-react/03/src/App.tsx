@@ -1,17 +1,11 @@
-import { Title, Button, Wrapper } from "./css/card";
+import User from "./components/User";
 
 export default function App() {
-  // CSS-IN-JS
-  // CSS를 런타임에 동적으로 생성해서 적용하는 원리
-  // document.createElement('style')
   return (
     <>
-      <Wrapper>
-        <Title>App Component</Title>
-        <Button>My Button</Button>
-      </Wrapper>
+      <User name="SeolWolWha" age={20} /> {/* 숫자는 중괄호 */}
+      {/* User component의 name값이 SeolWolWha */}
     </>
   );
 }
-// 인라인 스타일은 이메일 내부 양식을 구현할 때 빼고는 사용할 일이 없다
-// styled component는 직관적이지 않다.
+// tailwind가 알아서 리셋해주기 때문에 리셋파일을 만들지 않아도 된다.

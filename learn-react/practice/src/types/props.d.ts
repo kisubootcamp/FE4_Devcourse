@@ -3,5 +3,5 @@ interface User {
   username: string;
   profImg: string;
   cardImg: string;
-  follow: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  follow: (name: string) => void;
 }

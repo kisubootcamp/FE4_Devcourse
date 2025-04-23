@@ -1,0 +1,13 @@
+.title {
+  color: blue;
+  text-decoration: underline;
+}
+.foo {
+  color: red;
+}
+.bar {
+  text-decoration: underline;
+}
+.third {
+  font-style: italic;
+}
