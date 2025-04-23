@@ -130,14 +130,24 @@
 
     //4.
     // 함수 정의
-const intersection = (arr1:number[],arr2:number[]):number[]=>{
-    let filtered=arr1.filter((item)=>arr2.includes(item));
-    return filtered;
-}
+    const intersection = (arr1:number[],arr2:number[]):number[]=>{
+        let filtered=arr1.filter((item)=>arr2.includes(item));
+        return filtered;
+    }
 
-// 함수 호출
-const result4 = intersection([1, 2, 3], [2, 3, 4]);
-console.log(result4); // [2, 3]
+    // 함수 호출
+    const result4 = intersection([1, 2, 3], [2, 3, 4]);
+    console.log(result4); // [2, 3]
 
+    //5.?
+    // 함수 정의
+    const formatInfo = ({name,age}:{name:string; age:number})=>{
+        if(name) return `Name:${name}`;
+        else return `Age:${age}`;
+    }
+
+    // 함수 호출
+    const info = formatInfo({ name: "Alice" });
+    console.log(info); // "Name: Alice"
 
 }

@@ -1,0 +1,7 @@
+.underline {
+  text-decoration: underline;
+}
+/* .modules.css 는 글로벌하게 css적용되지 않고 import하는 파일에만 적용됨 */
+.red-color {
+  color: red;
+}

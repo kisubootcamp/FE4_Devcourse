@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@layer components {
+  .item-middle {
+    @apply flex flex-col items-center gap-4 justify-center min-h-screen;
+  }
+  .input-style {
+    @apply rounded-lg border-[#4f4f4f] text-sm px-4 placeholder:text-[#acacac];
+  }
+}

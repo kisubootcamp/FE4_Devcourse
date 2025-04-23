@@ -42,7 +42,8 @@
   function sun(n1: number, n2: string): string;
   function sun(n1: string, n2: string): string;
   function sun(n1: number | string, n2: number | string): number | string {
-    if (typeof n1 === "number" && typeof n2 === "number") return n1 + n2;
+    if (typeof n1 === "number" && typeof n2 === "number")
+      return n1 + n2; //타입가드
     else return `${n1}${n2}`;
   }
   //타입 단언
