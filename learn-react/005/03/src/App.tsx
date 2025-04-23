@@ -3,7 +3,9 @@ import Count from "./components/Count";
 export default function App() {
   return (
     <>
-      <Count />
+      <div className="items-center">
+        <Count />
+      </div>
     </>
   );
 }
