@@ -1,9 +1,9 @@
-import UseReducerPracticer from "./components/hooks/pratice/useReducer/UseReducerPractice";
+import Todo from "./components/todos/zustand/Todo";
 
 export default function App() {
   return (
     <>
-      <UseReducerPracticer />
+      <Todo />
     </>
   );
 }
