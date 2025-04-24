@@ -1,0 +1,96 @@
+{
+  "posts": [
+    {
+      "title": "patch modify data",
+      "views": 500,
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "wJoXihh"
+    },
+    {
+      "id": "BSPf0AI"
+    },
+    {
+      "id": "-vn3V01"
+    },
+    {
+      "id": "70xbi_d"
+    },
+    {
+      "id": "UVP61F2"
+    },
+    {
+      "id": "5JXn4p8"
+    },
+    {
+      "id": "vRO9gP-"
+    },
+    {
+      "id": "5ryKEqZ"
+    },
+    {
+      "id": "c2Z5ADX"
+    },
+    {
+      "id": "9pp1x1E"
+    },
+    {
+      "id": "MhMIWuX"
+    },
+    {
+      "id": "0oJIsTY"
+    },
+    {
+      "id": "OSvSLLK"
+    },
+    {
+      "id": "45_4JLE"
+    },
+    {
+      "id": "CPgtSz2"
+    },
+    {
+      "id": "cKoI0pl"
+    },
+    {
+      "id": "FaYgVMu"
+    },
+    {
+      "id": "Mq1TIDX"
+    },
+    {
+      "id": "wpEnB9f"
+    },
+    {
+      "id": "4",
+      "title": "anna",
+      "views": 100
+    },
+    {
+      "id": "5",
+      "title": "superman",
+      "views": 100
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
