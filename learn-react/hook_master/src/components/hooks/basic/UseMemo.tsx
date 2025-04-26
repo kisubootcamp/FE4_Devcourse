@@ -13,8 +13,8 @@ export default function UseMemo() {
 	const [count, setCount] = useState(0);
 
 	// 불필요한 연산을 만들어준 것
-	// 3000만개의 배열 데이터를 브라우저를 새로고침할 때=페이지 리로드할 때 새로 만들고 있음. 리렌더링 때는 다시 안만들어짐.
-	// items도 브라우저를 새로고침할 때는 다시 세팅되고, 리렌더링할 때는 새로 세팅되지 않음. setItems가 호출되지 않는 이상 변하지도 않ㅇ,ㅁ.
+	// 3000만개의 배열 데이터를 브라우저를 새로고침할 때=페이지 리로드할 때 새로 만들고 있음. 리렌더링 때는 다시 안만들어짐. 컴포넌트 밖에 작성되어 있기 때문에.
+	// items도 브라우저를 새로고침할 때는 다시 세팅되고, 리렌더링할 때는 새로 세팅되지 않음. setItems가 호출되지 않는 이상 변하지도 않음.
 	const [items] = useState(initialItems);
 
 	const selectItems = useMemo(() => items.find((item) => item.selected), [items]); // 만약 의존성배열 빈배열로 두면 items가 변해서 selected: i가 다른 값이 되어도 계속 29999998이기 때문에 의존성배열 [items]로 두어야 변화를 감지할 수 있다.
