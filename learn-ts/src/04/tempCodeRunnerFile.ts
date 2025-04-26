@@ -1,23 +1,10 @@
-	interface Vehicle {
-		brand: string;
-		model: string;
+	enum StatusEnum {
+		IS_ACTIVE = 0,
+		IS_INACTIVE = 1,
 	}
 
-	interface Electric {
-		batteryLife: number;
+	function toggleStatus(status: number): boolean {
+		return !status;
 	}
 
-	interface ElectricCar extends Vehicle, Electric {
-		charge(): void;
-	}
-
-	const tesla: ElectricCar = {
-		brand: "포르쉐",
-		model: "타이칸",
-		batteryLife: 1000,
-		charge() {
-			console.log("Charging the car...");
-		},
-	};
-
-	tesla.charge();
+	console.log(toggleStatus(0));

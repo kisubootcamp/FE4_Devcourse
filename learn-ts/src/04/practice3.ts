@@ -115,15 +115,15 @@
 	//   문제 7: 상태 변경
 	// 주어진 코드:
 	enum StatusEnum {
-		IS_ACTIVE = true,
-		IS_INACTIVE = true,
+		IS_ACTIVE = 0,
+		IS_INACTIVE = 1,
 	}
 
-	function toggleStatus(status: StatusEnum): boolean {
+	function toggleStatus(status: number): boolean {
 		return !status;
 	}
 
-	console.log(toggleStatus(true));
+	console.log(toggleStatus(0));
 }
 {
 	//   문제 8: 선택지 값
