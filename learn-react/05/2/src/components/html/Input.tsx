@@ -1,4 +1,3 @@
-import { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 type OnlyLiterals<T> = T extends string
   ? string extends T
@@ -12,10 +11,7 @@ type InputProps = Omit<React.ComponentPropsWithRef<"input">, "type"> & {
   type?: Exclude<ReactInputType, "radio" | "checkbox" | "range">;
 };
 
-export default forwardRef<HTMLInputElement, InputProps>(function Input(
-  props,
-  ref
-) {
+export default function Input({ ref, ...props }: InputProps) {
   const { className, type = "text", ...rest } = props;
 
   return (
@@ -28,4 +24,4 @@ export default forwardRef<HTMLInputElement, InputProps>(function Input(
       />
     </>
   );
-});
+}

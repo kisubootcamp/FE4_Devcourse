@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 import london from "./assets/images/london.jpg";
 import newyork from "./assets/images/newyork.jpg";
 import paris from "./assets/images/paris.jpg";
@@ -14,6 +15,7 @@ export default function App() {
     파리: paris,
     뉴욕: newyork,
   };
+  console.log(cityImg);
   const [city, setCity] = useState("서울");
   const clickHandler = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -32,26 +34,18 @@ export default function App() {
         <div className="flex flex-col items-center gap-4  max-w-[500px]">
           <img src={travel} alt={"로고"} width={80} />
           <ul className="flex items-center antialiased justify-around w-full">
-            <li>
-              <a href="#" onClick={(e) => clickHandler(e, "서울")}>
-                Seoul
-              </a>
-            </li>
-            <li>
-              <a href="#" onClick={(e) => clickHandler(e, "런던")}>
-                London
-              </a>
-            </li>
-            <li>
-              <a href="#" onClick={(e) => clickHandler(e, "파리")}>
-                Paris
-              </a>
-            </li>
-            <li>
-              <a href="#" onClick={(e) => clickHandler(e, "뉴욕")}>
-                NewYork
-              </a>
-            </li>
+            {Object.keys(cityImg).map((location) => {
+              return (
+                <li
+                  key={location}
+                  className={twMerge(city === location && "font-bold")}
+                >
+                  <a href="#" onClick={(e) => clickHandler(e, location)}>
+                    {location}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <div>
             <img src={cityImg[city]} alt={city} />
