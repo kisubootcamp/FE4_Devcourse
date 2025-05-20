@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --default-color: #4f4f4f;
+}
+
+@layer components {
+  .item-middle {
+    @apply flex items-center justify-center min-h-screen font-inter;
+  }
+
+  .input-style {
+    @apply w-full h-[44px] px-[16px] py-[14px] bg-[#FFFFFF] border-[#4F4F4F] border-[1px] rounded-[8px] text-sm placeholder:text-[#acacac];
+  }
+}
