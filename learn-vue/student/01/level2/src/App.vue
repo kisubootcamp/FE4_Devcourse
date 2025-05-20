@@ -10,6 +10,10 @@ export default {
       role: 'editor',
       logStatus: 'loggedOut',
       account: 'banned',
+      selectedOption: 'italic', // 'bold'. 'italic'
+      messageHTML: '<strong>텍스트</strong>',
+      messageItalic: '<em>텍스트</em>',
+      cartStatus: 'inCart', //"inCart", "purchased", "abandoned"
     }
   },
 }
@@ -28,5 +32,10 @@ export default {
   <h1 v-else-if="logStatus === 'loggedIn' && account === 'premium'">프리미엄 계정으로 로그인 중</h1>
   <h1 v-else-if="logStatus === 'loggedOut'">로그인 필요</h1>
   <h1 v-else-if="account === 'banned'">계정 정지</h1>
+  <h1 v-if="selectedOption === 'bold'" v-html="messageHTML"></h1>
+  <h1 v-else-if="selectedOption === 'italic'" v-html="messageItalic"></h1>
+  <h1 v-if="cartStatus === 'inCart'">장바구니에 상풍이 있습니다.</h1>
+  <h1 v-else-if="cartStatus === 'purchased'">구매 완료</h1>
+  <h1 v-else-if="cartStatus === 'abandoned'">구매가 취소되었습니다</h1>
 </template>
 <style scoped></style>
