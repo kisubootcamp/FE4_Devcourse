@@ -11,7 +11,7 @@ export default {
 };
 </script>
 <template>
-  <div v-if="selectedOption === italic" v-html="messageHTML"></div>
+  <div v-if="selectedOption === 'italic'" v-html="messageHTML"></div>
   <div v-else-if="selectedOption === 'bold'" v-html="messageItalic"></div>
 </template>
 <style scoped></style>

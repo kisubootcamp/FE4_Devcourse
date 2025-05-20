@@ -10,6 +10,5 @@ export default {
 </script>
 <template>
   <div v-text="message"></div>
-  <div>{{ message }}</div>
 </template>
 <style scoped></style>

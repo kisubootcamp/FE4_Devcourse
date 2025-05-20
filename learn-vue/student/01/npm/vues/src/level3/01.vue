@@ -10,7 +10,8 @@ export default {
 </script>
 <template>
   <ul>
-    <li v-for="(value, index) in items">{{ value }}</li>
+    <!-- <li v-for="(value, index) in items">{{ value }}</li> -->
+    <li v-for="fruits in items" :key="fruits"></li>
   </ul>
 </template>
 <style scoped></style>

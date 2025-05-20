@@ -9,6 +9,6 @@ export default {
 };
 </script>
 <template>
-  <div v-show="isVisible === true">조건이 참입니다</div>
+  <div v-show="isVisible">조건이 참입니다</div>
 </template>
 <style scoped></style>

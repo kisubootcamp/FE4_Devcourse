@@ -9,7 +9,7 @@ export default {
 };
 </script>
 <template>
-  <div v-if="isGreeting === true">Hello</div>
+  <div v-if="isGreeting">Hello</div>
   <div v-else>Goodbye</div>
 </template>
 <style scoped></style>
