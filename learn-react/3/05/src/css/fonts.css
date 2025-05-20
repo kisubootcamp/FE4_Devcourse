@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "ChosunGu";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jeju";
+  src: url("../assets/fonts/EF_jejudoldam\(OTF\).woff2") format("woff2"),
+    url("../assets/fonts/EF_jejudoldam_OTF_.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Jeju {
+  font-family: "Jeju";
+  font-weight: normal;
+  font-style: normal;
+}
+
+.chosungu {
+  font-family: "ChosunGu";
+  font-weight: normal;
+  font-style: normal;
+}
+
+.noto-sans-kr {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}

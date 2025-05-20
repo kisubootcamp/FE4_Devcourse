@@ -1,0 +1,18 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+img {
+  max-height: 200px;
+}
+
+.bg-cat {
+  background: url("/images/cat-5628953_640.jpg");
+  width: 400px;
+  height: 200px;
+}
+.bg-cat2 {
+  background: url("../assets/images/cat-5628953_640.jpg");
+  width: 400px;
+  height: 200px;
+}
