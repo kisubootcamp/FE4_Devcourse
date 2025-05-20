@@ -28,4 +28,3 @@ export default {
   <h1 v-show="condition === 'F'">F입니다</h1>
 </template>
 <style scoped></style>
-ㅁㅇㄴ
