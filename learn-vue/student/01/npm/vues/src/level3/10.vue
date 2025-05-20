@@ -9,7 +9,6 @@ export default {
 };
 </script>
 <template>
-  <!-- code here -->
   <ul>
     <li v-for="item in items" :key="item">{{ item }} // {{ item.length }}</li>
   </ul>
