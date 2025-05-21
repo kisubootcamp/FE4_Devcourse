@@ -39,7 +39,7 @@
   };
 }
 {
-  // 3. Readonly<T>
+  // 3. Readonly<T> // 객체의 불변성
   type User = {
     name: string;
     age?: number;
@@ -80,7 +80,7 @@
 }
 {
   // 6. Record<K, T>
-  // 주어진 키와 값의 타입을 가지는 객체 타입을 생성할 때 쓰는 것것
+  // 주어진 키와 값의 타입을 가지는 객체 타입을 생성할 때 쓰는 것
 
   let obj3: Record<string, never> = {};
   const score: Record<string, number> = {
