@@ -1,0 +1,18 @@
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      isHtml: true,
+      htmlContent: '<b>HTML을 사용한 텍스트</b>',
+      plainContent: 'HTML을 사용하지 않은 텍스트',
+    }
+  },
+}
+</script>
+<template>
+  <!-- code here -->
+  <h1 v-if="isHtml === true" v-html="htmlContent"></h1>
+  <h1 v-else v-text="plainContent"></h1>
+</template>
+<style scoped></style>
