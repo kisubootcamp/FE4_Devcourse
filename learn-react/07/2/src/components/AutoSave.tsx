@@ -1,0 +1,32 @@
+import React, { useEffect, useState } from "react";
+
+export default function AutoSave() {
+  const [text, setText] = useState("");
+  const textChaneHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(e.target.value);
+  };
+
+  useEffect(() => {
+    const saveText = localStorage.getItem("savedText");
+    if (saveText) {
+      setText(saveText);
+    }
+  }, []);
+
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      localStorage.setItem("savedItem", text);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [text]);
+
+  return (
+    <>
+      <h1>{text}</h1>
+      <textarea value={text} onChange={textChaneHandler}></textarea>
+    </>
+  );
+}

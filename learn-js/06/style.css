@@ -1,0 +1,7 @@
+.title {
+  color: red;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
