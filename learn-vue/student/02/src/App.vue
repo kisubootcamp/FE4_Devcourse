@@ -1,14 +1,14 @@
 <template>
   <div>
-    <PracticeForm />
+    <TestLength />
   </div>
 </template>
 
 <script>
-import PracticeForm from './components/formPractice/Practice.vue'
+import TestLength from './components/testLength.vue'
 export default {
   components: {
-    PracticeForm,
+    TestLength,
   },
 }
 </script>
