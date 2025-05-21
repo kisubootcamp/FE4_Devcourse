@@ -67,7 +67,7 @@ export default {
     :style="{
       width: '100px',
       height: '100px',
-      border: 'black',
+      border: '1px solid black',
       backgroundColor: color,
     }"
   ></div>
