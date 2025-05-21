@@ -15,7 +15,7 @@ export default {
   name: 'PracticeForm06',
   data() {
     return {
-      selected: ['apple', 'banana', 'orange'],
+      selected: [],
     }
   },
 }

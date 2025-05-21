@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ age }}</h1>
-    <input type="range" v-model="age" />
+    <input type="range" v-model="age" min="1" max="100" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   name: 'PracticeForm03',
   data() {
     return {
-      age: 20,
+      age: 25,
     }
   },
 }
