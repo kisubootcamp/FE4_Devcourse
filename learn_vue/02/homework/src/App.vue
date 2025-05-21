@@ -1,4 +1,6 @@
 <script>
+import TextLength from './TextLength.vue'
+
 export default {
   name: 'App',
   data() {
@@ -23,6 +25,9 @@ export default {
     handleChangeText(e) {
       this.textarea = e.target.value
     },
+  },
+  components: {
+    TextLength,
   },
 }
 </script>
@@ -80,5 +85,10 @@ export default {
   <input type="color" v-model="color" />
   <div :style="{ whith: '100px', height: '100px', backgroundColor: color }"></div>
   <p>{{ color }}</p>
+  <br />
+  <!-- 글자수 세기 -->
+  <div>
+    <TextLength />
+  </div>
 </template>
 <style scoped></style>
