@@ -1,0 +1,20 @@
+const InputType =
+  "number" |
+  "button" |
+  "color" |
+  "date" |
+  "datetime-local" |
+  "email" |
+  "file" |
+  "hidden" |
+  "image" |
+  "month" |
+  "password" |
+  "reset" |
+  "search" |
+  "submit" |
+  "tel" |
+  "text" |
+  "time" |
+  "url" |
+  "week";
