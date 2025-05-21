@@ -1,0 +1,21 @@
+body {
+  font-family: "SF_HambakSnow";
+}
+
+img {
+  max-height: 200px;
+}
+
+.bg-a {
+  background: url("../asset/images/a.jpg");
+  width: 400px;
+  height: 200px;
+}
+/* 절대 경로 */
+
+.bg-b {
+  background: url("/images/b.jpg");
+  width: 400px;
+  height: 200px;
+}
+/* 상대 경로 */
