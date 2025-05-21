@@ -5,23 +5,17 @@ export default {
     return {
       condition: 'A',
       fruits: ['apple', 'banana', 'orange'],
-      userObj: {
-        name: '철수',
-        age: 20,
-      },
+      arrInObj: [
+        { name: '철수', age: 20 },
+        { name: '영희', age: 22 },
+      ],
     }
   },
 }
 </script>
 <template>
-  <!--텍스트 보간-->
-  <h1>{{ message }}</h1>
-  <h1>{{ 3 * 3 }}</h1>
-  <h1>{{ (3 * 3) % 2 === 0 ? '짝수' : '홀수' }}</h1>
+  <ul>
+    <li v-for="item in arrInObj" :key="item.id">{{ item.name }}</li>
+  </ul>
 </template>
-<style>
-h1,
-p {
-  color: green;
-}
-</style>
+<style scoped></style>
