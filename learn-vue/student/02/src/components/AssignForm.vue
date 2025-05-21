@@ -56,6 +56,7 @@ export default {
     <label> <input type="checkbox" v-model="fruits" value="orange" />orange </label>
     <h1>{{ fruits }}</h1>
   </div>
+
   <p>문제 7</p>
   <h1>{{ gender }}</h1>
   <input type="radio" v-model="gender" value="male" />male

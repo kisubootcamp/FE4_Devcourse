@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
 // import App from './App.vue'
-import Assign from './components/Assign.vue'
+import AssignForm from './components/AssignForm.vue'
 
-createApp(Assign).mount('#app')
+createApp(AssignForm).mount('#app')
