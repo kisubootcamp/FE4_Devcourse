@@ -3,6 +3,109 @@ export default {
   name: 'App',
   data() {
     return {
+      count: 0,
+      amount: 0,
+      numArr: [1, 2],
+      numArrD: [1, 2],
+    }
+  },
+  watch: {
+    count(newValue, oldValue) {
+      console.log('변경됨1', newValue, oldValue)
+    },
+    amount() {
+      console.log('amount 변경')
+    },
+    numArr() {
+      console.log('numArr 변경')
+    },
+
+    numArrD: {
+      handler(n, o) {
+        console.log(n)
+        console.log(o)
+      },
+      deep: true,
+    },
+  },
+}
+</script>
+<template>
+  <h1>Count: {{ count }}</h1>
+  <button @click="count += 1">click</button>
+  <h1>amount: {{ amount }}</h1>
+  <button @click="amount += 1">click</button>
+  <h1>numArr: {{ numArr }}</h1>
+  <button @click="numArr.push(3)">click</button>
+  <h1>numArrD: {{ numArrD }}</h1>
+  <button @click="numArrD.push(3)">click</button>
+</template>
+<style scoped></style>
+
+<!-- <script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      numArr: [1, 2, 3, 4, 5],
+    }
+  },
+
+  computed: {
+    evenSum() {
+      console.log('computed sum')
+      return this.numArr.filter((num) => num % 2 === 0).reduce((acc, cur) => acc + cur, 0)
+    },
+  },
+
+  methods: {
+    sumEven(numArr) {
+      console.log('methods sum')
+      return numArr.filter((num) => num % 2 === 0).reduce((acc, cur) => acc + cur, 0)
+    },
+    sumEven2() {
+      return this.numArr.filter((num) => num % 2 === 0).reduce((acc, cur) => acc + cur, 0)
+    },
+  },
+}
+</script>
+<template>
+  <h1>
+    <h1>EvenSum:{{ evenSum }}</h1>
+    <h1>EvenSum:{{ evenSum }}</h1>
+    <button @click="numArr.push(8)">click</button>
+  </h1>
+</template>
+<style scoped></style> -->
+
+<!-- <script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      firstName: 'Gildong',
+      lastName: 'hong',
+    }
+  },
+  computed: {
+    fullName() {
+      return `${this.lastName}${this.firstName}`
+    },
+  },
+}
+</script>
+<template>
+  <h1>{{ lastName }}{{ firstName }}</h1>
+  <h1>{{ fullName }}</h1>
+  <h1>{{ greet }}</h1>
+</template>
+<style scoped></style> -->
+
+<!-- <script>
+export default {
+  name: 'App',
+  data() {
+    return {
       text: '',
       drink: '',
       price: 0,
@@ -34,7 +137,7 @@ export default {
     <option value="juice">juice (1500)</option>
   </select>
 </template>
-<style scoped></style>
+<style scoped></style> -->
 
 <!-- <script>
 export default {
@@ -172,7 +275,7 @@ export default {
       this.count += 1
     },
     incrementByAmount() {
-      this.amount = +1
+      this.amount += 1
     },
   },
 }
@@ -198,19 +301,18 @@ export default {
       console.log(event.keyCode)
       console.log(event.key)
 
-      // if (event.keyCode === 13) {
-      //   console.log('Enter!')
-      // } else {
-      //   console.log(event.target.value)
-      // }
+      if (event.keyCode === 13) {
+        console.log('Enter!')
+      } else {
+        console.log(event.target.value)
+      }
     },
     onSubmitHandler(event) {},
   },
 }
 </script>
 <template>
-  이벤트 수식어(modifier)
-  이벤트의 처리방식을 제어하는데 사용하는 기능
+  이벤트 수식어(modifier) 이벤트의 처리방식을 제어하는데 사용하는 기능
   <form @submit.prevent="onSubmitHandler">
     <input type="text" @keydown.enter="onKeyupHandler($event)" />
     <input type="text" @keydown.tab="onKeyupHandler($event)" />
@@ -254,8 +356,8 @@ export default {
   <button @click="incrementByAmount(10)">10 증가</button>
 </template>
 <style scoped></style> -->
-
-<!-- <script>
+<!-- 
+<script>
 export default {
   name: 'App',
   data() {
@@ -273,14 +375,7 @@ export default {
 </script>
 <template>
   <h1>app vue</h1>
-  <button
-    v-on:click="
-      ;() => printHello('sucoding')
-      printHaha()
-    "
-  >
-    클릭
-  </button>
+  <button @click="() => printHello('sucoding')">클릭</button>
   <button @click="printHello('handsome')">클릭</button>
 </template>
 <style scoped></style> -->
