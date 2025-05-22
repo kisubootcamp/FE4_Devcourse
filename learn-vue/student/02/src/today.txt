@@ -1,0 +1,90 @@
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      count: 0,
+    }
+  },
+  methods: {
+    decrement() {
+      this.count -= 1
+    },
+    reset() {
+      this.count = 0
+    },
+    increment() {
+      this.count += 1
+    },
+    incrementByAmount(amount) {
+      this.count += amount
+    },
+  },
+}
+</script>
+<template>
+  <h1>Count: {{ count }}</h1>
+  <button @click="decrement">감소</button>
+  <button @click="reset">리셋</button>
+  <button @click="increment">증가</button>
+  <button @click="incrementByAmount(10)">증가</button>
+</template>
+<style scoped></style>
+-----------------------------------------------------------
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {}
+  },
+  methods: {
+    onKeyUpHandler(event) {
+      console.log(event.key)
+    },
+    onSubmitHandler() {},
+  },
+}
+</script>
+<template>
+  <!-- 이벤트 수식어(modifier) -->
+  <!-- 이벤트의 처리 방식을 제어하는 데 사용하는 기능 -->
+  <form @submit="onSubmitHandler">
+    <input type="text" @keydown.enter="onKeyUpHandler($event)" />
+    <input type="text" @keydown.tab="onKeyUpHandler($event)" />
+    <input type="text" @keydown.alt.enter="onKeyUpHandler($event)" />
+    <button type="submit">전송</button>
+  </form>
+  <a href="https://www.naver.com" @click.prevent>네이버 바로가기</a>
+</template>
+<style scoped></style>
+----------------------------------------------------------------------------
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      count: 0,
+      amount: 0,
+    }
+  },
+  methods: {
+    incrementByCount() {
+      this.count += 1
+    },
+    incrementByAmount() {
+      this.amount += 1
+    },
+  },
+}
+</script>
+<template>
+  <!-- v-once 렌더링을 한번만 함(리렌더링이 안됨) -->
+  <!-- v-memo 안에 값이 변경되면 메모리제이션이 풀리게 됨(?) -->
+  <div v-memo="[count, amount]">
+    <h1>Count:{{ count }}</h1>
+    <button @click="incrementByCount">count</button>
+    <h1>Amount:{{ amount }}</h1>
+    <button @click="incrementByAmount">amount</button>
+  </div>
+</template>
+<style scoped></style>
