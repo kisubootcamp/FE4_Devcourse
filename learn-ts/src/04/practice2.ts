@@ -220,9 +220,10 @@
 {
 	// ❌
 	// 5.
-	type NullOrUndefined = null | undefined;
-	function getValue(value: unknown): boolean {
-		if (value === NullOrUndefined) {
+	type NullOrUndefined = unknown; // unknown을 다른 변수에 할당할 수는 없다.
+
+	function getValue(value: NullOrUndefined): boolean {
+		if (Object.is(value, null) || typeof value === "undefined") {
 			return true;
 		} else {
 			return false;

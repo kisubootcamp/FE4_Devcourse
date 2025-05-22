@@ -1,3 +1,5 @@
+// 제네릭 연습문제
+// 연습문제
 {
 	//   ### 1. **숫자 배열의 첫 번째 값 구하기**
 
@@ -65,7 +67,7 @@
 
 	// ### 기존 코드:
 
-	function add<T, U>(a: T, b: U): T {
+	function add<T>(a: T, b: T): string | number {
 		if (typeof a == "number" && typeof b == "number") {
 			return a + b;
 		} else {
@@ -74,6 +76,7 @@
 	}
 
 	console.log(add(2, 3)); // 5
+	console.log(add(true, false));
 
 	// ### 요구 사항:
 
@@ -118,7 +121,7 @@
 	// - 제네릭을 사용하여 다른 타입의 값들에 대해서도 비교할 수 있도록 하세요.
 }
 {
-	// ❌
+	// ❌ -> ✅
 	//   ### 7. **배열의 모든 값을 제곱하는 함수**
 
 	// ### 문제:
@@ -127,8 +130,17 @@
 
 	// ### 기존 코드:
 
-	function square<K>(arr: K[]): K[] {
-		return arr.map((num) => num * num);
+	function square<T>(arr: T[]): number[] {
+		return arr.map((num) => {
+			if (typeof num === "string") {
+				return num.length * num.length;
+			} else if (typeof num === "number") {
+				return num * num;
+			} else if (typeof num === "boolean") {
+				return num ? 1 : 0;
+			}
+			throw new Error("계산이 불가능한 타입입니다.");
+		});
 	}
 
 	console.log(square([1, 2, 3])); // [1, 4, 9]
@@ -205,12 +217,12 @@
 
 	// ### 기존 코드:
 
-  function sumArray<T extends number | string>(arr: T[]): T {
-    if (arr.length === 0) {
-      return (typeof arr[0] === 'string' ? '' : 0) as T;
-    }
-    return arr.reduce((acc, curr) => (acc as any) + curr) as T;
-  }
+	function sumArray<T extends number | string>(arr: T[]): T {
+		if (arr.length === 0) {
+			return (typeof arr[0] === "string" ? "" : 0) as T;
+		}
+		return arr.reduce((acc, curr) => (acc as any) + curr) as T;
+	}
 
 	console.log(sumArray([1, 2, 3])); // 6
 
