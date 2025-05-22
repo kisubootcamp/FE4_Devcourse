@@ -37,10 +37,5 @@ const result3 = containsNumber([1, 2, 3, 4, 5], 5);
 console.log(result3);
 
 // 4. 애너그램인지 확인
-const isAnagrams = (str, a) => {
-  // .......
-};
-const result4 = isAnagrams('listen', 'silent');
-console.log(result4);
 
 // 5. 배열에서 두 수의 합

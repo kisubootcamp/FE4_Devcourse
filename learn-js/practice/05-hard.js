@@ -10,10 +10,23 @@ console.log(`피보나치 수열(${n1}항): `, fib);
 // 2. 소수 찾기
 let start = 1;
 let end = 100;
+let arr = [];
 
 for (let i = start; i < end; i++) {
-  // 모르겠군............ㅠ....
+  let result = true;
+  if (i < 2) continue;
+
+  for (let j = 2; j < Math.sqrt(i); j++) {
+    if (i % j === 0) {
+      result = false;
+      break;
+    }
+  }
+  if (result) {
+    arr.push(i);
+  }
 }
+console.log(arr);
 
 // 3. 배열 요소의 합 구하기
 const numbers = [5, 10, 15, 20, 25];
@@ -42,8 +55,3 @@ for (let i = 1; i <= 5; i++) {
 console.log(n);
 
 // 6. 암스트롱수
-for (let num = 100; num < 999; num++) {
-  let sum = 0;
-
-  //...........ㅠ
-}

@@ -176,6 +176,32 @@
 
 {
   // 8. 조건부 타입에 따른 인터페이스 필드 추가
+  interface User {
+    name: string;
+    isAdmin: boolean;
+    adminCode?: string;
+  }
+
+  function createUser(name: string, isAdmin: boolean): User {
+    if (isAdmin) {
+      return {
+        name,
+        isAdmin: true,
+        adminCode: '123',
+      };
+    } else {
+      return {
+        name,
+        isAdmin: false,
+      };
+    }
+  }
+
+  const admin = createUser('Alice', true);
+  const user = createUser('Bob', false);
+
+  console.log(admin); // { name: "Alice", isAdmin: true, adminCode: "admin123" }
+  console.log(user); // { name: "Bob", isAdmin: false }
 }
 
 {
