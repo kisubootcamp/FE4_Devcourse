@@ -71,10 +71,10 @@ export default {
           result = a * b
           break
         case '÷':
-          result = parseFloat(a / b).toFixed(4)
+          result = a / b
           break
       }
-      this.currentOperand = result.toString()
+      this.currentOperand = parseFloat(result.toFixed(10))
     },
     handleClickEquals() {
       if (this.operator === '' || this.currentOperand === '') return
