@@ -437,7 +437,9 @@ export default {
   </ul>
 </template> -->
 
-<!-- <script>
+Lv. 4
+
+<script>
 export default {
   name: 'App',
   data() {
@@ -449,15 +451,20 @@ export default {
       ],
     }
   },
+  conputed: {
+    sortAgeStudents() {
+      return [...this.students].sort((a, b) => b.age - a.age)
+    },
+  },
 }
 </script>
 <template>
   <ul>
-    <li v-for="student in students.sort((a, b) => (b.age = a.age))" :key="student.name">
+    <li v-for="student in sortAgeStudents" :key="student.name">
       {{ student.name }} - {{ student.age }}
     </li>
   </ul>
-</template> -->
+</template>
 
 <!-- <script>
 export default {
