@@ -1,0 +1,24 @@
+<script>
+export default {
+  name: 'BaseTimer',
+  data() {
+    return {
+      count: 0,
+      interval: null,
+    }
+  },
+  // beforeMount나 mounted에 해도 상관 없음
+  created() {
+    this.interval = setInterval(() => {
+      this.count += 1
+    }, 1000)
+  },
+  beforeUnmount() {
+    clearInterval(this.interval) // 메모리 누수 방지
+  },
+}
+</script>
+<template>
+  <h1>count: {{ count }}</h1>
+</template>
+<style scoped></style>
