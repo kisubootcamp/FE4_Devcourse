@@ -1,6 +1,11 @@
 <script>
 export default {
   name: 'CustomerHeader',
+  props: {
+    isShowAll: {
+      type: Boolean,
+    },
+  },
   emits: ['clickViewAll'],
 }
 </script>
@@ -11,6 +16,7 @@ export default {
       href="#"
       class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
       @click="$emit('clickViewAll')"
+      v-show="!isShowAll"
     >
       View all
     </a>
