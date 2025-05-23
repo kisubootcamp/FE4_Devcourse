@@ -1,3 +1,4 @@
+<!--form-->
 <script>
 export default {
   name: 'App-2',
