@@ -3,6 +3,7 @@ export default {
   name: 'CustomerHeader',
   props: {
     toggleView: { type: Function, required: true },
+    viewAll: { type: Boolean, required: true },
   },
   data() {
     return {}
@@ -16,6 +17,7 @@ export default {
       @click="toggleView"
       href="#"
       class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+      v-show="!viewAll"
     >
       View all
     </a>
