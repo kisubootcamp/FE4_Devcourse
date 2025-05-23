@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import App3 from './App-3.vue'
 
-createApp(App).mount('#app')
+createApp(App3).mount('#app')
