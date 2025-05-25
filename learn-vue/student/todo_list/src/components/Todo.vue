@@ -1,15 +1,17 @@
 <script setup>
-import { reactive, provide } from "vue";
+import { reactive, provide, onMounted } from "vue";
 import TodoEditor from "./TodoEditor.vue";
 import TodoHeader from "./TodoHeader.vue";
 import TodoList from "./TodoList.vue";
 
 const todos = reactive([]);
 
-const storageTodos = localStorage.getItem("todos");
-if (storageTodos) {
-  todos.push(...JSON.parse(storageTodos));
-}
+onMounted(() => {
+  const storageTodos = localStorage.getItem("todos");
+  if (storageTodos) {
+    todos.push(...JSON.parse(storageTodos));
+  }
+});
 
 const saveTodos = () => {
   localStorage.setItem("todos", JSON.stringify(todos));
