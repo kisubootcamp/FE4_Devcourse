@@ -1,9 +1,10 @@
-np<!doctype html>
-<html lang="en">
+<!doctype html>
+<html lang="">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search</title>
+    <title>Vite App</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -11,91 +12,9 @@ np<!doctype html>
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app">
-      <div class="search-form" role="search">
-        <div class="input-group">
-          <button type="button" aria-label="Search">
-            <i class="fas fa-search"></i>
-          </button>
-          <input
-            type="text"
-            placeholder="Search"
-            aria-autocomplete="list"
-            aria-controls="auto-complete"
-          />
-          <button type="button" aria-label="Microphone">
-            <i class="fas fa-microphone"></i>
-          </button>
-        </div>
-        <ul
-          class="auto-complete"
-          id="auto-complete"
-          role="listbox"
-          aria-expanded="false"
-          aria-hidden="true"
-        >
-          <!-- <li class="auto-complete-list">
-          <span><i class="fas fa-search"></i></span> sample text
-        </li> -->
-        </ul>
-      </div>
-    </div>
-    <script>
-      const searchForm = document.querySelector('.search-form')
-      const input = document.querySelector('input')
-      const autoCompleteList = document.querySelector('.auto-complete')
-
-      input.addEventListener('focusin', () => {
-        if (input.value.length > 0) searchForm.classList.add('active')
-      })
-
-      input.addEventListener('input', () => {
-        if (input.value.length > 0) {
-          updateAutoComplete(input.value)
-        } else {
-          clearAutoComplete()
-        }
-      })
-
-      function updateAutoComplete(query) {
-        const searchDatas = [
-          'apple',
-          'awesome',
-          'animal',
-          'banana',
-          'born',
-          'butterfly',
-          'cat',
-          'creative',
-          'cookie',
-        ]
-        const filter = searchDatas.filter((v) => v.includes(query))
-        if (filter.length > 0) {
-          searchForm.classList.add('active')
-          autoCompleteList.innerHTML = ''
-          filter.forEach((v) => {
-            autoCompleteList.innerHTML += `<li class="auto-complete-list">
-          <span><i class="fas fa-search"></i></span> ${v}
-        </li>`
-          })
-        }
-      }
-
-      function clearAutoComplete() {
-        searchForm.classList.remove('active')
-        autoCompleteList.innerHTML = ''
-      }
-
-      autoCompleteList.addEventListener('click', (event) => {
-        if (event.target.classList.contains('auto-complete-list')) {
-          const selectedText = event.target.textContent.trim()
-          input.value = selectedText
-          searchForm.classList.remove('active')
-        }
-      })
-    </script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
