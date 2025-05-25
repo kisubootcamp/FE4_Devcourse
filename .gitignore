@@ -26,4 +26,5 @@ package-lock.json
 *.njsproj
 *.sln
 *.sw?
-learn-vue/teather
+
+teather
