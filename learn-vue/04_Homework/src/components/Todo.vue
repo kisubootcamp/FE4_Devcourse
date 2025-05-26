@@ -2,7 +2,6 @@
 import TodoEditor from "./TodoEditor.vue";
 import TodoHeader from "./TodoHeader.vue";
 import TodoList from "./TodoList.vue";
-import { ref, watch } from "vue";
 
 export default {
     components: {
@@ -42,8 +41,8 @@ export default {
 <template>
     <div class="max-w-md mx-auto shadow-lg rounded-lg overflow-hidden">
         <TodoHeader />
-        <TodoEditor @createTodo="createTodo" />
-        <TodoList :todos="todos" @deleteTodo="deleteTodo" />
+        <TodoEditor @create-todo="createTodo" />
+        <TodoList :todos="todos" @delete-todo="deleteTodo" />
     </div>
 </template>
 <style></style>

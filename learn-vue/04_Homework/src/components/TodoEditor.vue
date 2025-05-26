@@ -15,7 +15,7 @@ export default {
 };
 </script>
 <template>
-    <div class="flex p-4">
+    <form class="flex p-4" @submit.prevent="createHandler">
         <input
             type="text"
             placeholder="Enter a new todo"
@@ -24,10 +24,9 @@ export default {
         />
         <button
             class="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition-colors"
-            @click="createHandler"
         >
             Add Todo
         </button>
-    </div>
+    </form>
 </template>
 <style></style>
