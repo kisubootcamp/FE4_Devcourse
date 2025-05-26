@@ -1,11 +1,14 @@
 <script>
 export default {
   data() {
-    return {
-      isCompleted: false,
-    };
+    return {};
   },
-  props: ["item", "index"],
+  props: {
+    todo: {
+      type: Object,
+    },
+  },
+  emits: ["toggleTodo", "deleteTodo"],
 };
 </script>
 <template>
@@ -13,12 +16,13 @@ export default {
     <div class="flex items-center">
       <input
         type="checkbox"
-        v-model="isCompleted"
+        :checked="todo.done"
+        @change="$emit('toggleTodo', todo.id)"
         :class="`mr-3 h-4 w-4 text-blue-500 focus:ring-blue-400`"
       />
-      <span :style="{ textDecoration: isCompleted ? 'line-through' : 'none' }">{{ item }}</span>
+      <span>{{ todo.text }}</span>
     </div>
-    <button @click="$emit('delete', index)" class="text-red-500 hover:text-red-700 ml-4">
+    <button @click="$emit('deleteTodo', todo.id)" class="text-red-500 hover:text-red-700 ml-4">
       Delete
     </button>
   </li>

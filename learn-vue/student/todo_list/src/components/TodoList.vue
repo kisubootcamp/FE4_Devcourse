@@ -8,17 +8,30 @@ export default {
   data() {
     return {};
   },
-  props: ["itemsArr"],
+  props: {
+    todos: {
+      type: Array,
+    },
+  },
+  emits: ["toggleTodo", "deleteTodo"],
+  methods: {
+    toggleTodo(id) {
+      this.$emit("toggleTodo", id);
+    },
+    deleteTodo(id) {
+      this.$emit("deleteTodo", id);
+    },
+  },
 };
 </script>
 <template>
   <ul class="divide-y divide-gray-200">
     <TodoListItem
-      v-for="(item, index) in itemsArr"
-      :key="index"
-      :item="item"
-      :index="index"
-      @delete="$emit('delete', $event)"
+      v-for="todo in todos"
+      :key="todo.id"
+      :todo="todo"
+      @delete-todo="deleteTodo"
+      @toggle-todo="toggleTodo"
     />
   </ul>
 </template>
