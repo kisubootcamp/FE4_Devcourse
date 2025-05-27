@@ -10,17 +10,17 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/post/:id(\\d+)',
+      name: 'post-detail',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      component: () => import('../views/PostDetailView.vue'),
     },
     {
-      path: '/data-fetch',
-      name: 'dataFetch',
-      component: () => import('../views/DataView.vue'),
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFound.vue'),
     },
   ],
 })
