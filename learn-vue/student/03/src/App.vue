@@ -1,11 +1,70 @@
 <script>
-import CountButtons from './components/CountButtons.vue'
+import AssignCalculator from './components/AssignCalculator.vue'
+
+export default {
+  name: 'App',
+  components: {
+    AssignCalculator,
+  },
+  data() {
+    return {}
+  },
+}
+</script>
+<template>
+  <AssignCalculator />
+</template>
+<style scoped></style>
+
+<!-- <script>
+import CountGroup from './components/CountGroup.vue'
+
+export default {
+  name: 'App',
+  components: {
+    CountGroup,
+  },
+  data() {
+    return {
+      count: 0,
+    }
+  },
+  provide() {
+    return {
+      name: 'sucoding',
+      count: () => this.count,
+      up: this.countUp,
+      reset: this.reset,
+      down: this.countDown,
+    }
+  },
+  methods: {
+    countUp() {
+      return (this.count += 1)
+    },
+    reset() {
+      return (this.count = 0)
+    },
+    countDown() {
+      return (this.count -= 1)
+    },
+  },
+}
+</script>
+<template>
+  <CountGroup />
+</template>
+<style scoped></style> -->
+
+<!-- <script>
+// import CountButtons from './components/CountButtons.vue'
+import CountButtonsWithProp from './components/CountButtonsWithProp.vue'
 import CountDisplay from './components/CountDisplay.vue'
 
 export default {
   name: 'App',
   components: {
-    CountButtons,
+    CountButtonsWithProp,
     CountDisplay,
   },
   data() {
@@ -30,8 +89,9 @@ export default {
   <h1>Appvue</h1>
   <CountDisplay :count="count" />
   <CountButtons @up="countUp" @reset="reset" @down="countDown" />
+  <CountButtonsWithProp :up="countUp" :reset="reset" :down="countDown" />
 </template>
-<style scoped></style>
+<style scoped></style> -->
 
 <!-- <script>
 export default {

@@ -1,15 +1,16 @@
 <script>
 export default {
   name: 'CountDisplay',
-  data() {
-    return {}
-  },
-  props: {
-    count: Number,
+
+  inject: ['count'],
+  computed: {
+    currentCount() {
+      return this.count()
+    },
   },
 }
 </script>
 <template>
-  <h1>Count: {{ count }}</h1>
+  <h1>Count: {{ currentCount }}</h1>
 </template>
 <style scoped></style>

@@ -1,11 +1,22 @@
 <script>
 export default {
-  name: 'CountButtons',
+  name: 'CountButtonsWithProp',
   data() {
     return {}
   },
 
-  inject: ['up', 'reset', 'down'],
+  // emits: ['up', 'reset', 'down'],
+  props: {
+    up: {
+      type: Function,
+    },
+    reset: {
+      type: Function,
+    },
+    down: {
+      type: Function,
+    },
+  },
 }
 </script>
 <template>
