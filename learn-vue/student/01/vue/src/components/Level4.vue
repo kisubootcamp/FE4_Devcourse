@@ -37,15 +37,30 @@ export default {
       ],
     }
   },
+  computed: {
+    sortedStudents() {
+      return [...this.students].sort((a, b) => b.age - a.age)
+    },
+    mt50000products() {
+      return this.products.filter((product) => product.price >= 50000)
+    },
+    filteredMembers() {
+      return this.teamMembers.reduce((acc, member) => {
+        if (!acc[member.role]) {
+          acc[member.role] = []
+        }
+        acc[member.role].push(member)
+        return acc
+      }, {})
+    },
+  },
 }
 </script>
 <template>
-  <li v-for="student in students.sort((a, b) => b.age - a.age)" :key="student">
-    {{ student.name }} - {{ student.age }}
-  </li>
+  <li v-for="student in sortedStudents" :key="student">{{ student.name }} - {{ student.age }}</li>
   <hr />
 
-  <li v-for="product in products.filter((product) => product.price >= 50000)" :key="product">
+  <li v-for="product in mt50000products" :key="product">
     {{ product.name }} - {{ product.price }}
   </li>
   <hr />
@@ -73,16 +88,7 @@ export default {
   </li>
   <hr />
 
-  <li
-    v-for="(members, index) in teamMembers.reduce((acc, member) => {
-      if (!acc[member.role]) {
-        acc[member.role] = []
-      }
-      acc[member.role].push(member)
-      return acc
-    }, {})"
-    :key="index"
-  >
+  <li v-for="(members, index) in filteredMembers" :key="index">
     {{ index }}
     <ul>
       <li v-for="member in members" :key="member">
