@@ -23,12 +23,12 @@
 	const user: User = { name: "kisu" };
 	const car: Car = { name: "bmw", speed: 100 };
 
-	function printValue(obj: User | Car) {
+	function printValue1(obj: User | Car) {
 		if ("speed" in obj) console.log(obj.speed);
 		else console.log(obj.name);
 	}
-	printValue(user);
-	printValue(car);
+	printValue1(user);
+	printValue1(car);
 }
 
 {
@@ -49,7 +49,7 @@
 	vehicle = car;
 	console.log(vehicle.name);
 
-	function printValue(obj: Car) {
+	function printValue2(obj: Car) {
 		console.log(`${obj.name}, ${obj.speed}`);
 	}
 
