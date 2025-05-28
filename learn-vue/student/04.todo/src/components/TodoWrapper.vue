@@ -46,8 +46,8 @@ export default {
 <template>
   <div class="max-w-md mx-auto shadow-lg rounded-lg overflow-hidden">
     <TodoHeader />
-    <TodoEditor @addTodoItem="addTodoItem" />
-    <TodoList :todoList="todoList" @deleteTodoItem="deleteTodoItem" />
+    <TodoEditor @add-todo-item="addTodoItem" />
+    <TodoList :todoList="todoList" @delete-todo-item="deleteTodoItem" />
   </div>
 </template>
 <style></style>

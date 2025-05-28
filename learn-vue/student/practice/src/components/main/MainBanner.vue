@@ -19,8 +19,9 @@ const randomMovie = computed(() => {
 })
 </script>
 <template>
-  <section v-if="!props.loading && randomMovie" class="release">
+  <section class="release">
     <div
+      v-if="!props.loading && randomMovie"
       class="release-item"
       :style="`background-image: url('https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}')`"
     >
@@ -35,6 +36,7 @@ const randomMovie = computed(() => {
         </button>
       </div>
     </div>
+    <div v-else class="release-item"></div>
   </section>
 </template>
 <style scoped></style>

@@ -49,33 +49,33 @@ onMounted(() => {
   </header>
   <nav class="navigator">
     <ul class="navigator-list">
-      <li class="navigator-list__item">
+      <li class="navigator-list__item" @click="router.push('/')">
         <img src="@/assets/icons/home.png" alt="" class="navigator-list__icon" />
         <strong class="navigator-list__txt">메인</strong>
       </li>
-      <li class="navigator-list__item">
+      <li class="navigator-list__item" @click="router.push('/movie/now_playing')">
         <img src="@/assets/icons/live.png" alt="" class="navigator-list__icon" />
         <strong class="navigator-list__txt">상영중</strong>
       </li>
-      <li class="navigator-list__item">
+      <li class="navigator-list__item" @click="router.push('/movie/popular')">
         <img src="@/assets/icons/popluar.png" alt="" class="navigator-list__icon" />
         <strong class="navigator-list__txt">인기작</strong>
       </li>
 
-      <li class="navigator-list__item">
+      <li class="navigator-list__item" @click="router.push('/movie/upcoming')">
         <img src="@/assets/icons/video.png" alt="" class="navigator-list__icon" />
         <strong class="navigator-list__txt">개봉예정</strong>
       </li>
-      <li class="navigator-list__item">
+      <li @click="searchFlag = true" class="navigator-list__item">
         <img src="@/assets/icons/search.png" alt="" class="navigator-list__icon" />
-        <strong class="navigator-list__txt" @click="searchFlag = true">검색</strong>
+        <strong class="navigator-list__txt">검색</strong>
       </li>
     </ul>
   </nav>
-  <section class="search-box">
+  <section v-if="searchFlag" class="search-box">
     <div class="search-input">
       <div class="search-wrap">
-        <button>x</button>
+        <button @click="searchFlag = false">x</button>
         <input
           v-model="keyword"
           @keydown.enter="search"
@@ -83,7 +83,7 @@ onMounted(() => {
           placeholder="영화 제목을 입력하세요"
           autocomplete="off"
         />
-        <span class="material-symbols-outlined icon" @click="searchFlag = true"> search </span>
+        <span class="material-symbols-outlined icon" @click="searchFlag = false"> search </span>
       </div>
     </div>
   </section>
