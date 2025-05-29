@@ -52,15 +52,17 @@ export default {
       const korean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/
       for (let i = 0; i < this.text.length; i++) {
         if (!korean.test(this.text[i])) {
-          total += 2
-        } else {
           total += 1
+        } else {
+          total += 2
         }
       }
       this.byte = total
     },
     copied() {
-      alert('복사 되었습니다!')
+      navigator.clipboard.writeText(this.text).then(() => {
+        alert('복사 되었습니다!')
+      })
     },
   },
 }
