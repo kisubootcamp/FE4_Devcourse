@@ -12,13 +12,21 @@ export default {
     todoList: Array,
   },
   emits: ['deleteTodoItem'],
+  methods: {
+    deleteTodoItem(id) {
+      this.$emit('deleteTodoItem', id)
+    },
+  },
 }
 </script>
 <template>
   <ul class="divide-y divide-gray-200">
-    <template v-for="todoItem in todoList" :key="todoItem.id">
-      <TodoListItem :todoItem="todoItem" @deleteTodoItem="$emit('deleteTodoItem', todoItem.id)" />
-    </template>
+    <TodoListItem
+      v-for="todoItem in todoList"
+      :key="todoItem.id"
+      :todoItem="todoItem"
+      @delete-todo-item="deleteTodoItem"
+    />
   </ul>
 </template>
 <style></style>
