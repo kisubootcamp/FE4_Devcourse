@@ -37,11 +37,16 @@ export default {
       ],
     }
   },
+  computed: {
+    sortAgeStudents() {
+      return [...this.students].sort((a, b) => b.age - a.age)
+    },
+  },
 }
 </script>
 <template>
   <ul>
-    <li v-for="student in students.sort((a, b) => b.age - a.age)" :key="student.name">
+    <li v-for="student in sortAgeStudents" :key="student.name">
       {{ student.name }} - {{ student.age }}
     </li>
   </ul>
