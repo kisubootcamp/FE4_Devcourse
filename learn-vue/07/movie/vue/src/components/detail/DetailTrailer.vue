@@ -5,11 +5,11 @@ const props = defineProps({
 })
 </script>
 <template>
-  <section v-if="!props.loading" class="trailer">
+  <section v-if="!props.loading && props.video.length > 0" class="trailer">
     <iframe
       width="900"
       height="506"
-      :src="`https://www.youtube.com/embed/${props.video[0]?.key}`"
+      :src="`https://www.youtube.com/embed/${props.video[0].key}`"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
