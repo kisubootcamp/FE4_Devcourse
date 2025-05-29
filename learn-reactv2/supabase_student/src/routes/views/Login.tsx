@@ -3,7 +3,7 @@ import Button from "../../components/ui/Button";
 import supabase from "../../utils/supabase";
 
 export default function Login() {
-  const handleLogin = async (method: string) => {
+  const handleLogin = async (method: "github" | "google") => {
     await supabase.auth.signInWithOAuth({
       provider: method,
     });
