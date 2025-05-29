@@ -3,7 +3,7 @@ import Button from "../../components/ui/Button";
 import supabase from "../../utils/supabase";
 
 export default function Login() {
-  const handleLogin = async (method: "github" | "google") => {
+  const handleLogin = async (method: "github" | "google" | "kakao") => {
     await supabase.auth.signInWithOAuth({
       provider: method,
     });
@@ -51,6 +51,20 @@ export default function Login() {
                   className="w-5 h-5 mr-2"
                 />
                 Continue with Github
+              </Button>
+              <Button
+                type="button"
+                variant="secondary"
+                fullWidth
+                className="bg-white text-bl hover:bg-gray-100 text-black! border-gray-200"
+                onClick={() => handleLogin("kakao")}
+              >
+                <img
+                  src="https://cdn.simpleicons.org/kakaotalk/FFCD00"
+                  alt="KakaoTalk"
+                  className="w-5 h-5 mr-2"
+                />
+                Continue with Kakao
               </Button>
             </div>
           </div>
