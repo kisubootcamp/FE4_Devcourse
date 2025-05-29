@@ -30,6 +30,22 @@ export default {
     //   todo.done = !todo.done;
     // },
   },
+
+  // 새로 고침 시, 여전히 남아있도록 하기 위한 코드
+  mounted() {
+    const saved = sessionStorage.getItem("todos");
+    if (saved) {
+      this.todos = JSON.parse(saved);
+    }
+  },
+  watch: {
+    todos: {
+      deep: true,
+      handler(newTodo) {
+        sessionStorage.setItem("todos", JSON.stringify(newTodo));
+      },
+    },
+  },
 };
 </script>
 <template>
