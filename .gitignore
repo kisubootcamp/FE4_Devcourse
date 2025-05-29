@@ -25,9 +25,12 @@ env.*
 *.njsproj
 *.sln
 *.sw?
-
+.env
 
 _pictures
+learn-react
+learn-reactv2/react-router
 learn-pr
 learn-vite-ts
+learn-vue
 teacher
