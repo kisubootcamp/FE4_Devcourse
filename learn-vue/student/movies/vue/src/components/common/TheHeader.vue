@@ -3,13 +3,16 @@
     <router-link to="/"><h1 class="header__logo">Wave</h1></router-link>
     <ul class="header__navi">
       <li>
-        <a href="#">상영중</a>
+        <router-link to="/movie/now_playing">상영중</router-link>
       </li>
       <li>
-        <a href="#">인기작</a>
+        <router-link to="/movie/popular">인기작</router-link>
       </li>
       <li>
-        <a href="#">개봉예정</a>
+        <router-link to="/movie/upcoming">개봉예정</router-link>
+      </li>
+      <li>
+        <router-link to="/movie/top_rated">높은평점</router-link>
       </li>
     </ul>
     <div class="header-search">

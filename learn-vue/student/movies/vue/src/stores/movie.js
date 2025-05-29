@@ -102,6 +102,71 @@ export const useMovieStore = defineStore('movie', () => {
     }
   }
 
+  // 무비 트레일러
+  const movieTrailerList = ref([])
+  const movieTrailerListLoading = ref(false)
+  const getMovieTrailler = async (id) => {
+    try {
+      movieTrailerList.value = true
+      const response = await useFetch(`/movie/${id}/videos`, 'GET', {
+        language: 'ko-KR',
+      })
+      movieTrailerList.value = response.data.results
+      movieTrailerListLoading.value = false
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  // 영화 상세 정보
+  const movieDetail = ref([])
+  const movieDetailLoading = ref(false)
+  const getMovieDetail = async (id) => {
+    try {
+      movieDetailLoading.value = true
+      const response = await useFetch(`/movie/${id}`, 'GET', {
+        language: 'ko-KR',
+      })
+      movieDetail.value = response.data
+      movieDetailLoading.value = false
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  // 무비 크레딧
+  const movieCreditList = ref([])
+  const movieCreditListLoading = ref(false)
+  const getMovieCredit = async (id) => {
+    try {
+      movieCreditListLoading.value = true
+      const response = await useFetch(`/movie/${id}/credits`, 'GET', {
+        language: 'ko-KR',
+      })
+      movieCreditList.value = response.data
+      movieCreditListLoading.value = false
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  // 관련 장르
+  const movieGenreList = ref([])
+  const movieGenreListLoading = ref(false)
+  const getMovieGenre = async (genres) => {
+    try {
+      movieGenreListLoading.value = true
+      const response = await useFetch(`/discover/movie`, 'GET', {
+        language: 'ko-KR',
+        with_genres: genres,
+      })
+      movieGenreList.value = response.data.results
+      movieGenreListLoading.value = false
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
   return {
     moviePlayingList,
     moviePlayingListLoading,
@@ -123,5 +188,21 @@ export const useMovieStore = defineStore('movie', () => {
     movieMoreListloading,
     newMoreLoading,
     getMovieMore,
+
+    movieTrailerList,
+    movieTrailerListLoading,
+    getMovieTrailler,
+
+    movieDetail,
+    movieDetailLoading,
+    getMovieDetail,
+
+    movieCreditList,
+    movieCreditListLoading,
+    getMovieCredit,
+
+    movieGenreList,
+    movieGenreListLoading,
+    getMovieGenre,
   }
 })

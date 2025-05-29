@@ -2,7 +2,8 @@
   <section class="movie">
     <h3 class="movie-category">{{ subTitle }}</h3>
     <h4 class="movie-subtext">
-      {{ title }} <router-link :to="`/movie/${type}`">더보기</router-link>
+      {{ title }}
+      <router-link :to="`/movie/${type}`" v-if="type !== 'relative'">더보기</router-link>
     </h4>
     <div class="movie-list">
       <template v-if="loading">
