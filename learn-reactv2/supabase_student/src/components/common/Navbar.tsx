@@ -3,8 +3,13 @@ import { GitBranch, Menu, X, Search, Github, PenSquare } from "lucide-react";
 import Avatar from "../ui/Avatar";
 import { useNavigate } from "react-router";
 import Button from "../ui/Button";
+import { useAuthStore } from "../../stores/authStore";
+import supabase from "../../utils/supabase";
 
 export default function Navbar() {
+  const session = useAuthStore((state) => state.session);
+  const isLogin = useAuthStore((state) => state.isLogin);
+  const setLogout = useAuthStore((state) => state.setLogout);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -12,6 +17,11 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (!error) setLogout();
+  };
+  console.log(session);
   return (
     <nav className="bg-[#161B22] text-white sticky top-0 z-50 border-b border-[#30363d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,42 +57,49 @@ export default function Navbar() {
               />
             </div>
             {/* 로그인 */}
-            <div className="flex items-center ml-3">
-              <Button
-                variant="secondary"
-                size="sm"
-                className="mr-3"
-                onClick={() => navigate("/create-post")}
-                icon={<PenSquare size={16} />}
-              >
-                Write
-              </Button>
-              <GitBranch className="h-5 w-5 text-gray-400 mr-3" />
-              <div className="relative">
-                <button className="flex items-center text-sm focus:outline-none">
-                  <Avatar
-                    src={`https://api.dicebear.com/7.x/pixel-art/svg?seed=${encodeURIComponent(
-                      "user"
-                    )}`}
-                    alt={"User"}
-                    size="sm"
-                  />
-                </button>
+            {isLogin && (
+              <div className="flex items-center ml-3">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="mr-3"
+                  onClick={() => navigate("/create-post")}
+                  icon={<PenSquare size={16} />}
+                >
+                  Write
+                </Button>
+                <GitBranch className="h-5 w-5 text-gray-400 mr-3" />
+                <div className="relative">
+                  <button className="flex items-center text-sm focus:outline-none">
+                    <Avatar
+                      src={session?.user.user_metadata.avatar_url}
+                      alt={session?.user.user_metadata.name}
+                      size="sm"
+                    />
+                  </button>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="ml-3"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Button>
               </div>
-              <Button variant="ghost" size="sm" className="ml-3">
-                Logout
-              </Button>
-            </div>
+            )}
             {/* 로그아웃 상태 */}
-            <div className="flex items-center space-x-3">
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => navigate("/login")}
-              >
-                Login
-              </Button>
-            </div>
+            {!isLogin && (
+              <div className="flex items-center space-x-3">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </Button>
+              </div>
+            )}
           </div>
           <div className="md:hidden flex items-center">
             <button

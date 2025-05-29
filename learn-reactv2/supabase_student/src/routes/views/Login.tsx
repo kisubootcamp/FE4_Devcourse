@@ -1,7 +1,13 @@
 import { Github } from "lucide-react";
 import Button from "../../components/ui/Button";
+import supabase from "../../utils/supabase";
 
 export default function Login() {
+  const handleGoogleLogin = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google", // 'discord'
+    });
+  };
   return (
     <div className="min-h-screen bg-[#0D1117] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
@@ -23,6 +29,7 @@ export default function Login() {
               variant="secondary"
               fullWidth
               className="bg-white text-bl hover:bg-gray-100 text-black! border-gray-200"
+              onClick={handleGoogleLogin}
             >
               <img
                 src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
