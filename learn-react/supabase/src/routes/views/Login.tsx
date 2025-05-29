@@ -8,6 +8,12 @@ export default function Login() {
       provider: "google",
     });
   };
+
+  const handleGithubLogin = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "github",
+    });
+  };
   return (
     <div className="min-h-screen bg-[#0D1117] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
@@ -28,7 +34,7 @@ export default function Login() {
               type="button"
               variant="secondary"
               fullWidth
-              className="bg-white text-bl hover:bg-gray-100 text-black! border-gray-200"
+              className="bg-white text-bl hover:bg-gray-100 text-black! border-gray-200 mb-2"
               onClick={handleGoogleLogin}
             >
               <img
@@ -37,6 +43,20 @@ export default function Login() {
                 className="w-5 h-5 mr-2"
               />
               Continue with Google
+            </Button>
+            <Button
+              type="button"
+              variant="secondary"
+              fullWidth
+              className="bg-[#24292e] text-bl hover:[#24292e80] text-white! border-[#24292e] cursor-pointer"
+              onClick={handleGithubLogin}
+            >
+              <img
+                src="https://cdn.simpleicons.org/github/ffffff"
+                alt="GitHub Logo"
+                className="w-5 h-5 mr-2"
+              />
+              Continue with GitHub
             </Button>
           </div>
 
