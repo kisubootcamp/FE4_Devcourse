@@ -1,0 +1,33 @@
+<script>
+export default {
+  name: 'OptionCount',
+  data() {
+    return {
+      count: 0,
+    }
+  },
+  computed: {
+    doubleCount() {
+      return this.count * 2
+    },
+  },
+  methods: {
+    increment() {
+      this.count += 1
+    },
+    reset() {
+      this.count = 0
+    },
+    decrement() {
+      this.count -= 1
+    },
+  },
+}
+</script>
+<template>
+  <h1>Count: {{ count }}</h1>
+  <button @click="decrement">-</button>
+  <button @click="reset">0</button>
+  <button @click="increment">+</button>
+</template>
+<style scoped></style>
