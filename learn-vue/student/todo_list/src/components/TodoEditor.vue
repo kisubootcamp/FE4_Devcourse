@@ -1,7 +1,8 @@
 <script setup>
-import { inject, ref } from "vue";
+import { ref } from "vue";
+import { useTodoListStore } from "../stores/todoList";
+const { addTodo } = useTodoListStore();
 
-const addTodo = inject("addTodo");
 const newTodo = ref("");
 const isComposing = ref(false);
 

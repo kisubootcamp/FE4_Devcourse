@@ -1,9 +1,7 @@
 <script setup>
-import { inject } from "vue";
+import { useTodoListStore } from "../stores/todoList";
 
-const todos = inject("todos");
-const removeTodo = inject("removeTodo");
-const toggleTodo = inject("toggleTodo");
+const { todos, removeTodo, toggleTodo } = useTodoListStore();
 </script>
 <template>
   <li
