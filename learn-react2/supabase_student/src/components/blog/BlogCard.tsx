@@ -16,10 +16,7 @@ export default function BlogCard() {
         </div>
 
         <p className="text-[#c9d1d9] mb-6 line-clamp-3">
-          김기수 강사님은 롤 10년차지만 실버이다.
-          <br />
-          세상에 모든 실버들은 다 그런다. 본인은 실버 실력이 아니라고..
-          <br /> 강사님도 그러더라 난 실버 실력이 아니라고..
+          김기수 강사님은 정말 인품, 지성 등 어디 하나 빠지지 않는다?
         </p>
 
         <div className="flex justify-between items-center">
