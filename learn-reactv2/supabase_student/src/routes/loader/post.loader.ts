@@ -1,16 +1,24 @@
 import { LoaderFunctionArgs } from "react-router";
 import supabase from "../../utils/supabase";
 
-export const fetchPosts = async () => {
+export const fetchPosts = async ({ request }: LoaderFunctionArgs) => {
+  const url = new URL(request.url);
+  const q = url.searchParams.get("query") ?? "";
+
   try {
-    const { data: posts } = await supabase.from("posts").select(`
+    const { data: posts } = await supabase
+      .from("posts")
+      .select(
+        `
     *,
     profiles (
       id, 
       username,
       avatar_url
     )
-  `);
+  `
+      )
+      .ilike("title", `%${q}%`); // 예: 제목에 검색어 포함 필터
 
     return posts;
   } catch (e) {
