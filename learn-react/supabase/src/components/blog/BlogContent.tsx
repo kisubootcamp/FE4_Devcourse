@@ -1,8 +1,9 @@
-import { Calendar, Clock, Tag } from "lucide-react";
+import { Calendar, Clock, Ellipsis, Tag } from "lucide-react";
 import Avatar from "../ui/Avatar";
 import { PostDetail } from "../../routes/views/BlogPost";
 import { format } from "date-fns";
 import { readingTime } from "reading-time-estimator";
+import { useAuthStore } from "../../stores/authStore";
 
 // Simple markdown parser
 const parseMarkdown = (markdown: string): string => {
@@ -78,17 +79,29 @@ const parseMarkdown = (markdown: string): string => {
 
 export default function BlogContent({
   title,
+  id,
   profiles,
   content,
   created_at,
   tags,
-}: PostDetail) {
+  handleDeletePost,
+}: PostDetail & { handleDeletePost: (id: number) => Promise<void> }) {
+  const session = useAuthStore((state) => state.session);
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <header className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          {title}
-        </h1>
+        <div className="flex justify-between w-full">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            {title}
+          </h1>
+          {session?.user.id === profiles.id && (
+            <Ellipsis
+              size={16}
+              className="cursor-pointer"
+              onClick={() => handleDeletePost(id)}
+            />
+          )}
+        </div>
 
         <div className="flex flex-wrap items-center gap-4 mb-6">
           <div className="flex items-center">

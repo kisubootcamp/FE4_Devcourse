@@ -78,6 +78,12 @@ export default function BlogPost() {
         comments.filter((comment) => comment.id !== id)
       );
   };
+
+  const handleDeletePost = async (id: number) => {
+    const { error } = await supabase.from("posts").delete().eq("id", id);
+    if (!error) navigate("/");
+  };
+
   if (!post) {
     return (
       <div className="min-h-screen bg-[#0D1117] flex items-center justify-center">
@@ -105,7 +111,7 @@ export default function BlogPost() {
       </div>
 
       {/* Blog Content */}
-      <BlogContent {...post} />
+      <BlogContent {...post} handleDeletePost={handleDeletePost} />
 
       {/* Comments Section */}
       <CommentsSection
