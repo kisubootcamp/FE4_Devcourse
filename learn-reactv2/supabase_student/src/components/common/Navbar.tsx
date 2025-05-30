@@ -21,7 +21,6 @@ export default function Navbar() {
     const { error } = await supabase.auth.signOut();
     if (!error) setLogout();
   };
-  console.log(session);
   return (
     <nav className="bg-[#161B22] text-white sticky top-0 z-50 border-b border-[#30363d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
