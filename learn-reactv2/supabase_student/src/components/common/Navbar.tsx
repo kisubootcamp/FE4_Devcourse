@@ -13,6 +13,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  const [searchQuery, setSearchQuery] = useState("");
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -53,6 +55,13 @@ export default function Navbar() {
                 type="text"
                 placeholder="Search..."
                 className="block w-64 pl-10 pr-3 py-1.5 bg-[#0D1117] border border-[#30363d] rounded-md text-[#c9d1d9] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.nativeEvent.isComposing) return;
+                  if (e.keyCode !== 13) return;
+                  navigate("/?query=" + searchQuery);
+                }}
               />
             </div>
             {/* 로그인 */}
