@@ -4,13 +4,81 @@ import CommentsSection from "../../components/blog/CommentsSection";
 import { useLoaderData, useNavigate } from "react-router";
 import { fetchPostDetail } from "../loader/post.loader";
 import Button from "../../components/ui/Button";
+import { useOptimistic, useState, useTransition } from "react";
+import { useAuthStore } from "../../stores/authStore";
+import supabase from "../../utils/supabase";
 
 export type PostsDetail = NonNullable<
   Awaited<ReturnType<typeof fetchPostDetail>>
 >;
 export default function BlogPost() {
   const navigate = useNavigate();
+  const session = useAuthStore((state) => state.session);
   const post = useLoaderData<PostsDetail>();
+  const [comments, setComments] = useState(post.comments);
+
+  // [..., ...., ...., ...., {}, ...]
+  // []
+  const [optimisticComments, addOptimisticComments] = useOptimistic<
+    PostsDetail["comments"],
+    PostsDetail["comments"][number]
+  >(comments, (state, value) => [...state, value]);
+
+  const [isPending, startTransition] = useTransition();
+  const handleCommentAdd = async (comment: string) => {
+    if (!comment.trim()) return;
+    if (!session?.user.id) {
+      alert("로그인 후 등록 가능합니다.");
+      return;
+    }
+    addOptimisticComments({
+      id: Date.now(),
+      comment,
+      profile_id: session?.user.id,
+      created_at: new Date().toISOString(),
+      post_id: Number(post.id),
+      profiles: {
+        id: session?.user.id,
+        username: session?.user.user_metadata.name,
+        avatar_url: session?.user.user_metadata.avatar_url,
+      },
+    });
+
+    startTransition(async () => {
+      // await new Promise((resolve) => setTimeout(resolve, 5000)); // 5
+      const { data } = await supabase
+        .from("comments")
+        .insert([
+          { profile_id: session?.user.id, post_id: Number(post.id), comment },
+        ])
+        .select(
+          `
+          *, 
+          profiles (
+            id, 
+            username, 
+            avatar_url
+          )
+          `
+        )
+        .single();
+      startTransition(() => {
+        setComments((comments) => [
+          ...comments,
+          data as PostsDetail["comments"][number],
+        ]);
+      });
+    });
+  };
+
+  const handleDeleteComment = async (id: number) => {
+    const { error } = await supabase.from("comments").delete().eq("id", id);
+    if (!error)
+      setComments((comments) =>
+        comments.filter((comment) => comment.id !== id)
+      );
+  };
+
   if (!post) {
     return (
       <div className="min-h-screen bg-[#0D1117] flex items-center justify-center">
@@ -41,7 +109,12 @@ export default function BlogPost() {
       <BlogContent {...post} />
 
       {/* Comments Section */}
-      <CommentsSection />
+      <CommentsSection
+        comments={optimisticComments}
+        handleCommentAdd={handleCommentAdd}
+        handleDeleteComment={handleDeleteComment}
+        isPending={isPending}
+      />
     </div>
   );
 }
