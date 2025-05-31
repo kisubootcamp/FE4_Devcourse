@@ -1,14 +1,23 @@
 import { LoaderFunctionArgs } from "react-router";
 import supabase from "../utils/supabase";
 
-export const fetchPosts = async () => {
+export const fetchPosts = async ({ request }: LoaderFunctionArgs) => {
+  const url = new URL(request.url);
+  const q = url.searchParams.get("query") ?? "";
+
   try {
-    const { data: posts } = await supabase.from("posts").select(`
+    const { data: posts } = await supabase
+      .from("posts")
+      .select(
+        `
     *,
     profiles (
       id, username, avatar_url
     )
-  `);
+  `
+      )
+      .ilike("title", `%${q}%`);
+
     return posts;
   } catch (e) {
     console.error(e);

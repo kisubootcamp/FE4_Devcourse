@@ -13,6 +13,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  const [searchQuery, setSearchQuery] = useState("");
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -26,6 +28,7 @@ export default function Navbar() {
     <nav className="bg-[#161B22] text-white sticky top-0 z-50 border-b border-[#30363d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* 왼쪽 */}
           <div className="flex items-center">
             <div
               className="flex-shrink-0 flex items-center cursor-pointer"
@@ -45,6 +48,8 @@ export default function Navbar() {
               </div>
             </div>
           </div>
+
+          {/* 오른쪽 */}
           <div className="hidden md:flex items-center">
             <div className="relative mx-4">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -54,6 +59,13 @@ export default function Navbar() {
                 type="text"
                 placeholder="Search..."
                 className="block w-64 pl-10 pr-3 py-1.5 bg-[#0D1117] border border-[#30363d] rounded-md text-[#c9d1d9] focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.nativeEvent.isComposing) return;
+                  if (e.keyCode !== 13) return;
+                  navigate("/?query=" + searchQuery);
+                }}
               />
             </div>
             {/* 로그인 */}
@@ -62,7 +74,7 @@ export default function Navbar() {
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="mr-3"
+                  className="mr-3 cursor-pointer"
                   onClick={() => navigate("/create-post")}
                   icon={<PenSquare size={16} />}
                 >

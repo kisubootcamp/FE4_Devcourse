@@ -1,12 +1,21 @@
 import BlogHeader from "../../components/blog/BlogHeader";
 import BlogCard from "../../components/blog/BlogCard";
-import { useLoaderData } from "react-router";
+import { useFetcher, useLoaderData, useSearchParams } from "react-router";
 import { fetchPosts } from "../../loader/post.loader";
+import { useEffect } from "react";
 
 export type Posts = Awaited<ReturnType<typeof fetchPosts>>;
 export default function Home() {
+  const fetcher = useFetcher();
+  const [searchParams] = useSearchParams();
+  const q = searchParams.get("query") ?? "";
+  const { load } = fetcher;
+
   const posts = useLoaderData<Posts>();
 
+  useEffect(() => {
+    load(`/?query=${encodeURIComponent(q)}`);
+  }, [q, load]);
   return (
     <>
       <div className="min-h-screen bg-[#0D1117]">
